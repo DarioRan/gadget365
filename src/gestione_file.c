@@ -135,7 +135,9 @@ int resituisci_gadget(char ricerca[CARATTERI], gadget_t* risultato_gadget, int s
 	do
 	{
 
-			if(strcmp(xgadget.cod_gadget,ricerca)==0)
+		if(scelta==0)
+		{
+			if(strcmp(xgadget.nome_gadget,ricerca)==0)
 			{
 				trovato=1;
 			}
@@ -144,6 +146,19 @@ int resituisci_gadget(char ricerca[CARATTERI], gadget_t* risultato_gadget, int s
 
 				fread(&xgadget,sizeof(gadget_t), 1, file_gadget);
 			}
+		}
+
+		if(scelta==1)
+		{
+			if(strcmp(xgadget.cod_gadget,ricerca)==0)
+			{
+				trovato=1;
+			}
+			else
+			{
+				fread(&xgadget,sizeof(gadget_t), 1, file_gadget);
+			}
+		}
 
 
 	}while(!feof(file_gadget) && trovato==0);
@@ -157,9 +172,71 @@ int resituisci_gadget(char ricerca[CARATTERI], gadget_t* risultato_gadget, int s
 		strcpy(risultato_gadget->desc, xgadget.desc);
 		risultato_gadget->quantita=xgadget.quantita;
 		risultato_gadget->prezzo = xgadget.prezzo;
-	*/
+		 */
 
 		*risultato_gadget=xgadget;
 	}
 	return trovato;
 }
+
+//0 nome 1 codice 2 colore
+int ricerca_gadget(char ricerca[CARATTERI], gadget_t* risultato_gadget, int scelta )
+{
+	gadget_t xgadget;
+	int trovato=0;
+	rewind(file_gadget);
+	fread(&xgadget,sizeof(gadget_t), 1, file_gadget);
+	do
+	{
+		switch(scelta)
+		{
+		case 0:
+
+			if(strstr(xgadget.nome_gadget,ricerca)!=NULL)
+			{
+				//STAMPA
+			}
+			fread(&xgadget,sizeof(gadget_t), 1, file_gadget);
+			break;
+
+		case 1:
+
+			if(strstr(xgadget.cod_gadget,ricerca)!=NULL)
+			{
+				//STAMPA
+			}
+			fread(&xgadget,sizeof(gadget_t), 1, file_gadget);
+			break;
+
+		case 2:
+
+			if(strstr(xgadget.colore,ricerca)!=NULL)
+			{
+				//STAMPA
+			}
+			fread(&xgadget,sizeof(gadget_t), 1, file_gadget);
+			break;
+
+		}
+
+	}while(!feof(file_gadget) && trovato==0);
+
+	if(trovato==1)
+	{
+		/*
+		strcpy(risultato_gadget->cod_gadget, xgadget.cod_gadget);
+		strcpy(risultato_gadget->nome_gadget, xgadget.nome_gadget);
+		strcpy(risultato_gadget->colore, xgadget.colore);
+		strcpy(risultato_gadget->desc, xgadget.desc);
+		risultato_gadget->quantita=xgadget.quantita;
+		risultato_gadget->prezzo = xgadget.prezzo;
+		 */
+
+		*risultato_gadget=xgadget;
+	}
+	return trovato;
+}
+
+
+
+
