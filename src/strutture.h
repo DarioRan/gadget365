@@ -34,6 +34,7 @@ typedef struct
 	//Tipologia
 	float prezzo;
 	int quantita;
+	int venduti;
 
 }gadget_t;
 
