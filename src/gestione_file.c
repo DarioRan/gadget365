@@ -75,7 +75,7 @@ int inserisci_cliente(cliente_t xcliente)
 	return esito;
 }
 
-//0 nome 1 codice
+//0 username 1 codice
 int resituisci_cliente(char ricerca[CARATTERI], cliente_t* risultato_cliente, int scelta )
 {
 	cliente_t xcliente;

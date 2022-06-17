@@ -10,8 +10,28 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "visualizzazione.h"
+#include "gestione_file.h"
+#include "gestione_utente.h"
 
 int main(void) {
-	puts("!!!Hello World!!!"); /* prints !!!Hello World!!! */
-	return EXIT_SUCCESS;
+
+	setbuf(stdout, NULL);
+
+	int scelta=0;
+
+	inizializza_menu();
+	scanf("%d",&scelta);
+	switch(scelta)
+	{
+
+	case 1:
+		//login
+		break;
+	case 2:
+		regsitrazione_cliente();
+		break;
+
+	}
+
 }
