@@ -5,12 +5,11 @@
  *      Author: ranie
  */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include "strutture.h"
+#include "gestione_gadget.h"
 
 int registrazione_gadget()
 {
+	setbuf(stdout, NULL);
 	srand(time(NULL));
 	char codice[6],tipo[CARATTERI];
 	int esito=0;
@@ -21,11 +20,11 @@ int registrazione_gadget()
 	printf("\n|Inserire colore gadget: ");
 	scanf("%s",xgad.colore);
 	printf("\n|Inserire descrizione: ");
-	scanf("%s",&xgad.desc);
+	scanf("%s",xgad.desc);
 	printf("\n|Inserire prezzo cad.: ");
-	scanf("%f",&xgad.prezzo);
+	scanf("%.2f",&xgad.prezzo);
 	printf("\n|Inserire quantita' disponibile: ");
-	scanf("%f",&xgad.quantita);
+	scanf("%d",&xgad.quantita);
 	xgad.venduti=0;
 	itoa(rand(),codice,10);
 	strcpy(xgad.cod_gadget,codice);

@@ -49,7 +49,6 @@ int accesso_cliente(char username[CARATTERI], char pass[CARATTERI])
 	//INSERIMENTO USER PASS
 	cliente_t xutente;
 	int esito=0;
-
 	esito=restituisci_cliente(username,&xutente);
 	if(esito==1)
 	{

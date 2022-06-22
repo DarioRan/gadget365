@@ -52,7 +52,7 @@ int main(void) {
 					switch(scelta)
 					{
 					case 1:
-					restituisciALL_gadget();
+						restituisciALL_gadget();
 						break;
 					case 5:
 						visualizza_menu_modifica();
@@ -77,17 +77,23 @@ int main(void) {
 							break;
 						}
 						break;
-					case 6:
-						esito=cancella_cliente(utentecorrente);
-						if(esito==1)
-						{
-							printf("\n|Utente eliminato con successo!");
+						case 6:
+							esito=cancella_cliente(utentecorrente);
+							if(esito==1)
+							{
+								printf("\n|Utente eliminato con successo!");
+								menu2=1;
+							}
+							break;
+						case 7:
 							menu2=1;
-						}
-						break;
-					case 7:
-						menu2=1;
-						break;
+							break;
+
+
+							//TEST GESTORE
+						case 10:
+							registrazione_gadget();
+							break;
 					}
 
 
@@ -106,6 +112,8 @@ int main(void) {
 		case 4:
 			//modifica_utente;
 			break;
+
+
 
 		}
 

@@ -48,7 +48,6 @@ void apertura_file()
 int inserisci_gadget(gadget_t xgadget)
 {
 	int esito=0;
-	gadget_t xut;
 	//rewind(file_utenti);
 	fseek(file_gadget, sizeof(gadget_t), SEEK_END);
 	esito=fwrite(&xgadget,sizeof(gadget_t), 1, file_gadget);
