@@ -24,12 +24,13 @@ void visualizza_menu()
 	printf("\n*---------------------------------------*\n");
 	printf("|             Menu Cliente              |\n");
 	printf("*---------------------------------------*\n");
-	printf("|  1 - Ricerca gadget                   |\n");
-	printf("|  2 - Effettua Ordine                  |\n");
-	printf("|  3 - Visualizza Oridni                |\n");
-	printf("|  4 - Modifica Dati Personali          |\n");
-	printf("|  5 - Cancella Account                 |\n");
-	printf("|  6 - Log Out                          |\n");
+	printf("|  1 - Visualizza gadget                |\n");
+	printf("|  2 - Ricerca gadget                   |\n");
+	printf("|  3 - Effettua Ordine                  |\n");
+	printf("|  4 - Visualizza Oridni                |\n");
+	printf("|  5 - Modifica Dati Personali          |\n");
+	printf("|  6 - Cancella Account                 |\n");
+	printf("|  7 - Log Out                          |\n");
 	printf("*---------------------------------------*\n");
 
 }
@@ -95,9 +96,11 @@ void visualizza_gadget(gadget_t xgadget)
 	printf("\n*---------------------------------------*\n");
 	printf("|        COD: %s	        |\n",xgadget.cod_gadget);
 	printf("*---------------------------------------*\n");
-	printf("|  1 - Ricerca per Nome                 |\n");
-	printf("|  2 - Ricerca per Colore               |\n");
-	printf("|  3 - Ricerca per codice               |\n");
-	printf("|  4 - Indietro                         |\n");
+	printf("|  - Nome: %s\n",xgadget.nome_gadget);
+	printf("|  - Descrizione: %s\n",xgadget.desc);
+	printf("|  - Colore: %s\n",xgadget.colore);
+	printf("|  - Prezzo: %.2f\n",xgadget.prezzo);
+	printf("|  - Quantita: %d\n",xgadget.quantita);
+	printf("|  - Venduti: %d\n",xgadget.venduti);
 	printf("*---------------------------------------*\n");
 }

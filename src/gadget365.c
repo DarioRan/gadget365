@@ -51,7 +51,10 @@ int main(void) {
 
 					switch(scelta)
 					{
-					case 4:
+					case 1:
+					restituisciALL_gadget();
+						break;
+					case 5:
 						visualizza_menu_modifica();
 						printf("\n Inserire scelta: ");
 						scanf("%d",&scelta);
@@ -74,7 +77,7 @@ int main(void) {
 							break;
 						}
 						break;
-					case 5:
+					case 6:
 						esito=cancella_cliente(utentecorrente);
 						if(esito==1)
 						{
@@ -82,7 +85,7 @@ int main(void) {
 							menu2=1;
 						}
 						break;
-					case 6:
+					case 7:
 						menu2=1;
 						break;
 					}
