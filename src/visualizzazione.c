@@ -76,6 +76,18 @@ void visualizza_ricerca_appartamento()
 
 }
 
+void visualizza_cliente(cliente_t xcliente)
+{
+
+	printf("\n*---------------------------------------*\n");
+	printf("|        Informazioni Utente            |\n");
+	printf("*---------------------------------------*\n");
+	printf("|  - P.Iva: %s                          |\n",xcliente.piva);
+	printf("|  - Ragione Sociale: %s                |\n",xcliente.ragione_sociale);
+	printf("|  - Citta': %s                         |\n",xcliente.citta);
+	printf("*---------------------------------------*\n");
+
+}
 
 //Completare
 void visualizza_gadget(gadget_t xgadget)
@@ -88,6 +100,4 @@ void visualizza_gadget(gadget_t xgadget)
 		printf("|  3 - Ricerca per codice               |\n");
 		printf("|  4 - Indietro                         |\n");
 		printf("*---------------------------------------*\n");
-
-
 }

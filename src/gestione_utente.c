@@ -72,8 +72,13 @@ int accesso_cliente(char username[CARATTERI], char pass[CARATTERI])
 	}
 	return esito;
 }
+//1 ragsoc 2 piva 3 citta
+void modifica_cliente(char username_corrente[CARATTERI],char rag[CARATTERI],int scelta)
+{
 
-void modifica_cliente_RagSoc(char username_corrente[CARATTERI],char rag[CARATTERI]){
+	switch(scelta){
+
+	case 2:
 	cliente_t xcliente;
 	int esito=0,esito2=0;
 	esito=restituisci_cliente(username_corrente, &xcliente );
@@ -83,11 +88,14 @@ void modifica_cliente_RagSoc(char username_corrente[CARATTERI],char rag[CARATTER
 	if(esito2==1)
 	{
 		printf("\n|Utente Modificato!|");
+		visualizza_cliente(xcliente);
 		sleep(1);
 	}
 	else
 	{
 		printf("\n|Impossibile Trovare Username!|");
 		sleep(1);
+	}
+	break;
 	}
 }

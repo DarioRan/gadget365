@@ -60,7 +60,7 @@ int inserisci_cliente(cliente_t xcliente)
 {
 	int esito=0;
 	cliente_t xut;
-	if(restituisci_cliente(xcliente.username, &xut,0)==0)
+	if(restituisci_cliente(xcliente.username, &xut)==0)
 	{
 		//rewind(file_utenti);
 		fseek(file_clienti, sizeof(cliente_t), SEEK_END);
