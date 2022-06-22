@@ -48,6 +48,20 @@ void visualizza_menu_modifica()
 
 }
 
+void visualizza_menu_modifica_gadget()
+{
+	printf("\n*---------------------------------------*\n");
+	printf("|             Menu Modifica             |\n");
+	printf("*---------------------------------------*\n");
+	printf("|  1 - Modifica Nome                    |\n");
+	printf("|  2 - Modifica Descrizione             |\n");
+	printf("|  3 - Modifica Colore                  |\n");
+	printf("|  4 - Modifica Prezzo                  |\n");
+	printf("|  5 - Indietro                         |\n");
+	printf("*---------------------------------------*\n");
+
+}
+
 void visualizza_menu_gestore()
 {
 	printf("\n*---------------------------------------*\n");

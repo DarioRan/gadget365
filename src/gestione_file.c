@@ -255,6 +255,40 @@ int cancella_cliente(char username[CARATTERI])
 	return esito;
 }
 
+int cancella_gadget(char gadget[CARATTERI])
+{
+	int esito=0;
+	gadget_t xgadget;
+	FILE *temp;
+	temp=fopen("temp.csv","wb");
+
+	rewind(file_gadget);
+
+	do{
+		fread(&xgadget,sizeof(gadget_t), 1, file_gadget);
+		if(strcmp(xgadget.nome_gadget,gadget)!=0)
+		{
+			fwrite(&xgadget,sizeof(cliente_t), 1, temp);
+		}
+		else
+		{
+			esito=1;
+
+		}
+	}while(!feof(file_gadget));
+
+	fclose(file_gadget);
+	fclose(temp);
+	remove("gadget.csv");
+	rename("temp.csv","gadget.csv");
+	file_gadget=fopen("gadget.csv","r+b");
+
+
+
+	return esito;
+}
+
+
 void restituisciALL_gadget()
 {
 	gadget_t xgadget;

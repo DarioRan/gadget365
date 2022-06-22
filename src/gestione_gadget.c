@@ -40,3 +40,70 @@ int registrazione_gadget()
 	return esito;
 
 }
+
+
+
+
+
+
+
+
+
+
+
+void modifica_gadget(char gadget[CARATTERI],char mod[CARATTERI],int scelta)
+{
+	gadget_t xgadget;
+	int esito=0;
+	int esito2=0;
+	switch(scelta){
+	case 1:
+			esito=ricerca_gadget(gadget, &xgadget,0);
+			strcpy(xgadget.nome_gadget,mod);
+			esito2=cancella_gadget(gadget);
+			esito2=inserisci_gadget(xgadget);
+			if(esito2==1)
+			{
+				printf("\n|gadget Modificato!|");
+				visualizza_gadget(xgadget);
+				sleep(1);
+			}
+			else
+			{
+				printf("\n|Impossibile Trovare Gadget!|");
+				sleep(1);
+			}
+			break;
+
+	}
+}
+
+/*void modifica_prezzo(char gadget[CARATTERI],char mod[CARATTERI],int scelta)
+{
+	cliente_t xcliente;
+	int esito=0;
+	int esito2=0;
+	switch(scelta){
+
+	case 1:
+			esito=restituisci_cliente(username_corrente, &xcliente);
+			strcpy(xcliente.piva,mod);
+			esito2=cancella_cliente(username_corrente);
+			esito2=inserisci_cliente(xcliente);
+			if(esito2==1)
+			{
+				printf("\n|Utente Modificato!|");
+				visualizza_cliente(xcliente);
+				sleep(1);
+			}
+			else
+			{
+				printf("\n|Impossibile Trovare Username!|");
+				sleep(1);
+			}
+			break;
+
+	}
+}
+*/
+

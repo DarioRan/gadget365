@@ -18,7 +18,7 @@ int main(void) {
 
 	setbuf(stdout, NULL);
 	int scelta=0,esito,menu1=0,menu2=0,menu3=0;
-	char nomeutente[CARATTERI],pass[CARATTERI],utentecorrente[CARATTERI],mod[CARATTERI];
+	char nomeutente[CARATTERI],pass[CARATTERI],utentecorrente[CARATTERI],mod[CARATTERI],gadget[CARATTERI];
 
 	apertura_file();
 
@@ -116,6 +116,34 @@ int main(void) {
 
 					case 1:
 						registrazione_gadget();
+						break;
+					case 2:
+						visualizza_menu_modifica_gadget();
+						printf("\n Inserire scelta: ");
+						scanf("%d",&scelta);
+						switch(scelta){
+						case 1:
+							printf("\n|Inserire Nome Gadget: ");
+							scanf("%s",gadget);
+							printf("\n|Inserire Nome Gadget: ");
+							scanf("%s",mod);
+							modifica_gadget(gadget[CARATTERI],mod,1);
+							                        break;
+						case 2:
+													break;
+						case 3:
+													break;
+						case 4:
+													break;
+						}
+						break;
+					case 3:
+						printf("\n|Inserire Nome Gadget: ");
+						scanf("%s",gadget);
+						esito=cancella_gadget(gadget);
+						if(esito==1){
+							printf("cancellato.");
+						}
 						break;
 					case 6:
 						menu3=1;
