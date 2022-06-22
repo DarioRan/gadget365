@@ -50,7 +50,8 @@ int inserisci_gadget(gadget_t xgadget)
 	int esito=0;
 	//rewind(file_utenti);
 	fseek(file_gadget, sizeof(gadget_t), SEEK_END);
-	esito=fwrite(&xgadget,sizeof(gadget_t), 1, file_gadget);
+	fwrite(&xgadget,sizeof(gadget_t), 1, file_gadget);
+	esito=1;
 	return esito;
 }
 

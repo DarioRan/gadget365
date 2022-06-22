@@ -116,6 +116,9 @@ int main(void) {
 					case 1:
 						registrazione_gadget();
 						break;
+					case 6:
+						menu3=1;
+					break;
 
 
 					}

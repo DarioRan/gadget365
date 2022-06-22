@@ -22,7 +22,7 @@ int registrazione_gadget()
 	printf("\n|Inserire descrizione: ");
 	scanf("%s",xgad.desc);
 	printf("\n|Inserire prezzo cad.: ");
-	scanf("%.2f",&xgad.prezzo);
+	scanf("%f",&xgad.prezzo);
 	printf("\n|Inserire quantita' disponibile: ");
 	scanf("%d",&xgad.quantita);
 	xgad.venduti=0;
@@ -32,7 +32,7 @@ int registrazione_gadget()
 
 	if(inserisci_gadget(xgad)==1)
 	{
-		printf("|gadget Inserito Correttamente|"); //////////////////
+		printf("|Gadget Inserito Correttamente|"); //////////////////
 		esito=1;
 		sleep(1);
 	}
