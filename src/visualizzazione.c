@@ -39,9 +39,9 @@ void visualizza_menu_modifica()
 	printf("\n*---------------------------------------*\n");
 	printf("|             Menu Modifica             |\n");
 	printf("*---------------------------------------*\n");
-	printf("|  1 - Modifica Nome                    |\n");
-	printf("|  2 - Modifica Cognome                 |\n");
-	printf("|  3 - Modifica Data di Nascita         |\n");
+	printf("|  1 - Modifica P.Iva                   |\n");
+	printf("|  2 - Modifica Rag. Sociale            |\n");
+	printf("|  3 - Modifica Citta'                  |\n");
 	printf("|  4 - Indietro                         |\n");
 	printf("*---------------------------------------*\n");
 

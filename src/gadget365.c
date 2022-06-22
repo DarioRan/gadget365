@@ -18,7 +18,7 @@ int main(void) {
 
 	setbuf(stdout, NULL);
 	int scelta=0,esito,menu1=0,menu2=0;
-	char nomeutente[CARATTERI],pass[CARATTERI],utentecorrente[CARATTERI];
+	char nomeutente[CARATTERI],pass[CARATTERI],utentecorrente[CARATTERI],mod[CARATTERI];
 
 	apertura_file();
 
@@ -51,6 +51,29 @@ int main(void) {
 
 					switch(scelta)
 					{
+					case 4:
+						visualizza_menu_modifica();
+						printf("\n Inserire scelta: ");
+						scanf("%d",&scelta);
+						switch(scelta)
+						{
+						case 1:
+							printf("\n|Inserire P. Iva: ");
+							scanf("%s",mod);
+							modifica_cliente(utentecorrente,mod,1);
+							break;
+						case 2:
+							printf("\n|Inserire Rag. Sociale: ");
+							scanf("%s",mod);
+							modifica_cliente(utentecorrente,mod,2);
+							break;
+						case 3:
+							printf("\n|Inserire Citta': ");
+							scanf("%s",mod);
+							modifica_cliente(utentecorrente,mod,3);
+							break;
+						}
+						break;
 					case 5:
 						esito=cancella_cliente(utentecorrente);
 						if(esito==1)

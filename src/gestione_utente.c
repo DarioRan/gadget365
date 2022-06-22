@@ -72,17 +72,35 @@ int accesso_cliente(char username[CARATTERI], char pass[CARATTERI])
 	}
 	return esito;
 }
-//1 ragsoc 2 piva 3 citta
-void modifica_cliente(char username_corrente[CARATTERI],char rag[CARATTERI],int scelta)
+//1 piva 2 ragsoc 3 citta
+void modifica_cliente(char username_corrente[CARATTERI],char mod[CARATTERI],int scelta)
 {
 	cliente_t xcliente;
 	int esito=0;
 	int esito2=0;
 	switch(scelta){
 
+	case 1:
+			esito=restituisci_cliente(username_corrente, &xcliente);
+			strcpy(xcliente.piva,mod);
+			esito2=cancella_cliente(username_corrente);
+			esito2=inserisci_cliente(xcliente);
+			if(esito2==1)
+			{
+				printf("\n|Utente Modificato!|");
+				visualizza_cliente(xcliente);
+				sleep(1);
+			}
+			else
+			{
+				printf("\n|Impossibile Trovare Username!|");
+				sleep(1);
+			}
+			break;
+
 	case 2:
 		esito=restituisci_cliente(username_corrente, &xcliente);
-		strcpy(xcliente.ragione_sociale,rag);
+		strcpy(xcliente.ragione_sociale,mod);
 		esito2=cancella_cliente(username_corrente);
 		esito2=inserisci_cliente(xcliente);
 		if(esito2==1)
@@ -97,5 +115,24 @@ void modifica_cliente(char username_corrente[CARATTERI],char rag[CARATTERI],int 
 			sleep(1);
 		}
 		break;
+
+	case 3:
+		esito=restituisci_cliente(username_corrente, &xcliente);
+		strcpy(xcliente.citta,mod);
+		esito2=cancella_cliente(username_corrente);
+		esito2=inserisci_cliente(xcliente);
+		if(esito2==1)
+		{
+			printf("\n|Utente Modificato!|");
+			visualizza_cliente(xcliente);
+			sleep(1);
+		}
+		else
+		{
+			printf("\n|Impossibile Trovare Username!|");
+			sleep(1);
+		}
+		break;
+
 	}
 }
