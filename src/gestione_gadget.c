@@ -42,4 +42,9 @@ int registrazione_gadget()
 
 }
 
+int isQuantityAvilable()
+{
+
+}
+
 

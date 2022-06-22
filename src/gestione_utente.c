@@ -72,3 +72,22 @@ int accesso_cliente(char username[CARATTERI], char pass[CARATTERI])
 	}
 	return esito;
 }
+
+void modifica_cliente_RagSoc(char username_corrente[CARATTERI],char rag[CARATTERI]){
+	cliente_t xcliente;
+	int esito=0,esito2=0;
+	esito=restituisci_cliente(username_corrente, &xcliente );
+	strcpy(xcliente.ragione_sociale,rag);
+	esito2=cancella_cliente(username_corrente);
+	esito2=inserisci_cliente(xcliente);
+	if(esito2==1)
+	{
+		printf("\n|Utente Modificato!|");
+		sleep(1);
+	}
+	else
+	{
+		printf("\n|Impossibile Trovare Username!|");
+		sleep(1);
+	}
+}
