@@ -41,3 +41,5 @@ int registrazione_gadget()
 	return esito;
 
 }
+
+

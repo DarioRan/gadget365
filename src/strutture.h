@@ -8,11 +8,12 @@
 #ifndef STRUTTURE_H_
 #define STRUTTURE_H_
 #define CARATTERI 50
+#define MAX_ARTICOLI 10
+
 
 
 typedef struct
 {
-	char cod_cliente[6];
 	char ragione_sociale[CARATTERI];
 	char piva[CARATTERI];
 	char citta[CARATTERI];
@@ -41,7 +42,8 @@ typedef struct
 typedef struct
 {
 	char cod_ordine[6];
-	char codice_prodotto[CARATTERI];
+	//char codice_prodotto[CARATTERI];
+	char articoli[MAX_ARTICOLI][MAX_ARTICOLI];
 	int quantita;
 	int stato;  //0 non confermata 1 confermata
 	float totale;
