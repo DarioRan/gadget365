@@ -47,28 +47,48 @@ int registrazione_cliente()
 int accesso_cliente(char username[CARATTERI], char pass[CARATTERI])
 {
 	//INSERIMENTO USER PASS
-	cliente_t xutente;
+
+	int res=0,res2=0;
 	int esito=0;
-	esito=restituisci_cliente(username,&xutente);
-	if(esito==1)
-	{
-		if(strcmp(xutente.pass,pass)==0)
-		{
-			printf("\n|Log-In Avvenuto con Successo!|");
-			sleep(1);
-		}
-		else
-		{
-			esito=0;
-			printf("\n|Password Errata!|");
-			sleep(1);
-		}
-	}
-	else
-	{
-		printf("\n|Impossibile Trovare Username!|");
-		sleep(1);
-	}
+	res=strncmp(USERADMIN,username,9);
+	res2=strncmp(PASSADMIN,pass,6);
+    if(res==0)
+    {
+
+    	if(res2==0)
+    	    {
+    	     printf("\n|Log-In Admin Avvenuto con Successo!|");
+    	     esito=2;
+    	    }
+    	else
+    	{
+    		 printf("\n|Password Errata!|");
+    	}
+    }
+    else
+    {
+    	cliente_t xutente;
+    		esito=restituisci_cliente(username,&xutente);
+    		if(esito==1)
+    		{
+    			if(strcmp(xutente.pass,pass)==0)
+    			{
+    				printf("\n|Log-In Avvenuto con Successo!|");
+    				sleep(1);
+    			}
+    			else
+    			{
+    				esito=0;
+    				printf("\n|Password Errata!|");
+    				sleep(1);
+    			}
+    		}
+    		else
+    		{
+    			printf("\n|Impossibile Trovare Username!|");
+    			sleep(1);
+    		}
+    }
 	return esito;
 }
 //1 piva 2 ragsoc 3 citta

@@ -17,7 +17,7 @@
 int main(void) {
 
 	setbuf(stdout, NULL);
-	int scelta=0,esito,menu1=0,menu2=0;
+	int scelta=0,esito,menu1=0,menu2=0,menu3=0;
 	char nomeutente[CARATTERI],pass[CARATTERI],utentecorrente[CARATTERI],mod[CARATTERI];
 
 	apertura_file();
@@ -91,12 +91,36 @@ int main(void) {
 
 
 							//TEST GESTORE
+							/*
 						case 10:
 							registrazione_gadget();
-							break;
+							break;*/
 					}
 
 
+				}
+			}
+			else
+			{
+				if(esito==2)
+				{
+
+					menu3=0;
+
+					while(menu3==0){
+					visualizza_menu_gestore();
+				    printf("\n Inserire scelta: ");
+					scanf("%d",&scelta);
+					switch(scelta){
+
+					case 1:
+						registrazione_gadget();
+						break;
+
+
+					}
+
+					}
 				}
 			}
 			break;

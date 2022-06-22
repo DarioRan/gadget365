@@ -51,7 +51,7 @@ void visualizza_menu_modifica()
 void visualizza_menu_gestore()
 {
 	printf("\n*---------------------------------------*\n");
-	printf("|          Menu gestore 		        |\n");
+	printf("|          Menu gestore                 |\n");
 	printf("*---------------------------------------*\n");
 	printf("|  1 - Aggiungi Gadget                  |\n");
 	printf("|  2 - Modifica Gadget                  |\n");
