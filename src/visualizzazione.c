@@ -5,6 +5,7 @@
  *      Author: ranie
  */
 
+#include "strutture.h"
 
 void inizializza_menu()
 {

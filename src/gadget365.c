@@ -29,7 +29,7 @@ int main(void) {
 		//login
 		break;
 	case 2:
-		regsitrazione_cliente();
+		registrazione_cliente();
 		break;
 
 	}

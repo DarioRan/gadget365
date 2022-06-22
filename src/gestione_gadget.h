@@ -8,6 +8,6 @@
 #ifndef GESTIONE_GADGET_H_
 #define GESTIONE_GADGET_H_
 
-
+int registrazione_gadget();
 
 #endif /* GESTIONE_GADGET_H_ */
