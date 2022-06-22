@@ -237,6 +237,40 @@ int ricerca_gadget(char ricerca[CARATTERI], gadget_t* risultato_gadget, int scel
 	return trovato;
 }
 
+int cancella_cliente(char username[CARATTERI])
+{
+	int esito=0;
+	cliente_t xcliente;
+	FILE *temp;
+	temp=fopen("temp.csv","wb");
+
+	rewind(file_clienti);
+
+	do{
+		fread(&xcliente,sizeof(cliente_t), 1, file_clienti);
+		if(strcmp(xcliente.username,username)!=0)
+		{
+			fwrite(&xcliente,sizeof(cliente_t), 1, temp);
+		}
+		else
+		{
+			esito=1;
+
+		}
+	}while(!feof(file_clienti));
+
+	fclose(file_clienti);
+	fclose(temp);
+	remove("utenti.csv");
+	rename("temp.csv","utenti.csv");
+	file_clienti=fopen("utenti.csv","r+b");
+
+
+
+	return esito;
+}
+
+
 
 
 
