@@ -41,13 +41,3 @@ int registrazione_gadget()
 	return esito;
 
 }
-<<<<<<< HEAD
-
-int isQuantityAvilable()
-{
-
-}
-
-
-=======
->>>>>>> parent of 524369d (inzio gestione ordini)
