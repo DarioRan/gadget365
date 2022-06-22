@@ -8,6 +8,7 @@
 #ifndef GESTIONE_UTENTE_H_
 #define GESTIONE_UTENTE_H_
 #include "strutture.h"
+#include "gestione_file.h"
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>

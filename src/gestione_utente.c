@@ -15,7 +15,7 @@ char PASSADMIN[CARATTERI]="gadget";
 
 int registrazione_cliente()
 {
-	char tipo[CARATTERI];
+
 	int esito=0;
 	cliente_t xutente;
 	printf("\n|Inserire ragione sociale: ");
@@ -50,7 +50,7 @@ int accesso_cliente(char username[CARATTERI], char pass[CARATTERI])
 	cliente_t xutente;
 	int esito=0;
 
-	esito=restituisci_cliente(username,&xutente,0);
+	esito=restituisci_cliente(username,&xutente);
 	if(esito==1)
 	{
 		if(strcmp(xutente.pass,pass)==0)
@@ -75,27 +75,27 @@ int accesso_cliente(char username[CARATTERI], char pass[CARATTERI])
 //1 ragsoc 2 piva 3 citta
 void modifica_cliente(char username_corrente[CARATTERI],char rag[CARATTERI],int scelta)
 {
-
+	cliente_t xcliente;
+	int esito=0;
+	int esito2=0;
 	switch(scelta){
 
 	case 2:
-	cliente_t xcliente;
-	int esito=0,esito2=0;
-	esito=restituisci_cliente(username_corrente, &xcliente );
-	strcpy(xcliente.ragione_sociale,rag);
-	esito2=cancella_cliente(username_corrente);
-	esito2=inserisci_cliente(xcliente);
-	if(esito2==1)
-	{
-		printf("\n|Utente Modificato!|");
-		visualizza_cliente(xcliente);
-		sleep(1);
-	}
-	else
-	{
-		printf("\n|Impossibile Trovare Username!|");
-		sleep(1);
-	}
-	break;
+		esito=restituisci_cliente(username_corrente, &xcliente);
+		strcpy(xcliente.ragione_sociale,rag);
+		esito2=cancella_cliente(username_corrente);
+		esito2=inserisci_cliente(xcliente);
+		if(esito2==1)
+		{
+			printf("\n|Utente Modificato!|");
+			visualizza_cliente(xcliente);
+			sleep(1);
+		}
+		else
+		{
+			printf("\n|Impossibile Trovare Username!|");
+			sleep(1);
+		}
+		break;
 	}
 }

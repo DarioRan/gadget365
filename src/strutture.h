@@ -12,7 +12,6 @@
 
 typedef struct
 {
-	char cod_cliente[6];
 	char ragione_sociale[CARATTERI];
 	char piva[CARATTERI];
 	char citta[CARATTERI];

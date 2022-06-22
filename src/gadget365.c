@@ -24,60 +24,64 @@ int main(void) {
 
 	while(menu1==0)
 	{
-	inizializza_menu();
-	printf("\n Inserire scelta: ");
-	scanf("%d",&scelta);
+		inizializza_menu();
+		printf("\n Inserire scelta: ");
+		scanf("%d",&scelta);
 
-	switch(scelta)
-	{
+		switch(scelta)
+		{
 
-	case 1:
-		printf("\n|Inserire nome utente: ");
-		scanf("%s",nomeutente);
-		printf("\n|Inserire password: ");
-		scanf("%s",pass);
-    esito=accesso_cliente(nomeutente,pass);
+		case 1:
+			printf("\n|Inserire nome utente: ");
+			scanf("%s",nomeutente);
+			printf("\n|Inserire password: ");
+			scanf("%s",pass);
+			esito=accesso_cliente(nomeutente,pass);
 
-    if(esito==1)
-    {
+			if(esito==1)
+			{
 
-    	strcpy(utentecorrente,nomeutente);
-    	menu2=0;
-    	while(menu2==0){
-    	visualizza_menu();
+				strcpy(utentecorrente,nomeutente);
+				menu2=0;
+				while(menu2==0){
+					visualizza_menu();
 
-    	printf("\n Inserire scelta: ");
-    	scanf("%d",&scelta);
+					printf("\n Inserire scelta: ");
+					scanf("%d",&scelta);
 
-    	switch(scelta)
-    	{
-    	case 5:
-    	esito=cancella_cliente(utentecorrente);
-    	if(esito==1)
-    	{
-    		printf("\n|Utente eliminato con successo!");
-    		menu2=1;
-    	}
-    	break;
-    	case 6:
-    	menu2=1;
-    	break;
-    	}
+					switch(scelta)
+					{
+					case 5:
+						esito=cancella_cliente(utentecorrente);
+						if(esito==1)
+						{
+							printf("\n|Utente eliminato con successo!");
+							menu2=1;
+						}
+						break;
+					case 6:
+						menu2=1;
+						break;
+					}
 
 
-    	}
-    }
-		break;
+				}
+			}
+			break;
 
-	case 2:
-		registrazione_cliente();
-		break;
+		case 2:
+			registrazione_cliente();
+			break;
 
-	case 3:
-		menu1=1;
-		break;
+		case 3:
+			menu1=1;
+			break;
 
-	}
+		case 4:
+			//modifica_utente;
+			break;
+
+		}
 
 	}
 }

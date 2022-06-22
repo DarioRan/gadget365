@@ -92,12 +92,12 @@ void visualizza_cliente(cliente_t xcliente)
 //Completare
 void visualizza_gadget(gadget_t xgadget)
 {
-		printf("\n*---------------------------------------*\n");
-		printf("|        COD: %s	        |\n",xgadget.cod_gadget);
-		printf("*---------------------------------------*\n");
-		printf("|  1 - Ricerca per Nome                 |\n");
-		printf("|  2 - Ricerca per Colore               |\n");
-		printf("|  3 - Ricerca per codice               |\n");
-		printf("|  4 - Indietro                         |\n");
-		printf("*---------------------------------------*\n");
+	printf("\n*---------------------------------------*\n");
+	printf("|        COD: %s	        |\n",xgadget.cod_gadget);
+	printf("*---------------------------------------*\n");
+	printf("|  1 - Ricerca per Nome                 |\n");
+	printf("|  2 - Ricerca per Colore               |\n");
+	printf("|  3 - Ricerca per codice               |\n");
+	printf("|  4 - Indietro                         |\n");
+	printf("*---------------------------------------*\n");
 }

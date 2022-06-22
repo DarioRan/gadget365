@@ -76,7 +76,7 @@ int inserisci_cliente(cliente_t xcliente)
 }
 
 //0 username 1 codice
-int restituisci_cliente(char ricerca[CARATTERI], cliente_t* risultato_cliente, int scelta )
+int restituisci_cliente(char ricerca[CARATTERI], cliente_t* risultato_cliente )
 {
 	cliente_t xcliente;
 	int trovato=0;
@@ -84,29 +84,14 @@ int restituisci_cliente(char ricerca[CARATTERI], cliente_t* risultato_cliente, i
 	fread(&xcliente,sizeof(cliente_t), 1, file_clienti);
 	do
 	{
-		if(scelta==0)
+		if(strcmp(xcliente.username,ricerca)==0)
 		{
-			if(strcmp(xcliente.username,ricerca)==0)
-			{
-				trovato=1;
-			}
-			else
-			{
-
-				fread(&xcliente,sizeof(cliente_t), 1, file_clienti);
-			}
+			trovato=1;
 		}
-
-		if(scelta==1)
+		else
 		{
-			if(strcmp(xcliente.cod_cliente,ricerca)==0)
-			{
-				trovato=1;
-			}
-			else
-			{
-				fread(&xcliente,sizeof(cliente_t), 1, file_clienti);
-			}
+
+			fread(&xcliente,sizeof(cliente_t), 1, file_clienti);
 		}
 
 	}while(!feof(file_clienti) && trovato==0);
@@ -261,9 +246,9 @@ int cancella_cliente(char username[CARATTERI])
 
 	fclose(file_clienti);
 	fclose(temp);
-	remove("utenti.csv");
-	rename("temp.csv","utenti.csv");
-	file_clienti=fopen("utenti.csv","r+b");
+	remove("clienti.csv");
+	rename("temp.csv","clienti.csv");
+	file_clienti=fopen("clienti.csv","r+b");
 
 
 
