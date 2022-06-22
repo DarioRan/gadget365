@@ -111,8 +111,9 @@ int restituisci_cliente(char ricerca[CARATTERI], cliente_t* risultato_cliente )
 }
 
 
-int resituisci_gadget(char ricerca[CARATTERI], gadget_t* risultato_gadget, int scelta )
+int restituisci_gadget(char ricerca[CARATTERI], gadget_t* risultato_gadget, int scelta )
 {
+
 	gadget_t xgadget;
 	int trovato=0;
 	rewind(file_gadget);

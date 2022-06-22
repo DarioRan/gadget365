@@ -127,7 +127,7 @@ int main(void) {
 							scanf("%s",gadget);
 							printf("\n|Inserire Nome Gadget: ");
 							scanf("%s",mod);
-							modifica_gadget(gadget[CARATTERI],mod,1);
+							modifica_gadget(gadget,mod,1);
 							                        break;
 						case 2:
 													break;
@@ -142,7 +142,7 @@ int main(void) {
 						scanf("%s",gadget);
 						esito=cancella_gadget(gadget);
 						if(esito==1){
-							printf("cancellato.");
+							printf("|Gadget Cancellato!");
 						}
 						break;
 					case 6:
