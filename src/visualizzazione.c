@@ -10,7 +10,7 @@
 void inizializza_menu()
 {
 	printf("\n*---------------------------------------*\n");
-	printf("|                gadget365		        |\n");
+	printf("|                gadget365	        |\n");
 	printf("*---------------------------------------*\n");
 	printf("|  1 - Log-In Utente                    |\n");
 	printf("|  2 - Registrazione Utente             |\n");
@@ -22,11 +22,11 @@ void inizializza_menu()
 void visualizza_menu()
 {
 	printf("\n*---------------------------------------*\n");
-	printf("|             Menu Cliente		        |\n");
+	printf("|             Menu Cliente              |\n");
 	printf("*---------------------------------------*\n");
-	printf("|  1 - Ricerca gadget            	    |\n");
-	printf("|  2 - Effettua Ordine            		|\n");
-	printf("|  3 - Visualizza Oridni			    |\n");
+	printf("|  1 - Ricerca gadget                   |\n");
+	printf("|  2 - Effettua Ordine                  |\n");
+	printf("|  3 - Visualizza Oridni                |\n");
 	printf("|  4 - Modifica Dati Personali          |\n");
 	printf("|  5 - Cancella Account                 |\n");
 	printf("|  6 - Log Out                          |\n");
