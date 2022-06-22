@@ -61,6 +61,7 @@ void modifica_gadget(char gadget[CARATTERI],char mod[CARATTERI],int scelta)
 			esito=ricerca_gadget(gadget, &xgadget,0);
 			strcpy(xgadget.nome_gadget,mod);
 			esito2=cancella_gadget(gadget);
+			/*
 			esito2=inserisci_gadget(xgadget);
 			if(esito2==1)
 			{
@@ -74,7 +75,7 @@ void modifica_gadget(char gadget[CARATTERI],char mod[CARATTERI],int scelta)
 				sleep(1);
 			}
 			break;
-
+*/
 	}
 }
 

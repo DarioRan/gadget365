@@ -268,7 +268,7 @@ int cancella_gadget(char gadget[CARATTERI])
 		fread(&xgadget,sizeof(gadget_t), 1, file_gadget);
 		if(strcmp(xgadget.nome_gadget,gadget)!=0)
 		{
-			fwrite(&xgadget,sizeof(cliente_t), 1, temp);
+			fwrite(&xgadget,sizeof(gadget_t), 1, temp);
 		}
 		else
 		{
