@@ -248,9 +248,9 @@ int cancella_cliente(char username[CARATTERI])
 
 	fclose(file_clienti);
 	fclose(temp);
-	remove("utenti.csv");
-	rename("temp.csv","utenti.csv");
-	file_clienti=fopen("utenti.csv","r+b");
+	remove("clienti.csv");
+	rename("temp.csv","clienti.csv");
+	file_clienti=fopen("clienti.csv","r+b");
 
 
 
