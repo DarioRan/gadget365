@@ -76,35 +76,68 @@ void modifica_gadget(char gadget[CARATTERI],char mod[CARATTERI],int scelta)
 			}
 			break;
 
+	case 2:
+				esito=restituisci_gadget(gadget, &xgadget,0);
+				strcpy(xgadget.desc,mod);
+				esito2=cancella_gadget(gadget);
+				esito2=inserisci_gadget(xgadget);
+
+				if(esito2==1)
+				{
+					printf("\n|gadget Modificato!|");
+					visualizza_gadget(xgadget);
+					sleep(1);
+				}
+				else
+				{
+					printf("\n|Impossibile Trovare Gadget!|");
+					sleep(1);
+				}
+				break;
+	case 3:
+					esito=restituisci_gadget(gadget, &xgadget,0);
+					strcpy(xgadget.colore,mod);
+					esito2=cancella_gadget(gadget);
+					esito2=inserisci_gadget(xgadget);
+
+					if(esito2==1)
+					{
+						printf("\n|gadget Modificato!|");
+						visualizza_gadget(xgadget);
+						sleep(1);
+					}
+					else
+					{
+						printf("\n|Impossibile Trovare Gadget!|");
+						sleep(1);
+					}
+					break;
 	}
 }
 
-/*void modifica_prezzo(char gadget[CARATTERI],char mod[CARATTERI],int scelta)
+void modifica_prezzo(char gadget[CARATTERI],float prezzo)
 {
-	cliente_t xcliente;
-	int esito=0;
-	int esito2=0;
-	switch(scelta){
+	gadget_t xgadget;
+		int esito=0;
+		int esito2=0;
 
-	case 1:
-			esito=restituisci_cliente(username_corrente, &xcliente);
-			strcpy(xcliente.piva,mod);
-			esito2=cancella_cliente(username_corrente);
-			esito2=inserisci_cliente(xcliente);
-			if(esito2==1)
-			{
-				printf("\n|Utente Modificato!|");
-				visualizza_cliente(xcliente);
-				sleep(1);
-			}
-			else
-			{
-				printf("\n|Impossibile Trovare Username!|");
-				sleep(1);
-			}
-			break;
+				esito=restituisci_gadget(gadget, &xgadget,0);
+				xgadget.prezzo=prezzo;
+				esito2=cancella_gadget(gadget);
+				esito2=inserisci_gadget(xgadget);
 
-	}
+				if(esito2==1)
+				{
+					printf("\n|gadget Modificato!|");
+					visualizza_gadget(xgadget);
+					sleep(1);
+				}
+				else
+				{
+					printf("\n|Impossibile Trovare Gadget!|");
+					sleep(1);
+				}
+
 }
-*/
+
 

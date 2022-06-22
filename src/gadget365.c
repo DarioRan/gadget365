@@ -17,7 +17,7 @@
 int main(void) {
 
 	setbuf(stdout, NULL);
-	int scelta=0,esito,menu1=0,menu2=0,menu3=0;
+	int scelta=0,esito,menu1=0,menu2=0,menu3=0,prezzo;
 	char nomeutente[CARATTERI],pass[CARATTERI],utentecorrente[CARATTERI],mod[CARATTERI],gadget[CARATTERI];
 
 	apertura_file();
@@ -130,10 +130,25 @@ int main(void) {
 							modifica_gadget(gadget,mod,1);
 							                        break;
 						case 2:
+							printf("\n|Inserire Nome Gadget: ");
+							scanf("%s",gadget);
+							printf("\n|Inserire Descrizione Gadget: ");
+							scanf("%s",mod);
+							modifica_gadget(gadget,mod,2);
 													break;
 						case 3:
+							printf("\n|Inserire Nome Gadget: ");
+							scanf("%s",gadget);
+							printf("\n|Inserire Colore Gadget: ");
+							scanf("%s",mod);
+							modifica_gadget(gadget,mod,3);
 													break;
 						case 4:
+							printf("\n|Inserire Nome Gadget: ");
+							scanf("%s",gadget);
+							printf("\n|Inserire Prezzo Gadget: ");
+							scanf("%f",&prezzo);
+							modifica_prezzo(gadget,prezzo);
 													break;
 						}
 						break;
