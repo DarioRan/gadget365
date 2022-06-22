@@ -2,7 +2,7 @@
  * strutture.h
  *
  *  Created on: 9 giu 2022
- *      Author: ranie
+ *      Author: ranieromito
  */
 
 #ifndef STRUTTURE_H_
