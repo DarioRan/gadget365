@@ -24,7 +24,6 @@ int main(void) {
 
 	while(menu1==0)
 	{
-
 	inizializza_menu();
 	printf("\n Inserire scelta: ");
 	scanf("%d",&scelta);
@@ -41,9 +40,10 @@ int main(void) {
 
     if(esito==1)
     {
-    	strcpy(utentecorrente,nomeutente);
-    	while(menu2==0){
 
+    	strcpy(utentecorrente,nomeutente);
+    	menu2=0;
+    	while(menu2==0){
     	visualizza_menu();
 
     	printf("\n Inserire scelta: ");
@@ -51,6 +51,14 @@ int main(void) {
 
     	switch(scelta)
     	{
+    	case 5:
+    	esito=cancella_cliente(utentecorrente);
+    	if(esito==1)
+    	{
+    		printf("\n|Utente eliminato con successo!");
+    		menu2=1;
+    	}
+    	break;
     	case 6:
     	menu2=1;
     	break;
