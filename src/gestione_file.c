@@ -75,8 +75,8 @@ int inserisci_cliente(cliente_t xcliente)
 	return esito;
 }
 
-//0 username 1 codice
-int restituisci_cliente(char ricerca[CARATTERI], cliente_t* risultato_cliente, int scelta )
+//0 username
+int restituisci_cliente(char ricerca[CARATTERI], cliente_t* risultato_cliente)
 {
 	cliente_t xcliente;
 	int trovato=0;
@@ -84,8 +84,6 @@ int restituisci_cliente(char ricerca[CARATTERI], cliente_t* risultato_cliente, i
 	fread(&xcliente,sizeof(cliente_t), 1, file_clienti);
 	do
 	{
-		if(scelta==0)
-		{
 			if(strcmp(xcliente.username,ricerca)==0)
 			{
 				trovato=1;
@@ -95,19 +93,8 @@ int restituisci_cliente(char ricerca[CARATTERI], cliente_t* risultato_cliente, i
 
 				fread(&xcliente,sizeof(cliente_t), 1, file_clienti);
 			}
-		}
 
-		if(scelta==1)
-		{
-			if(strcmp(xcliente.cod_cliente,ricerca)==0)
-			{
-				trovato=1;
-			}
-			else
-			{
-				fread(&xcliente,sizeof(cliente_t), 1, file_clienti);
-			}
-		}
+
 
 	}while(!feof(file_clienti) && trovato==0);
 
