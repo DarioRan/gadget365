@@ -90,7 +90,7 @@ void visualizza_cliente(cliente_t xcliente)
 
 }
 
-//Completare
+
 void visualizza_gadget(gadget_t xgadget)
 {
 	printf("\n*---------------------------------------*\n");

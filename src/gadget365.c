@@ -53,6 +53,7 @@ int main(void) {
 					{
 					case 1:
 						restituisciALL_gadget();
+
 						break;
 					case 5:
 						visualizza_menu_modifica();

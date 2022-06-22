@@ -255,13 +255,14 @@ int cancella_cliente(char username[CARATTERI])
 	return esito;
 }
 
-void restituisciALL_gadget( )
+void restituisciALL_gadget()
 {
 	gadget_t xgadget;
 	rewind(file_gadget);
 	fread(&xgadget,sizeof(gadget_t), 1, file_gadget);
 	do{
 		visualizza_gadget(xgadget);
+		fread(&xgadget,sizeof(gadget_t), 1, file_gadget);
 	}while(!feof(file_gadget));
 
 }
