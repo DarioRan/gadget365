@@ -5,8 +5,12 @@
  *      Author: ranie
  */
 
-#include "strutture.h"
 #include "gestione_file.h"
+
+
+char USERADMIN[CARATTERI]="admin_365";
+char PASSADMIN[CARATTERI]="gadget";
+
 
 int registrazione_cliente()
 {
@@ -18,9 +22,9 @@ int registrazione_cliente()
 	printf("\n|Inserire P. IVA: ");
 	scanf("%s",xutente.piva);
 	printf("\n|Inserire citta': ");
+	scanf("%s",xutente.citta);
 	printf("\n|Inserire email: ");
 	scanf("%s",xutente.email);
-	scanf("%s",xutente.citta);
 	printf("\n|Inserire username utente: ");
 	scanf("%s",xutente.username);
 	printf("\n|Inserire password utente: ");

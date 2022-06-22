@@ -8,6 +8,11 @@
 #ifndef GESTIONE_UTENTE_H_
 #define GESTIONE_UTENTE_H_
 #include "strutture.h"
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+
 
 int registrazione_cliente();
 int accesso_cliente(char username[CARATTERI], char pass[CARATTERI]);
