@@ -41,7 +41,23 @@ int registrazione_gadget()
 }
 
 
+void effettua_ricerca()
+{
+	int scelta=0;
+	char ricerca[CARATTERI];
+	visualizza_menu_ricerca();
+	scanf("%d",&scelta);
 
+
+
+	switch(scelta)
+	{
+	 case 0:
+		printf("Inserire nome gadget: ");
+		printf("%s",&ricerca);
+		ricerca_gadget(ricerca[CARATTERI],, int scelta-1 )
+	}
+}
 
 
 

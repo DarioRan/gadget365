@@ -177,7 +177,7 @@ int restituisci_gadget(char ricerca[CARATTERI], gadget_t* risultato_gadget, int 
 }
 
 //0 nome 1 codice 2 colore
-int ricerca_gadget(char ricerca[CARATTERI], gadget_t* risultato_gadget, int scelta )
+void ricerca_gadget(char ricerca[CARATTERI], gadget_t* risultato_gadget, int scelta )
 {
 	gadget_t xgadget;
 	int trovato=0;
@@ -191,7 +191,7 @@ int ricerca_gadget(char ricerca[CARATTERI], gadget_t* risultato_gadget, int scel
 
 			if(strstr(xgadget.nome_gadget,ricerca)!=NULL)
 			{
-				//STAMPA
+				visualizza_gadget(xgadget);
 			}
 			fread(&xgadget,sizeof(gadget_t), 1, file_gadget);
 			break;
@@ -200,7 +200,7 @@ int ricerca_gadget(char ricerca[CARATTERI], gadget_t* risultato_gadget, int scel
 
 			if(strstr(xgadget.cod_gadget,ricerca)!=NULL)
 			{
-				//STAMPA
+				visualizza_gadget(xgadget);
 			}
 			fread(&xgadget,sizeof(gadget_t), 1, file_gadget);
 			break;
@@ -209,29 +209,14 @@ int ricerca_gadget(char ricerca[CARATTERI], gadget_t* risultato_gadget, int scel
 
 			if(strstr(xgadget.colore,ricerca)!=NULL)
 			{
-				//STAMPA
+				visualizza_gadget(xgadget);
 			}
 			fread(&xgadget,sizeof(gadget_t), 1, file_gadget);
 			break;
 
 		}
 
-	}while(!feof(file_gadget) && trovato==0);
-
-	if(trovato==1)
-	{
-		/*
-		strcpy(risultato_gadget->cod_gadget, xgadget.cod_gadget);
-		strcpy(risultato_gadget->nome_gadget, xgadget.nome_gadget);
-		strcpy(risultato_gadget->colore, xgadget.colore);
-		strcpy(risultato_gadget->desc, xgadget.desc);
-		risultato_gadget->quantita=xgadget.quantita;
-		risultato_gadget->prezzo = xgadget.prezzo;
-		 */
-
-		*risultato_gadget=xgadget;
-	}
-	return trovato;
+	}while(!feof(file_gadget));
 }
 
 int cancella_cliente(char username[CARATTERI])
@@ -325,6 +310,58 @@ void visualizza_ordini_cliente(char* username)
 		}
 		fread(&xordine,sizeof(ordine_t), 1, file_ordini);
 	}while(!feof(file_ordini));
+
+}
+
+//visualizza i 3 più venduti
+void visualizza_piu_venduti()
+{
+	gadget_t xgadget,xgadget1,xgadget2,xgadget3, xscambio;
+	xgadget1.venduti=0;
+	xgadget2.venduti=0;
+	xgadget3.venduti=0;
+	rewind(file_gadget);
+	fread(&xgadget,sizeof(gadget_t), 1, file_gadget);
+	do{
+		if(xgadget.venduti>xgadget1.venduti)
+		{
+			//scambio il nuovo con il primo
+			xscambio=xgadget1;
+			xgadget1=xgadget;
+
+			//scambio il primo con il secondo
+			xgadget=xgadget2;
+			xgadget2=xscambio;
+
+			//scambio il secondo con il terzo
+
+			xgadget3=xgadget;
+
+		}
+		else{
+			if(xgadget.venduti>xgadget2.venduti)
+			{
+				xscambio=xgadget2;
+				xgadget2=xgadget;
+				xgadget3=xscambio;
+
+			}
+			else{
+				if(xgadget.venduti>xgadget3.venduti)
+				{
+					xgadget3=xgadget;
+				}
+			}
+		}
+		fread(&xgadget,sizeof(gadget_t), 1, file_gadget);
+	}while(!feof(file_gadget));
+
+
+	visualizza_gadget(xgadget1);
+	visualizza_gadget(xgadget2);
+	visualizza_gadget(xgadget3);
+
+
 
 }
 

@@ -48,6 +48,19 @@ void visualizza_menu_modifica()
 
 }
 
+
+void visualizza_menu_ricerca()
+{
+	printf("\n*--------------------------------------*\n");
+	printf("|             Menu Ricerca              |\n");
+	printf("*---------------------------------------*\n");
+	printf("|  1 - Per nome                         |\n");
+	printf("|  2 - Per codice                       |\n");
+	printf("|  3 - Per colore                       |\n");
+	printf("*---------------------------------------*\n");
+
+}
+
 void visualizza_menu_modifica_gadget()
 {
 	printf("\n*---------------------------------------*\n");

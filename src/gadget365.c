@@ -53,17 +53,20 @@ int main(void) {
 					{
 					case 1:
 						restituisciALL_gadget();
+						break;
 
+					case 1:
+						effettua_ricerca();
 						break;
 
 					case 3:
 						effettua_ordine(utente_corrente);
-
 						break;
 
 					case 4:
 						visualizza_ordini_cliente(utente_corrente);
 						break;
+
 					case 5:
 						visualizza_menu_modifica();
 						printf("\n Inserire scelta: ");
@@ -94,6 +97,9 @@ int main(void) {
 							break;
 						case 7:
 							menu2=1;
+							break;
+						case 8:
+							visualizza_piu_venduti();
 							break;
 
 

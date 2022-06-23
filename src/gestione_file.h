@@ -17,9 +17,13 @@ void apertura_file();
 int inserisci_gadget(gadget_t xgadget);
 int inserisci_cliente(cliente_t xcliente);
 int restituisci_cliente(char ricerca[CARATTERI], cliente_t* risultato_cliente );
-int ricerca_gadget(char ricerca[CARATTERI], gadget_t* risultato_gadget, int scelta );
+void ricerca_gadget(char ricerca[CARATTERI], gadget_t* risultato_gadget, int scelta );
 int restituisci_gadget(char ricerca[CARATTERI], gadget_t* risultato_gadget, int scelta );
+int cancella_gadget(char gadget[CARATTERI]);
+int cancella_cliente(char username[CARATTERI]);
+void visualizza_ordini_cliente(char* username);
 void restituisciALL_gadget();
+void visualizza_piu_venduti();
 
 
 
