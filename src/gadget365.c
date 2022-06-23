@@ -71,19 +71,16 @@ int main(void) {
 						switch(scelta)
 						{
 						case 1:
-							printf("\n|Inserire P. Iva: ");
-							scanf("%s",mod);
-							modifica_cliente(utente_corrente,mod,1);
+
+							modifica_cliente(utente_corrente,1);
 							break;
 						case 2:
-							printf("\n|Inserire Rag. Sociale: ");
-							scanf("%s",mod);
-							modifica_cliente(utente_corrente,mod,2);
+
+							modifica_cliente(utente_corrente,2);
 							break;
 						case 3:
-							printf("\n|Inserire Citta': ");
-							scanf("%s",mod);
-							modifica_cliente(utente_corrente,mod,3);
+
+							modifica_cliente(utente_corrente,3);
 							break;
 						}
 						break;
@@ -100,11 +97,7 @@ int main(void) {
 							break;
 
 
-							//TEST GESTORE
-							/*
-						case 10:
-							registrazione_gadget();
-							break;*/
+
 					}
 
 

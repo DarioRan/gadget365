@@ -92,14 +92,17 @@ int accesso_cliente(char username[CARATTERI], char pass[CARATTERI])
 	return esito;
 }
 //1 piva 2 ragsoc 3 citta
-void modifica_cliente(char username_corrente[CARATTERI],char mod[CARATTERI],int scelta)
+void modifica_cliente(char username_corrente[CARATTERI],int scelta)
 {
+	char mod[CARATTERI];
 	cliente_t xcliente;
 	int esito;
 	int esito2;
 	switch(scelta){
 
 	case 1:
+		printf("\n|Inserire P. Iva: ");
+		scanf("%s",mod);
 			esito=restituisci_cliente(username_corrente, &xcliente);
 			strcpy(xcliente.piva,mod);
 			esito2=cancella_cliente(username_corrente);
@@ -118,6 +121,8 @@ void modifica_cliente(char username_corrente[CARATTERI],char mod[CARATTERI],int 
 			break;
 
 	case 2:
+		printf("\n|Inserire Rag. Sociale: ");
+		scanf("%s",mod);
 		esito=restituisci_cliente(username_corrente, &xcliente);
 		strcpy(xcliente.ragione_sociale,mod);
 		esito2=cancella_cliente(username_corrente);
@@ -136,6 +141,8 @@ void modifica_cliente(char username_corrente[CARATTERI],char mod[CARATTERI],int 
 		break;
 
 	case 3:
+		printf("\n|Inserire Citta': ");
+		scanf("%s",mod);
 		esito=restituisci_cliente(username_corrente, &xcliente);
 		strcpy(xcliente.citta,mod);
 		esito2=cancella_cliente(username_corrente);

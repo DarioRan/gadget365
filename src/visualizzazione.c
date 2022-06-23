@@ -97,9 +97,9 @@ void visualizza_cliente(cliente_t xcliente)
 	printf("\n*---------------------------------------*\n");
 	printf("|        Informazioni Utente            |\n");
 	printf("*---------------------------------------*\n");
-	printf("|  - P.Iva: %s                          |\n",xcliente.piva);
-	printf("|  - Ragione Sociale: %s                |\n",xcliente.ragione_sociale);
-	printf("|  - Citta': %s                         |\n",xcliente.citta);
+	printf("|  - P.Iva: %s                          \n",xcliente.piva);
+	printf("|  - Ragione Sociale: %s                \n",xcliente.ragione_sociale);
+	printf("|  - Citta': %s                         \n",xcliente.citta);
 	printf("*---------------------------------------*\n");
 
 }
