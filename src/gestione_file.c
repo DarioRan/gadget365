@@ -301,6 +301,7 @@ int cancella_gadget(char gadget[CARATTERI])
 }
 
 
+
 void restituisciALL_gadget()
 {
 	gadget_t xgadget;

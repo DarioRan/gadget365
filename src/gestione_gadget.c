@@ -50,13 +50,19 @@ int registrazione_gadget()
 
 
 
-void modifica_gadget(char gadget[CARATTERI],char mod[CARATTERI],int scelta)
+void modifica_gadget(int scelta)
 {
+	char gadget[CARATTERI];
+	char mod[CARATTERI];
 	gadget_t xgadget;
 	int esito=0;
 	int esito2=0;
+	printf("\n|Inserire Nome Gadget: ");
+	scanf("%s",gadget);
 	switch(scelta){
 	case 1:
+		printf("\n|Inserire Nome Gadget: ");
+		scanf("%s",mod);
 			esito=restituisci_gadget(gadget, &xgadget,0);
 			strcpy(xgadget.nome_gadget,mod);
 			esito2=cancella_gadget(gadget);
@@ -76,6 +82,8 @@ void modifica_gadget(char gadget[CARATTERI],char mod[CARATTERI],int scelta)
 			break;
 
 	case 2:
+		printf("\n|Inserire Descrizione Gadget: ");
+		scanf("%s",mod);
 				esito=restituisci_gadget(gadget, &xgadget,0);
 				strcpy(xgadget.desc,mod);
 				esito2=cancella_gadget(gadget);
@@ -94,6 +102,8 @@ void modifica_gadget(char gadget[CARATTERI],char mod[CARATTERI],int scelta)
 				}
 				break;
 	case 3:
+		printf("\n|Inserire Colore Gadget: ");
+		scanf("%s",mod);
 					esito=restituisci_gadget(gadget, &xgadget,0);
 					strcpy(xgadget.colore,mod);
 					esito2=cancella_gadget(gadget);
@@ -114,12 +124,17 @@ void modifica_gadget(char gadget[CARATTERI],char mod[CARATTERI],int scelta)
 	}
 }
 
-void modifica_prezzo(char gadget[CARATTERI],float prezzo)
+void modifica_prezzo()
 {
+	char gadget[CARATTERI];
+	float prezzo;
 	gadget_t xgadget;
 		int esito=0;
 		int esito2=0;
-
+		printf("\n|Inserire Nome Gadget: ");
+			scanf("%s",gadget);
+			printf("\n|Inserire Prezzo Gadget: ");
+			scanf("%f",&prezzo);
 				esito=restituisci_gadget(gadget, &xgadget,0);
 				xgadget.prezzo=prezzo;
 				esito2=cancella_gadget(gadget);

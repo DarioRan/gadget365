@@ -132,32 +132,16 @@ int main(void) {
 							scanf("%d",&scelta);
 							switch(scelta){
 							case 1:
-								printf("\n|Inserire Nome Gadget: ");
-								scanf("%s",gadget);
-								printf("\n|Inserire Nome Gadget: ");
-								scanf("%s",mod);
-								modifica_gadget(gadget,mod,1);
+								modifica_gadget(1);
 								break;
 							case 2:
-								printf("\n|Inserire Nome Gadget: ");
-								scanf("%s",gadget);
-								printf("\n|Inserire Descrizione Gadget: ");
-								scanf("%s",mod);
-								modifica_gadget(gadget,mod,2);
+								modifica_gadget(2);
 								break;
 							case 3:
-								printf("\n|Inserire Nome Gadget: ");
-								scanf("%s",gadget);
-								printf("\n|Inserire Colore Gadget: ");
-								scanf("%s",mod);
-								modifica_gadget(gadget,mod,3);
+								modifica_gadget(3);
 								break;
 							case 4:
-								printf("\n|Inserire Nome Gadget: ");
-								scanf("%s",gadget);
-								printf("\n|Inserire Prezzo Gadget: ");
-								scanf("%f",&prezzo);
-								modifica_prezzo(gadget,prezzo);
+								modifica_prezzo();
 								break;
 							}
 							break;

@@ -18,16 +18,16 @@ void effettua_ordine(char* username){
 	ordine_t ordine;
 	ordine.stato=1;
 
-	printf("CREAZIONE ORDINE\n");
+	printf("\n| CREAZIONE ORDINE |");
 
 	do{
-		printf("Inserire codice gadget: ");
+		printf("\n|Inserire codice gadget: ");
 		scanf("%s",ordine.articoli_ordine[n_articolo].cod_gadget);
 		esito=restituisci_gadget(ordine.articoli_ordine[n_articolo].cod_gadget,&xgad,1);
 		if(esito==1)
 		{
 			visualizza_gadget(xgad);
-			printf("\nInserire quantita gadget: ");
+			printf("\n|Inserire quantita gadget: ");
 			scanf("%d",&ordine.articoli_ordine[n_articolo].quantita);
 			if(xgad.quantita>=ordine.articoli_ordine[n_articolo].quantita && ordine.stato==1)
 			{
@@ -45,9 +45,9 @@ void effettua_ordine(char* username){
 		}
 		else
 		{
-			printf("Articolo non trovato!\n");
+			printf("\n|Articolo non trovato!");
 		}
-		printf("Continuare: 1, Chiudere ordine: 2, Annullare:3 ");
+		printf("\n|Continuare: 1, Chiudere ordine: 2, Annullare:3 ");
 		scanf("%d",&scelta);
 
 	}
@@ -64,23 +64,24 @@ void effettua_ordine(char* username){
 		esito=inserisci_ordine(ordine);
 		if(esito==1)
 		{
-			printf("| Oridne registrato correttamente! |\n");
+			printf("\n| Oridne registrato correttamente! |");
 			sleep(1);
 		}
 		else
 		{
-			printf("| Errore nella registrazione dell'ordine |\n");
+			printf("\n| Errore nella registrazione dell'ordine |");
 			sleep(1);
 		}
 		if (ordine.stato==1)
 		{
-				//MODIFICA GIACENZE E VENDUTI
+
 		}
 
 	}else
 	{
-		printf("ANNULLATO");
+		printf("\n|Ordine Annullato.");
 	}
 
 }
+
 
