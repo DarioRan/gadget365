@@ -63,120 +63,120 @@ void modifica_gadget(int scelta)
 	case 1:
 		printf("\n|Inserire Nome Gadget: ");
 		scanf("%s",mod);
-			esito=restituisci_gadget(gadget, &xgadget,0);
-			strcpy(xgadget.nome_gadget,mod);
-			esito2=cancella_gadget(gadget);
-			esito2=inserisci_gadget(xgadget);
+		esito=restituisci_gadget(gadget, &xgadget,0);
+		strcpy(xgadget.nome_gadget,mod);
+		esito2=cancella_gadget(gadget);
+		esito2=inserisci_gadget(xgadget);
 
-			if(esito2==1)
-			{
-				printf("\n|gadget Modificato!|");
-				visualizza_gadget(xgadget);
-				sleep(1);
-			}
-			else
-			{
-				printf("\n|Impossibile Trovare Gadget!|");
-				sleep(1);
-			}
-			break;
+		if(esito2==1)
+		{
+			printf("\n|gadget Modificato!|");
+			visualizza_gadget(xgadget);
+			sleep(1);
+		}
+		else
+		{
+			printf("\n|Impossibile Trovare Gadget!|");
+			sleep(1);
+		}
+		break;
 
 	case 2:
 		printf("\n|Inserire Descrizione Gadget: ");
 		scanf("%s",mod);
-				esito=restituisci_gadget(gadget, &xgadget,0);
-				strcpy(xgadget.desc,mod);
-				esito2=cancella_gadget(gadget);
-				esito2=inserisci_gadget(xgadget);
+		esito=restituisci_gadget(gadget, &xgadget,0);
+		strcpy(xgadget.desc,mod);
+		esito2=cancella_gadget(gadget);
+		esito2=inserisci_gadget(xgadget);
 
-				if(esito2==1)
-				{
-					printf("\n|gadget Modificato!|");
-					visualizza_gadget(xgadget);
-					sleep(1);
-				}
-				else
-				{
-					printf("\n|Impossibile Trovare Gadget!|");
-					sleep(1);
-				}
-				break;
+		if(esito2==1)
+		{
+			printf("\n|gadget Modificato!|");
+			visualizza_gadget(xgadget);
+			sleep(1);
+		}
+		else
+		{
+			printf("\n|Impossibile Trovare Gadget!|");
+			sleep(1);
+		}
+		break;
 	case 3:
 		printf("\n|Inserire Colore Gadget: ");
 		scanf("%s",mod);
-					esito=restituisci_gadget(gadget, &xgadget,0);
-					strcpy(xgadget.colore,mod);
-					esito2=cancella_gadget(gadget);
-					esito2=inserisci_gadget(xgadget);
+		esito=restituisci_gadget(gadget, &xgadget,0);
+		strcpy(xgadget.colore,mod);
+		esito2=cancella_gadget(gadget);
+		esito2=inserisci_gadget(xgadget);
 
-					if(esito2==1)
-					{
-						printf("\n|gadget Modificato!|");
-						visualizza_gadget(xgadget);
-						sleep(1);
-					}
-					else
-					{
-						printf("\n|Impossibile Trovare Gadget!|");
-						sleep(1);
-					}
-					break;
+		if(esito2==1)
+		{
+			printf("\n|gadget Modificato!|");
+			visualizza_gadget(xgadget);
+			sleep(1);
+		}
+		else
+		{
+			printf("\n|Impossibile Trovare Gadget!|");
+			sleep(1);
+		}
+		break;
 	}
 }
 
-void modifica_prezzo()
+void modifica_prezzo_gadget()
 {
 	char gadget[CARATTERI];
 	float prezzo;
 	gadget_t xgadget;
-		int esito=0;
-		int esito2=0;
-		printf("\n|Inserire Nome Gadget: ");
-			scanf("%s",gadget);
-			printf("\n|Inserire Prezzo Gadget: ");
-			scanf("%f",&prezzo);
-				esito=restituisci_gadget(gadget, &xgadget,0);
-				xgadget.prezzo=prezzo;
-				esito2=cancella_gadget(gadget);
-				esito2=inserisci_gadget(xgadget);
+	int esito=0;
+	int esito2=0;
+	printf("\n|Inserire Nome Gadget: ");
+	scanf("%s",gadget);
+	printf("\n|Inserire Prezzo Gadget: ");
+	scanf("%f",&prezzo);
+	esito=restituisci_gadget(gadget, &xgadget,0);
+	xgadget.prezzo=prezzo;
+	esito2=cancella_gadget(gadget);
+	esito2=inserisci_gadget(xgadget);
 
-				if(esito2==1)
-				{
-					printf("\n|gadget Modificato!|");
-					visualizza_gadget(xgadget);
-					sleep(1);
-				}
-				else
-				{
-					printf("\n|Impossibile Trovare Gadget!|");
-					sleep(1);
-				}
+	if(esito2==1)
+	{
+		printf("\n|gadget Modificato!|");
+		visualizza_gadget(xgadget);
+		sleep(1);
+	}
+	else
+	{
+		printf("\n|Impossibile Trovare Gadget!|");
+		sleep(1);
+	}
 
 }
 
 
-void modifica_quant(char gadget[CARATTERI],float quantita)
+void modifica_quant_gadget(char gadget[CARATTERI],float quantita)
 {
-		gadget_t xgadget;
-		int esito=0;
-		int esito2=0;
+	gadget_t xgadget;
+	int esito=0;
+	int esito2=0;
 
-				esito=restituisci_gadget(gadget, &xgadget,0);
-				xgadget.quantita=quantita;
-				esito2=cancella_gadget(gadget);
-				esito2=inserisci_gadget(xgadget);
+	esito=restituisci_gadget(gadget, &xgadget,0);
+	xgadget.quantita=quantita;
+	esito2=cancella_gadget(gadget);
+	esito2=inserisci_gadget(xgadget);
 
-				if(esito2==1)
-				{
-					printf("\n|gadget Modificato!|");
-					visualizza_gadget(xgadget);
-					sleep(1);
-				}
-				else
-				{
-					printf("\n|Impossibile Trovare Gadget!|");
-					sleep(1);
-				}
+	if(esito2==1)
+	{
+		printf("\n|gadget Modificato!|");
+		visualizza_gadget(xgadget);
+		sleep(1);
+	}
+	else
+	{
+		printf("\n|Impossibile Trovare Gadget!|");
+		sleep(1);
+	}
 
 }
 

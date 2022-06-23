@@ -14,5 +14,6 @@
 #include "strutture.h"
 
 int registrazione_gadget();
+void modifica_quant_gadget(char gadget[CARATTERI],float quantita);
 
 #endif /* GESTIONE_GADGET_H_ */

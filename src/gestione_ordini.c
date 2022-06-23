@@ -14,6 +14,7 @@ void effettua_ordine(char* username){
 	int esito;
 	int codice[LUNG_CODICE];
 	int n_articolo=0;
+
 	gadget_t xgad;
 	ordine_t ordine;
 	ordine.stato=1;
@@ -82,6 +83,23 @@ void effettua_ordine(char* username){
 		printf("\n|Ordine Annullato.");
 	}
 
+}
+
+void emetti_ordine(ordine_t xordine)
+{
+	int esito;
+	int nuova_giacenza=0;
+	gadget_t xgad;
+
+	for(int i=0;i<xordine.n_gadget;i++){
+		esito=restituisci_gadget(xordine.articoli_ordine[i].cod_gadget,&xgad,1);
+		nuova_giacenza=xgad.quantita-xordine.articoli_ordine[i].quantita;
+		if(nuova_giacenza<0){
+			nuova_giacenza=0;
+		}
+		modifica_quant_gadget(xordine.articoli_ordine[i].cod_gadget,nuova_giacenza);
+		//MODIFICA VENDUTI
+	}
 }
 
 

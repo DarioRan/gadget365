@@ -62,8 +62,8 @@ int main(void) {
 						break;
 
 					case 4:
-							visualizza_ordini_cliente(utente_corrente);
-									break;
+						visualizza_ordini_cliente(utente_corrente);
+						break;
 					case 5:
 						visualizza_menu_modifica();
 						printf("\n Inserire scelta: ");
@@ -134,7 +134,7 @@ int main(void) {
 								modifica_gadget(3);
 								break;
 							case 4:
-								modifica_prezzo();
+								modifica_prezzo_gadget();
 								break;
 							}
 							break;
