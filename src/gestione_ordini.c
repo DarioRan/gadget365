@@ -72,6 +72,10 @@ void effettua_ordine(char* username){
 			printf("| Errore nella registrazione dell'ordine |\n");
 			sleep(1);
 		}
+		if (ordine.stato==1)
+		{
+				//MODIFICA GIACENZE E VENDUTI
+		}
 
 	}else
 	{
