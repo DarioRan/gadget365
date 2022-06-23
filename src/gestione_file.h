@@ -18,6 +18,7 @@ int inserisci_gadget(gadget_t xgadget);
 int inserisci_cliente(cliente_t xcliente);
 int restituisci_cliente(char ricerca[CARATTERI], cliente_t* risultato_cliente );
 int ricerca_gadget(char ricerca[CARATTERI], gadget_t* risultato_gadget, int scelta );
+int restituisci_gadget(char ricerca[CARATTERI], gadget_t* risultato_gadget, int scelta );
 void restituisciALL_gadget();
 
 

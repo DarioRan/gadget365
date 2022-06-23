@@ -18,7 +18,7 @@ int main(void) {
 
 	setbuf(stdout, NULL);
 	int scelta=0,esito,menu1=0,menu2=0,menu3=0,prezzo;
-	char nomeutente[CARATTERI],pass[CARATTERI],utentecorrente[CARATTERI],mod[CARATTERI],gadget[CARATTERI];
+	char nomeutente[CARATTERI],pass[CARATTERI],utente_corrente[CARATTERI],mod[CARATTERI],gadget[CARATTERI];
 
 	apertura_file();
 
@@ -41,7 +41,7 @@ int main(void) {
 			if(esito==1)
 			{
 
-				strcpy(utentecorrente,nomeutente);
+				strcpy(utente_corrente,nomeutente);
 				menu2=0;
 				while(menu2==0){
 					visualizza_menu();
@@ -55,6 +55,15 @@ int main(void) {
 						restituisciALL_gadget();
 
 						break;
+
+					case 3:
+						effettua_ordine(utente_corrente);
+
+						break;
+
+					case 4:
+							visualizza_ordini_cliente(utente_corrente);
+									break;
 					case 5:
 						visualizza_menu_modifica();
 						printf("\n Inserire scelta: ");
@@ -64,22 +73,22 @@ int main(void) {
 						case 1:
 							printf("\n|Inserire P. Iva: ");
 							scanf("%s",mod);
-							modifica_cliente(utentecorrente,mod,1);
+							modifica_cliente(utente_corrente,mod,1);
 							break;
 						case 2:
 							printf("\n|Inserire Rag. Sociale: ");
 							scanf("%s",mod);
-							modifica_cliente(utentecorrente,mod,2);
+							modifica_cliente(utente_corrente,mod,2);
 							break;
 						case 3:
 							printf("\n|Inserire Citta': ");
 							scanf("%s",mod);
-							modifica_cliente(utentecorrente,mod,3);
+							modifica_cliente(utente_corrente,mod,3);
 							break;
 						}
 						break;
 						case 6:
-							esito=cancella_cliente(utentecorrente);
+							esito=cancella_cliente(utente_corrente);
 							if(esito==1)
 							{
 								printf("\n|Utente eliminato con successo!");
@@ -109,63 +118,63 @@ int main(void) {
 					menu3=0;
 
 					while(menu3==0){
-					visualizza_menu_gestore();
-				    printf("\n Inserire scelta: ");
-					scanf("%d",&scelta);
-					switch(scelta){
-
-					case 1:
-						registrazione_gadget();
-						break;
-					case 2:
-						visualizza_menu_modifica_gadget();
+						visualizza_menu_gestore();
 						printf("\n Inserire scelta: ");
 						scanf("%d",&scelta);
 						switch(scelta){
+
 						case 1:
-							printf("\n|Inserire Nome Gadget: ");
-							scanf("%s",gadget);
-							printf("\n|Inserire Nome Gadget: ");
-							scanf("%s",mod);
-							modifica_gadget(gadget,mod,1);
-							                        break;
+							registrazione_gadget();
+							break;
 						case 2:
-							printf("\n|Inserire Nome Gadget: ");
-							scanf("%s",gadget);
-							printf("\n|Inserire Descrizione Gadget: ");
-							scanf("%s",mod);
-							modifica_gadget(gadget,mod,2);
-													break;
-						case 3:
-							printf("\n|Inserire Nome Gadget: ");
-							scanf("%s",gadget);
-							printf("\n|Inserire Colore Gadget: ");
-							scanf("%s",mod);
-							modifica_gadget(gadget,mod,3);
-													break;
-						case 4:
-							printf("\n|Inserire Nome Gadget: ");
-							scanf("%s",gadget);
-							printf("\n|Inserire Prezzo Gadget: ");
-							scanf("%f",&prezzo);
-							modifica_prezzo(gadget,prezzo);
-													break;
-						}
-						break;
-					case 3:
-						printf("\n|Inserire Nome Gadget: ");
-						scanf("%s",gadget);
-						esito=cancella_gadget(gadget);
-						if(esito==1){
-							printf("|Gadget Cancellato!");
-						}
-						break;
-					case 6:
-						menu3=1;
-					break;
+							visualizza_menu_modifica_gadget();
+							printf("\n Inserire scelta: ");
+							scanf("%d",&scelta);
+							switch(scelta){
+							case 1:
+								printf("\n|Inserire Nome Gadget: ");
+								scanf("%s",gadget);
+								printf("\n|Inserire Nome Gadget: ");
+								scanf("%s",mod);
+								modifica_gadget(gadget,mod,1);
+								break;
+							case 2:
+								printf("\n|Inserire Nome Gadget: ");
+								scanf("%s",gadget);
+								printf("\n|Inserire Descrizione Gadget: ");
+								scanf("%s",mod);
+								modifica_gadget(gadget,mod,2);
+								break;
+							case 3:
+								printf("\n|Inserire Nome Gadget: ");
+								scanf("%s",gadget);
+								printf("\n|Inserire Colore Gadget: ");
+								scanf("%s",mod);
+								modifica_gadget(gadget,mod,3);
+								break;
+							case 4:
+								printf("\n|Inserire Nome Gadget: ");
+								scanf("%s",gadget);
+								printf("\n|Inserire Prezzo Gadget: ");
+								scanf("%f",&prezzo);
+								modifica_prezzo(gadget,prezzo);
+								break;
+							}
+							break;
+							case 3:
+								printf("\n|Inserire Nome Gadget: ");
+								scanf("%s",gadget);
+								esito=cancella_gadget(gadget);
+								if(esito==1){
+									printf("|Gadget Cancellato!");
+								}
+								break;
+							case 6:
+								menu3=1;
+								break;
 
 
-					}
+						}
 
 					}
 				}

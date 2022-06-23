@@ -8,6 +8,8 @@
 #ifndef STRUTTURE_H_
 #define STRUTTURE_H_
 #define CARATTERI 50
+#define LUNG_CODICE 6
+#define MAX_ART_ORDINE 10
 
 
 typedef struct
@@ -26,7 +28,7 @@ typedef struct
 
 typedef struct
 {
-	char cod_gadget[6];
+	char cod_gadget[LUNG_CODICE];
 	char nome_gadget[CARATTERI];
 	char desc[CARATTERI];
 	char colore[CARATTERI];
@@ -39,14 +41,25 @@ typedef struct
 
 typedef struct
 {
-	char cod_ordine[6];
-	char codice_prodotto[CARATTERI];
+	char cod_gadget[LUNG_CODICE];
 	int quantita;
+	float prezzo_CAD;
+
+}articoli_ordine_t;
+
+typedef struct
+{
+	char cod_ordine[LUNG_CODICE];
+	articoli_ordine_t articoli_ordine[MAX_ART_ORDINE];
+	int n_gadget;
 	int stato;  //0 non confermata 1 confermata
 	float totale;
-	char cod_cliente[CARATTERI];
+	char username_cliente[CARATTERI];
 
 }ordine_t;
+
+
+
 
 
 #endif /* STRUTTURE_H_ */

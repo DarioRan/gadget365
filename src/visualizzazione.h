@@ -9,7 +9,9 @@
 #define VISUALIZZAZIONE_H_
 
 #include <stdlib.h>
+#include <stdio.h>
 #include "strutture.h"
+#include "gestione_file.h"
 
 void inizializza_menu();
 void visualizza_menu();

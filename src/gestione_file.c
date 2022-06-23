@@ -56,6 +56,17 @@ int inserisci_gadget(gadget_t xgadget)
 }
 
 
+int inserisci_ordine(ordine_t xordine)
+{
+	int esito=0;
+	//rewind(file_utenti);
+	fseek(file_ordini, sizeof(ordine_t), SEEK_END);
+	fwrite(&xordine,sizeof(ordine_t), 1, file_ordini);
+	esito=1;
+	return esito;
+}
+
+
 int inserisci_cliente(cliente_t xcliente)
 {
 	int esito=0;
@@ -299,6 +310,20 @@ void restituisciALL_gadget()
 		visualizza_gadget(xgadget);
 		fread(&xgadget,sizeof(gadget_t), 1, file_gadget);
 	}while(!feof(file_gadget));
+
+}
+
+void visualizza_ordini_cliente(char* username)
+{
+	ordine_t xordine;
+	rewind(file_ordini);
+	fread(&xordine,sizeof(ordine_t), 1, file_ordini);
+	do{
+		if(strcmp(xordine.username_cliente,username)==0){
+			visualizza_ordine_recap(xordine);
+		}
+		fread(&xordine,sizeof(ordine_t), 1, file_ordini);
+	}while(!feof(file_ordini));
 
 }
 

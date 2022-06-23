@@ -9,9 +9,8 @@
 
 int registrazione_gadget()
 {
-	setbuf(stdout, NULL);
 	srand(time(NULL));
-	char codice[6],tipo[CARATTERI];
+	char codice[LUNG_CODICE],tipo[CARATTERI];
 	int esito=0;
 	gadget_t xgad;
 
@@ -123,6 +122,32 @@ void modifica_prezzo(char gadget[CARATTERI],float prezzo)
 
 				esito=restituisci_gadget(gadget, &xgadget,0);
 				xgadget.prezzo=prezzo;
+				esito2=cancella_gadget(gadget);
+				esito2=inserisci_gadget(xgadget);
+
+				if(esito2==1)
+				{
+					printf("\n|gadget Modificato!|");
+					visualizza_gadget(xgadget);
+					sleep(1);
+				}
+				else
+				{
+					printf("\n|Impossibile Trovare Gadget!|");
+					sleep(1);
+				}
+
+}
+
+
+void modifica_quant(char gadget[CARATTERI],float quantita)
+{
+		gadget_t xgadget;
+		int esito=0;
+		int esito2=0;
+
+				esito=restituisci_gadget(gadget, &xgadget,0);
+				xgadget.quantita=quantita;
 				esito2=cancella_gadget(gadget);
 				esito2=inserisci_gadget(xgadget);
 

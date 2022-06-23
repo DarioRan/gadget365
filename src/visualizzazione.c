@@ -5,7 +5,7 @@
  *      Author: ranie
  */
 
-#include "strutture.h"
+#include "visualizzazione.h"
 
 void inizializza_menu()
 {
@@ -118,3 +118,67 @@ void visualizza_gadget(gadget_t xgadget)
 	printf("|  - Venduti: %d\n",xgadget.venduti);
 	printf("*---------------------------------------*\n");
 }
+
+
+void visualizza_gadget_recap(gadget_t xgadget)
+{
+	printf("\n*---------------------------------------*\n");
+	printf("|        COD: %s	        |\n",xgadget.cod_gadget);
+	printf("*---------------------------------------*\n");
+	printf("|  - Nome: %s\n",xgadget.nome_gadget);
+	printf("|  - Colore: %s\n",xgadget.colore);
+	printf("*---------------------------------------*\n");
+}
+
+
+void visualizza_ordine_recap(ordine_t xordine)
+{
+
+	cliente_t xcliente;
+	gadget_t xgad;
+	int esito=0;
+	restituisci_cliente(xordine.username_cliente,&xcliente);
+
+	printf("\n*---------------------------------------*\n");
+	printf("|        COD: %s	        |\n",xordine.cod_ordine);
+	printf("*---------------------------------------*\n");
+	printf("|  - Cliente: %s\n",xcliente.ragione_sociale);
+
+	for(int i=0; i<xordine.n_gadget;i++)
+	{
+		esito=restituisci_gadget(xordine.articoli_ordine[i].cod_gadget,&xgad,1);
+		if(esito==1){
+			visualizza_gadget_recap(xgad);
+		}
+		else{
+			printf("Prodotto non disponibile\n");
+		}
+
+		printf("|  - Quantita' ordinata: %d\n",xordine.articoli_ordine[i].quantita);
+		printf("|  - Prezzo CAD: %d\n", xordine.articoli_ordine[i].prezzo_CAD);
+
+	}
+
+
+	printf("|  - Totale: %.2f\n", xordine.totale);
+
+	if(xordine.stato==1)
+	{
+		printf("| APPROVATO |\n");
+	}
+	else
+	{
+		if(xordine.stato==2){
+			printf("| IN ATTESA |\n");
+		}
+		else{
+			printf("| NON APPROVATO |\n");
+		}
+	}
+
+
+
+
+	printf("*---------------------------------------*\n");
+}
+

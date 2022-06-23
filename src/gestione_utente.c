@@ -95,8 +95,8 @@ int accesso_cliente(char username[CARATTERI], char pass[CARATTERI])
 void modifica_cliente(char username_corrente[CARATTERI],char mod[CARATTERI],int scelta)
 {
 	cliente_t xcliente;
-	int esito=0;
-	int esito2=0;
+	int esito;
+	int esito2;
 	switch(scelta){
 
 	case 1:
