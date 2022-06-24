@@ -10,6 +10,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include "visualizzazione.h"
 #include "gestione_file.h"
 #include "gestione_utente.h"
@@ -24,6 +25,7 @@ int main(void) {
 
 	while(menu1==0)
 	{
+		fflush(stdin);
 		inizializza_menu();
 		printf("\n Inserire scelta: ");
 		scanf("%d",&scelta);
@@ -44,6 +46,7 @@ int main(void) {
 				strcpy(utente_corrente,nomeutente);
 				menu2=0;
 				while(menu2==0){
+					fflush(stdin);
 					visualizza_menu();
 
 					printf("\n Inserire scelta: ");
@@ -117,6 +120,7 @@ int main(void) {
 					menu3=0;
 
 					while(menu3==0){
+						fflush(stdin);
 						visualizza_menu_gestore();
 						printf("\n Inserire scelta: ");
 						scanf("%d",&scelta);
@@ -175,7 +179,6 @@ int main(void) {
 		case 4:
 			//modifica_utente;
 			break;
-
 
 
 		}
