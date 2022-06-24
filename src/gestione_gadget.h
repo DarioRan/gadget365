@@ -15,5 +15,8 @@
 
 int registrazione_gadget();
 void modifica_quant_gadget(char gadget[CARATTERI],float quantita);
+void effettua_ricerca();
+int modifica_quant_prezz_venduti_gadget(char gadget[CARATTERI],float valore, int scelta);
+
 
 #endif /* GESTIONE_GADGET_H_ */

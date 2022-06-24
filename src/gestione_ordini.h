@@ -11,6 +11,8 @@
 #include "strutture.h"
 #include "gestione_file.h"
 #include "gestione_gadget.h"
+#include "gestione_ordini.h"
+
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>

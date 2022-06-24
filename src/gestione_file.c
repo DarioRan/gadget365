@@ -108,14 +108,7 @@ int restituisci_cliente(char ricerca[CARATTERI], cliente_t* risultato_cliente )
 	}while(!feof(file_clienti) && trovato==0);
 
 	if(trovato==1)
-	{/*
-		strcpy(risultato_cliente->cod_cliente, xcliente.cod_cliente);
-		strcpy(risultato_cliente->ragione_sociale, xcliente.ragione_sociale);
-		strcpy(risultato_cliente->piva, xcliente.piva);
-		strcpy(risultato_cliente->citta, xcliente.citta);
-		strcpy(risultato_cliente->email, xcliente.email);
-		strcpy(risultato_cliente->pass, xcliente.pass);
-		strcpy(risultato_cliente->username, xcliente.username);*/
+	{
 		*risultato_cliente=xcliente;
 	}
 	return trovato;
@@ -162,34 +155,33 @@ int restituisci_gadget(char ricerca[CARATTERI], gadget_t* risultato_gadget, int 
 
 	if(trovato==1)
 	{
-		/*
-		strcpy(risultato_gadget->cod_gadget, xgadget.cod_gadget);
-		strcpy(risultato_gadget->nome_gadget, xgadget.nome_gadget);
-		strcpy(risultato_gadget->colore, xgadget.colore);
-		strcpy(risultato_gadget->desc, xgadget.desc);
-		risultato_gadget->quantita=xgadget.quantita;
-		risultato_gadget->prezzo = xgadget.prezzo;
-		 */
-
 		*risultato_gadget=xgadget;
 	}
 	return trovato;
 }
 
 //0 nome 1 codice 2 colore
-void ricerca_gadget(char ricerca[CARATTERI], gadget_t* risultato_gadget, int scelta )
+void ricerca_gadget(char ricerca[CARATTERI], int scelta )
 {
 	gadget_t xgadget;
-	int trovato=0;
+	char nome_gadget_LOW[CARATTERI];
+	char colore_gadget_LOW[CARATTERI];
 	rewind(file_gadget);
 	fread(&xgadget,sizeof(gadget_t), 1, file_gadget);
 	do
 	{
+		//CONVERTE IN LOWER CASE (non case sensitive)
+		for(int i = 0; ricerca[i]; i++){
+		  ricerca[i] = tolower(ricerca[i]);
+		  nome_gadget_LOW[i] = tolower(xgadget.nome_gadget[i]);
+		  colore_gadget_LOW[i] = tolower(xgadget.colore[i]);
+		}
+
 		switch(scelta)
 		{
 		case 0:
 
-			if(strstr(xgadget.nome_gadget,ricerca)!=NULL)
+			if(strstr(nome_gadget_LOW,ricerca)!=NULL)
 			{
 				visualizza_gadget(xgadget);
 			}
@@ -207,7 +199,7 @@ void ricerca_gadget(char ricerca[CARATTERI], gadget_t* risultato_gadget, int sce
 
 		case 2:
 
-			if(strstr(xgadget.colore,ricerca)!=NULL)
+			if(strstr(colore_gadget_LOW,ricerca)!=NULL)
 			{
 				visualizza_gadget(xgadget);
 			}
@@ -247,8 +239,6 @@ int cancella_cliente(char username[CARATTERI])
 	rename("temp.csv","clienti.csv");
 	file_clienti=fopen("clienti.csv","r+b");
 
-
-
 	return esito;
 }
 
@@ -280,8 +270,6 @@ int cancella_gadget(char gadget[CARATTERI])
 	rename("temp.csv","gadget.csv");
 	file_gadget=fopen("gadget.csv","r+b");
 
-
-
 	return esito;
 }
 
@@ -295,6 +283,7 @@ void restituisciALL_gadget()
 	do{
 		visualizza_gadget(xgadget);
 		fread(&xgadget,sizeof(gadget_t), 1, file_gadget);
+
 	}while(!feof(file_gadget));
 
 }
@@ -364,8 +353,5 @@ void visualizza_piu_venduti()
 
 
 }
-
-
-
 
 

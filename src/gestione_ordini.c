@@ -85,21 +85,31 @@ void effettua_ordine(char* username){
 
 }
 
-void emetti_ordine(ordine_t xordine)
+int emetti_ordine(ordine_t xordine)
 {
-	int esito;
+	int esito,esito2,esito3, esitoFinale=1;
 	int nuova_giacenza=0;
+	int nuova_venduti=0;
+
 	gadget_t xgad;
 
 	for(int i=0;i<xordine.n_gadget;i++){
 		esito=restituisci_gadget(xordine.articoli_ordine[i].cod_gadget,&xgad,1);
 		nuova_giacenza=xgad.quantita-xordine.articoli_ordine[i].quantita;
+		nuova_venduti=xgad.venduti+xordine.articoli_ordine[i].quantita;
 		if(nuova_giacenza<0){
 			nuova_giacenza=0;
 		}
-		modifica_quant_gadget(xordine.articoli_ordine[i].cod_gadget,nuova_giacenza);
-		//MODIFICA VENDUTI
+		esito2=modifica_quant_prezz_venduti_gadget(xordine.articoli_ordine[i].cod_gadget,nuova_giacenza,0);
+		esito3=modifica_quant_prezz_venduti_gadget(xordine.articoli_ordine[i].cod_gadget,nuova_venduti,2);
+		if(esito==0||esito2==0||esito3==0)
+		{
+			esitoFinale=0;
+		}
 	}
+
+	return esitoFinale;
+
 }
 
 
