@@ -100,8 +100,8 @@ void emetti_ordine(ordine_t xordine)
 		modifica_quant_gadget(xordine.articoli_ordine[i].cod_gadget,nuova_giacenza);
 		//MODIFICA VENDUTI
 	}
-
 	return esitoFinale;
+
 
 
 }
