@@ -103,9 +103,10 @@ int main(void) {
 							break;
 
 
-						default:
 
-							break;
+						default:
+						break;
+
 
 					}
 
@@ -145,6 +146,7 @@ int main(void) {
 							case 4:
 								modifica_prezzo_gadget();
 								break;
+
 							default:
 								break;
 
@@ -177,6 +179,11 @@ int main(void) {
 		case 3:
 			menu1=1;
 			break;
+
+		case 4:
+			//modifica_utente;
+			break;
+
 
 
 		case 4:

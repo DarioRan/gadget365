@@ -101,7 +101,6 @@ void emetti_ordine(ordine_t xordine)
 		//MODIFICA VENDUTI
 	}
 
-
 	return esitoFinale;
 
 
