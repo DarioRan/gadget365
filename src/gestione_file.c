@@ -172,9 +172,9 @@ void ricerca_gadget(char ricerca[CARATTERI], int scelta )
 	{
 		//CONVERTE IN LOWER CASE (non case sensitive)
 		for(int i = 0; ricerca[i]; i++){
-		  ricerca[i] = tolower(ricerca[i]);
-		  nome_gadget_LOW[i] = tolower(xgadget.nome_gadget[i]);
-		  colore_gadget_LOW[i] = tolower(xgadget.colore[i]);
+			ricerca[i] = tolower(ricerca[i]);
+			nome_gadget_LOW[i] = tolower(xgadget.nome_gadget[i]);
+			colore_gadget_LOW[i] = tolower(xgadget.colore[i]);
 		}
 
 		switch(scelta)
@@ -353,5 +353,136 @@ void visualizza_piu_venduti()
 
 
 }
+
+int restituisci_ordine(char* codice_ordine, ordine_t* risultato_ordine)
+{
+	ordine_t xordine;
+	int trovato=0;
+	rewind(file_clienti);
+	fread(&xordine,sizeof(ordine_t), 1, file_ordini);
+	do
+	{
+		if(strcmp(xordine.cod_ordine,codice_ordine)==0)
+		{
+			trovato=1;
+		}
+		else
+		{
+
+			fread(&xordine,sizeof(ordine_t), 1, file_ordini);
+		}
+
+	}while(!feof(file_ordini) && trovato==0);
+
+	if(trovato==1)
+	{
+		*risultato_ordine=xordine;
+	}
+	return trovato;
+}
+
+void approva_ordini()
+{
+	ordine_t xordine;
+	int esito=0, approvazione=0,stato=0;
+	char* codice_ordine;
+	rewind(file_ordini);
+	fread(&xordine,sizeof(ordine_t), 1, file_ordini);
+	do{
+		if(xordine.stato==0){
+			visualizza_ordine_recap(xordine);
+		}
+		fread(&xordine,sizeof(ordine_t), 1, file_ordini);
+	}while(!feof(file_ordini));
+
+	printf("|Inserire codice ordine da approvare o rifiutare: |");
+	scanf("%s",codice_ordine);
+
+	esito=restituisci_ordine(codice_ordine,&xordine);
+
+	if(esito==0)
+	{
+		printf("Ordine non trovato!\n");
+
+	}
+	else
+	{
+		if(xordine.stato==1 || xordine.stato==2)
+		{
+			printf("Ordine gia' valutato");
+		}
+		else
+		{
+			printf("1 - Approvare\n0 - Rifiutare ");
+			scanf("%d",&approvazione);
+
+			if(approvazione==1)
+			{
+				if(emetti_ordine(xordine)==1)
+				{
+					stato=1;
+				}
+				else
+				{
+					printf("Errore durante l'emissione dell'ordine");
+				}
+
+			}
+			else
+			{
+				if(approvazione==2)
+				{
+					stato=2;
+				}
+
+			}
+			if(stato!=0)
+			{
+				modifica_stato_ordine(xordine.cod_ordine,stato);
+				printf("Ordine aggiornato\n");
+			}
+
+		}
+	}
+
+
+}
+
+int modifica_stato_ordine(char* cod_ordine, int stato)
+{
+	ordine_t xordine, xordine_trovato;
+	int esito=0;
+	FILE *temp;
+	temp=fopen("temp.csv","wb");
+
+	rewind(file_ordini);
+
+	do{
+		fread(&xordine,sizeof(ordine_t), 1, file_ordini);
+		if(strcmp(xordine.cod_ordine,cod_ordine)!=0)
+		{
+			fwrite(&xordine,sizeof(ordine_t), 1, temp);
+		}
+		else
+		{
+			xordine_trovato=xordine;
+			esito=1;
+
+		}
+	}while(!feof(file_clienti));
+
+	fclose(file_clienti);
+	fclose(temp);
+	remove("clienti.csv");
+	rename("temp.csv","clienti.csv");
+	file_clienti=fopen("clienti.csv","r+b");
+
+	if(esito==1&&(stato==0 ||stato==1 || stato==2)){
+		xordine_trovato.stato=stato;
+		esito=inserisci_ordine(xordine_trovato);
+	}
+	return esito;
+}
+
 
 

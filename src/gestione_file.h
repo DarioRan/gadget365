@@ -26,6 +26,8 @@ int cancella_cliente(char username[CARATTERI]);
 void visualizza_ordini_cliente(char* username);
 void restituisciALL_gadget();
 void visualizza_piu_venduti();
+int modifica_stato_ordine(char* cod_ordine, int stato);
+
 
 
 

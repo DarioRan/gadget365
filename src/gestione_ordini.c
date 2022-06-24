@@ -87,6 +87,7 @@ void effettua_ordine(char* username){
 
 int emetti_ordine(ordine_t xordine)
 {
+	//MODIFICARE STATO
 	int esito,esito2,esito3, esitoFinale=1;
 	int nuova_giacenza=0;
 	int nuova_venduti=0;

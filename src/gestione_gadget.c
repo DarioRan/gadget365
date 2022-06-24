@@ -43,31 +43,32 @@ int registrazione_gadget()
 
 void effettua_ricerca()
 {
-	char scelta;
+	setbuf(stdout, NULL);
+	int scelta;
 	char ricerca[CARATTERI];
 	visualizza_menu_ricerca();
 	printf("Inserire scelta: ");
-	scanf("%c",&scelta);
-	scelta=tolower(scelta);
+	scanf("%d",&scelta);
 	switch(scelta)
 	{
-	case 'a':
+	case 1:
 		printf("Inserire nome gadget: ");
 		scanf("%s",ricerca);
 		ricerca_gadget(ricerca,0);
 		break;
 
-	case 'b':
+	case 2:
 		printf("Inserire codice gadget: ");
 		scanf("%s",ricerca);
 		ricerca_gadget(ricerca,1);
 		break;
 
-	case 'c':
+	case 3:
 		printf("Inserire colore gadget: ");
 		scanf("%s",ricerca);
 		ricerca_gadget(ricerca,2);
 		break;
+
 	default:
 		break;
 	}
