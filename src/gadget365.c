@@ -13,12 +13,15 @@
 #include "visualizzazione.h"
 #include "gestione_file.h"
 #include "gestione_utente.h"
+#include "gestione_ordini.h"
+#include "gestione_gadget.h"
 
 int main(void) {
 
 	setbuf(stdout, NULL);
-	int scelta=0,esito,menu1=0,menu2=0,menu3=0,prezzo;
-	char nomeutente[CARATTERI],pass[CARATTERI],utente_corrente[CARATTERI],mod[CARATTERI],gadget[CARATTERI];
+	int esito,menu1=0,menu2=0,menu3=0;
+	char nomeutente[CARATTERI],pass[CARATTERI],utente_corrente[CARATTERI],gadget[CARATTERI];
+	char scelta;
 
 	apertura_file();
 
@@ -26,12 +29,13 @@ int main(void) {
 	{
 		inizializza_menu();
 		printf("\n Inserire scelta: ");
-		scanf("%d",&scelta);
+		scanf("%c",&scelta);
+		scelta=tolower(scelta);
 
 		switch(scelta)
 		{
 
-		case 1:
+		case 'a':
 			printf("\n|Inserire nome utente: ");
 			scanf("%s",nomeutente);
 			printf("\n|Inserire password: ");
@@ -43,51 +47,55 @@ int main(void) {
 
 				strcpy(utente_corrente,nomeutente);
 				menu2=0;
+				//MENU CLIENTE
 				while(menu2==0){
 					visualizza_menu();
-
 					printf("\n Inserire scelta: ");
-					scanf("%d",&scelta);
+					scanf("%c",&scelta);
+					scelta=tolower(scelta);
+
 
 					switch(scelta)
 					{
-					case 1:
+					case 'a':
 						restituisciALL_gadget();
 						break;
 
-					case 1:
+					case 'b':
 						effettua_ricerca();
 						break;
 
-					case 3:
+					case 'c':
 						effettua_ordine(utente_corrente);
 						break;
 
-					case 4:
+					case 'd':
 						visualizza_ordini_cliente(utente_corrente);
 						break;
 
-					case 5:
+					case 'e':
 						visualizza_menu_modifica();
 						printf("\n Inserire scelta: ");
-						scanf("%d",&scelta);
+						scanf("%c",&scelta);
+						scelta=tolower(scelta);
+
 						switch(scelta)
 						{
-						case 1:
+						case 'a':
 
 							modifica_cliente(utente_corrente,1);
 							break;
-						case 2:
+						case 'b':
 
 							modifica_cliente(utente_corrente,2);
 							break;
-						case 3:
+						case 'c':
 
 							modifica_cliente(utente_corrente,3);
 							break;
 						}
 						break;
-						case 6:
+						case 'f':
 							esito=cancella_cliente(utente_corrente);
 							if(esito==1)
 							{
@@ -95,14 +103,16 @@ int main(void) {
 								menu2=1;
 							}
 							break;
-						case 7:
+						case 'g':
 							menu2=1;
 							break;
-						case 8:
+						case 'h':
 							visualizza_piu_venduti();
 							break;
 
+						default:
 
+							break;
 
 						default:
 						break;
@@ -117,42 +127,48 @@ int main(void) {
 			{
 				if(esito==2)
 				{
+					//MENU GESTORE
 
 					menu3=0;
 
 					while(menu3==0){
 						visualizza_menu_gestore();
 						printf("\n Inserire scelta: ");
-						scanf("%d",&scelta);
+						scanf("%c",&scelta);
+						scelta=tolower(scelta);
+
 						switch(scelta){
 
-						case 1:
+						case 'a':
 							registrazione_gadget();
 							break;
-						case 2:
+						case 'b':
 							visualizza_menu_modifica_gadget();
 							printf("\n Inserire scelta: ");
-							scanf("%d",&scelta);
+							scanf("%c",&scelta);
+							scelta=tolower(scelta);
+
 							switch(scelta){
-							case 1:
+							case 'a':
 								modifica_gadget(1);
 								break;
-							case 2:
+							case 'b':
 								modifica_gadget(2);
 								break;
-							case 3:
+							case 'c':
 								modifica_gadget(3);
 								break;
-							case 4:
+							case 'd':
 								modifica_prezzo_gadget();
 								break;
+
 
 							default:
 								break;
 
 							}
 							break;
-							case 3:
+							case 'd':
 								printf("\n|Inserire Nome Gadget: ");
 								scanf("%s",gadget);
 								esito=cancella_gadget(gadget);
@@ -160,7 +176,7 @@ int main(void) {
 									printf("|Gadget Cancellato!");
 								}
 								break;
-							case 6:
+							case 'f':
 								menu3=1;
 								break;
 
@@ -172,18 +188,13 @@ int main(void) {
 			}
 			break;
 
-		case 2:
+		case 'b':
 			registrazione_cliente();
 			break;
 
-		case 3:
+		case 'c':
 			menu1=1;
 			break;
-
-		case 4:
-			//modifica_utente;
-			break;
-
 
 
 		case 4:

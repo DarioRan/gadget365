@@ -43,19 +43,33 @@ int registrazione_gadget()
 
 void effettua_ricerca()
 {
-	int scelta=0;
+	char scelta;
 	char ricerca[CARATTERI];
 	visualizza_menu_ricerca();
-	scanf("%d",&scelta);
-
-
-
+	printf("Inserire scelta: ");
+	scanf("%c",&scelta);
+	scelta=tolower(scelta);
 	switch(scelta)
 	{
-	 case 0:
+	case 'a':
 		printf("Inserire nome gadget: ");
-		printf("%s",&ricerca);
-		ricerca_gadget(ricerca[CARATTERI],, int scelta-1 )
+		scanf("%s",ricerca);
+		ricerca_gadget(ricerca,0);
+		break;
+
+	case 'b':
+		printf("Inserire codice gadget: ");
+		scanf("%s",ricerca);
+		ricerca_gadget(ricerca,1);
+		break;
+
+	case 'c':
+		printf("Inserire colore gadget: ");
+		scanf("%s",ricerca);
+		ricerca_gadget(ricerca,2);
+		break;
+	default:
+		break;
 	}
 }
 
@@ -170,29 +184,38 @@ void modifica_prezzo_gadget()
 
 }
 
-
-void modifica_quant_gadget(char gadget[CARATTERI],float quantita)
+//0 quantità, 1 prezzo, 2 venduti
+int modifica_quant_prezz_venduti_gadget(char gadget[CARATTERI],float valore, int scelta)
 {
 	gadget_t xgadget;
 	int esito=0;
 	int esito2=0;
 
 	esito=restituisci_gadget(gadget, &xgadget,0);
-	xgadget.quantita=quantita;
-	esito2=cancella_gadget(gadget);
-	esito2=inserisci_gadget(xgadget);
+	if(esito==1){
+		switch(scelta){
 
-	if(esito2==1)
-	{
-		printf("\n|gadget Modificato!|");
-		visualizza_gadget(xgadget);
-		sleep(1);
+		case 0:
+			xgadget.quantita=valore;
+			break;
+		case 1:
+			xgadget.prezzo=valore;
+			break;
+		case 2:
+			xgadget.venduti=valore;
+			break;
+
+		}
+		esito2=cancella_gadget(gadget);
+		esito2=inserisci_gadget(xgadget);
+
+		if(esito2==0)
+		{
+			esito=0;
+		}
 	}
-	else
-	{
-		printf("\n|Impossibile Trovare Gadget!|");
-		sleep(1);
-	}
+	return esito;
+
 
 }
 
