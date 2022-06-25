@@ -279,10 +279,19 @@ void restituisciALL_gadget()
 {
 	gadget_t xgadget;
 	rewind(file_gadget);
+	char codice[LUNG_CODICE]="";
+	int a=0;
 	fread(&xgadget,sizeof(gadget_t), 1, file_gadget);
 	do{
-		visualizza_gadget(xgadget);
+
+		a=strcmp(codice,xgadget.cod_gadget);
+		if(a!=0)
+		{
+			visualizza_gadget(xgadget);
+		}
+		strcpy(codice,xgadget.cod_gadget);
 		fread(&xgadget,sizeof(gadget_t), 1, file_gadget);
+
 
 	}while(!feof(file_gadget));
 
