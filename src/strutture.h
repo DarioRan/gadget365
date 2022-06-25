@@ -54,6 +54,7 @@ typedef struct
 	int n_gadget;
 	int stato;  //0 non confermata 1 confermata
 	float totale;
+	char commento[CARATTERI];
 	char username_cliente[CARATTERI];
 
 }ordine_t;

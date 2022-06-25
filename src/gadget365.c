@@ -162,13 +162,13 @@ int main(void) {
 
 							switch(scelta){
 							case 1:
-								modifica_gadget(1);
+								modifica_gadget_utente(1);
 								break;
 							case 2:
-								modifica_gadget(2);
+								modifica_gadget_utente(2);
 								break;
 							case 3:
-								modifica_gadget(3);
+								modifica_gadget_utente(3);
 								break;
 							case 4:
 								modifica_prezzo_gadget();

@@ -181,7 +181,7 @@ void visualizza_ordine_recap(ordine_t xordine)
 	}
 	else
 	{
-		if(xordine.stato==2){
+		if(xordine.stato==0){
 			printf("| IN ATTESA |\n");
 		}
 		else{

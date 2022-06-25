@@ -81,7 +81,7 @@ void effettua_ricerca()
 
 
 
-void modifica_gadget(int scelta)
+void modifica_gadget_utente(int scelta)
 {
 	char gadget[CARATTERI];
 	char mod[CARATTERI];
@@ -186,29 +186,32 @@ void modifica_prezzo_gadget()
 }
 
 //0 quantità, 1 prezzo, 2 venduti
-int modifica_quant_prezz_venduti_gadget(char gadget[CARATTERI],float valore, int scelta)
+int modifica_gadget(gadget_t xgadget,int valore, int scelta)
 {
-	gadget_t xgadget;
-	int esito=0;
+	gadget_t gadget;
+	int esito=1;
 	int esito2=0;
 
-	esito=restituisci_gadget(gadget, &xgadget,0);
+	gadget=xgadget;
+	//esito=restituisci_gadget(gadget, &xgadget,0);
+	printf("prova gadget: %s",gadget.cod_gadget);
 	if(esito==1){
 		switch(scelta){
 
 		case 0:
-			xgadget.quantita=valore;
+			gadget.quantita=valore;
+			printf("Nuova quant: %d",gadget.quantita);
 			break;
 		case 1:
-			xgadget.prezzo=valore;
+			gadget.prezzo=valore;
 			break;
 		case 2:
-			xgadget.venduti=valore;
+			gadget.venduti=valore;
 			break;
 
 		}
-		esito2=cancella_gadget(gadget);
-		esito2=inserisci_gadget(xgadget);
+		esito2=cancella_gadget(xgadget.cod_gadget);
+		esito2=inserisci_gadget(gadget);
 
 		if(esito2==0)
 		{

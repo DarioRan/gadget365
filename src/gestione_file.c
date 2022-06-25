@@ -253,7 +253,7 @@ int cancella_gadget(char gadget[CARATTERI])
 
 	do{
 		fread(&xgadget,sizeof(gadget_t), 1, file_gadget);
-		if(strcmp(xgadget.nome_gadget,gadget)!=0)
+		if(strcmp(xgadget.cod_gadget,gadget)!=0)
 		{
 			fwrite(&xgadget,sizeof(gadget_t), 1, temp);
 		}
@@ -358,7 +358,7 @@ int restituisci_ordine(char* codice_ordine, ordine_t* risultato_ordine)
 {
 	ordine_t xordine;
 	int trovato=0;
-	rewind(file_clienti);
+	rewind(file_ordini);
 	fread(&xordine,sizeof(ordine_t), 1, file_ordini);
 	do
 	{
@@ -469,13 +469,13 @@ int modifica_stato_ordine(char* cod_ordine, int stato)
 			esito=1;
 
 		}
-	}while(!feof(file_clienti));
+	}while(!feof(file_ordini));
 
-	fclose(file_clienti);
+	fclose(file_ordini);
 	fclose(temp);
-	remove("clienti.csv");
-	rename("temp.csv","clienti.csv");
-	file_clienti=fopen("clienti.csv","r+b");
+	remove("ordini.csv");
+	rename("temp.csv","ordini.csv");
+	file_clienti=fopen("ordini.csv","r+b");
 
 	if(esito==1&&(stato==0 ||stato==1 || stato==2)){
 		xordine_trovato.stato=stato;

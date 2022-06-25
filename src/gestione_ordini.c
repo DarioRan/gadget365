@@ -14,6 +14,7 @@ void effettua_ordine(char* username){
 	int esito;
 	int codice[LUNG_CODICE];
 	int n_articolo=0;
+	char commento[CARATTERI];
 
 	gadget_t xgad;
 	ordine_t ordine;
@@ -56,6 +57,9 @@ void effettua_ordine(char* username){
 
 	if(scelta==2 && n_articolo>0)
 	{
+		printf("Inserire un commento: ");
+		scanf("%s",commento);
+		strcpy(ordine.commento,commento);
 		ordine.n_gadget=n_articolo;
 		strcpy(ordine.username_cliente,username);
 
@@ -75,7 +79,7 @@ void effettua_ordine(char* username){
 		}
 		if (ordine.stato==1)
 		{
-
+			emetti_ordine(ordine);
 		}
 
 	}else
@@ -98,11 +102,20 @@ int emetti_ordine(ordine_t xordine)
 		esito=restituisci_gadget(xordine.articoli_ordine[i].cod_gadget,&xgad,1);
 		nuova_giacenza=xgad.quantita-xordine.articoli_ordine[i].quantita;
 		nuova_venduti=xgad.venduti+xordine.articoli_ordine[i].quantita;
+
+
+		xgad.quantita=nuova_giacenza;
+		xgad.venduti=nuova_venduti;
+
+
 		if(nuova_giacenza<0){
 			nuova_giacenza=0;
 		}
-		esito2=modifica_quant_prezz_venduti_gadget(xordine.articoli_ordine[i].cod_gadget,nuova_giacenza,0);
-		esito3=modifica_quant_prezz_venduti_gadget(xordine.articoli_ordine[i].cod_gadget,nuova_venduti,2);
+
+		cancella_gadget(xgad.cod_gadget);
+		inserisci_gadget(xgad);
+		//esito2=modifica_gadget(xgad,nuova_giacenza,0);
+		//esito3=modifica_gadget(xgad,nuova_venduti,2);
 		if(esito==0||esito2==0||esito3==0)
 		{
 			esitoFinale=0;
