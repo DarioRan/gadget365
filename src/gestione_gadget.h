@@ -12,11 +12,12 @@
 #include <stdio.h>
 #include <time.h>
 #include "strutture.h"
+#include "gestione_file.h"
+#include "visualizzazione.h"
 
 int registrazione_gadget();
-void modifica_gadget_utente(int scelta);
 void effettua_ricerca();
-int modifica_quant_prezz_venduti_gadget(char gadget[CARATTERI],float valore, int scelta);
+void modifica_gadget_utente();
 
 
 #endif /* GESTIONE_GADGET_H_ */

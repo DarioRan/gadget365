@@ -18,7 +18,7 @@
 int registrazione_cliente();
 int accesso_cliente(char username[CARATTERI], char pass[CARATTERI]);
 void modifica_cliente_RagSoc(char username_corrente[CARATTERI],char rag[CARATTERI]);
-void modifica_cliente(char username_corrente[CARATTERI],int scelta);
+void modifica_cliente(char username_corrente[CARATTERI]);
 
 
 

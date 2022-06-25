@@ -17,8 +17,14 @@ void inizializza_menu();
 void visualizza_menu();
 void visualizza_menu_modifica();
 void visualizza_menu_gestore();
+void visualizza_menu_ricerca();
 void visualizza_ricerca_appartamento();
 void visualizza_gadget(gadget_t xgadget);
+void visualizza_menu_modifica_gadget();
+void visualizza_menu_gestore();
+
+
+
 
 
 #endif /* VISUALIZZAZIONE_H_ */

@@ -92,12 +92,18 @@ int accesso_cliente(char username[CARATTERI], char pass[CARATTERI])
 	return esito_accesso;
 }
 //1 piva 2 ragsoc 3 citta
-void modifica_cliente(char username_corrente[CARATTERI],int scelta)
+void modifica_cliente(char username_corrente[CARATTERI])
 {
 	char mod[CARATTERI];
 	cliente_t xcliente;
 	int esito;
 	int esito2;
+	int scelta;
+
+	visualizza_menu_modifica();
+	printf("\n Inserire scelta: ");
+	scanf("%d",&scelta);
+
 	switch(scelta){
 	case 1:
 		printf("\n|Inserire P. Iva: ");
