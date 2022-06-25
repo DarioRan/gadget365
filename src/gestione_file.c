@@ -211,7 +211,7 @@ void ricerca_gadget(char ricerca[CARATTERI], int scelta )
 	}while(!feof(file_gadget));
 }
 
-int cancella_cliente(char username[CARATTERI])
+int cancella_cliente(char* username)
 {
 	int esito=0;
 	cliente_t xcliente;
@@ -368,20 +368,15 @@ int restituisci_ordine(char* codice_ordine, ordine_t* risultato_ordine)
 	ordine_t xordine;
 	int trovato=0;
 	rewind(file_ordini);
-	fread(&xordine,sizeof(ordine_t), 1, file_ordini);
-	do
-	{
-		if(strcmp(xordine.cod_ordine,codice_ordine)==0)
-		{
-			trovato=1;
-		}
-		else
-		{
-
+		fread(&xordine,sizeof(ordine_t), 1, file_ordini);
+		do{
+			if(strcmp(xordine.cod_ordine,codice_ordine)==0){
+				trovato=1;
+			}
+			else{
 			fread(&xordine,sizeof(ordine_t), 1, file_ordini);
-		}
-
-	}while(!feof(file_ordini) && trovato==0);
+			}
+		}while(!feof(file_ordini) && trovato==0);
 
 	if(trovato==1)
 	{
@@ -394,7 +389,7 @@ void approva_ordini()
 {
 	ordine_t xordine;
 	int esito=0, approvazione=0,stato=0;
-	char* codice_ordine;
+	char codice_ordine[LUNG_CODICE];
 	rewind(file_ordini);
 	fread(&xordine,sizeof(ordine_t), 1, file_ordini);
 	do{
@@ -422,7 +417,7 @@ void approva_ordini()
 		}
 		else
 		{
-			printf("1 - Approvare\n0 - Rifiutare ");
+			printf("1 - Approvare\n2 - Rifiutare ");
 			scanf("%d",&approvazione);
 
 			if(approvazione==1)

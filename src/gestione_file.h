@@ -22,7 +22,7 @@ int restituisci_cliente(char ricerca[CARATTERI], cliente_t* risultato_cliente );
 void ricerca_gadget(char ricerca[CARATTERI], int scelta );
 int restituisci_gadget(char ricerca[CARATTERI], gadget_t* risultato_gadget, int scelta );
 int cancella_gadget(char gadget[CARATTERI]);
-int cancella_cliente(char username[CARATTERI]);
+int cancella_cliente(char* username);
 void visualizza_ordini_cliente(char* username);
 void restituisciALL_gadget();
 void visualizza_piu_venduti();
