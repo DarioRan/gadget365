@@ -23,13 +23,13 @@ void effettua_ordine(char* username){
 	printf("\n| CREAZIONE ORDINE |");
 
 	do{
-		printf("\n|Inserire codice gadget: ");
+		printf("\n\n|Inserire codice gadget: ");
 		scanf("%s",ordine.articoli_ordine[n_articolo].cod_gadget);
 		esito=restituisci_gadget(ordine.articoli_ordine[n_articolo].cod_gadget,&xgad,1);
 		if(esito==1)
 		{
 			visualizza_gadget(xgad);
-			printf("\n|Inserire quantita gadget: ");
+			printf("\n\n|Inserire quantita gadget: ");
 			scanf("%d",&ordine.articoli_ordine[n_articolo].quantita);
 			if(xgad.quantita>=ordine.articoli_ordine[n_articolo].quantita && ordine.stato==1)
 			{
@@ -49,7 +49,8 @@ void effettua_ordine(char* username){
 		{
 			printf("\n|Articolo non trovato!");
 		}
-		printf("\n|Continuare: 1, Chiudere ordine: 2, Annullare:3 ");
+		printf("\n\n|Continuare: 1, Chiudere ordine: 2, Annullare: 3 ");
+		printf("\n|Inserire scelta: ");
 		scanf("%d",&scelta);
 
 	}
@@ -58,7 +59,7 @@ void effettua_ordine(char* username){
 	if(scelta==2 && n_articolo>0)
 	{
 		fflush(stdin);
-		printf("Inserire un commento: ");
+		printf("\n\n|Inserire un commento: ");
 		fgets(commento, CARATTERI, stdin);
 		strcpy(ordine.commento,commento);
 		ordine.n_gadget=n_articolo;
