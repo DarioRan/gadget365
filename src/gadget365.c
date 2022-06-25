@@ -192,6 +192,13 @@ int main(void) {
 								approva_ordini();
 								break;
 							case 6:
+								restituisciALL_gadget();
+								break;
+
+							case 7:
+								effettua_ricerca();
+								break;
+							case 8:
 								menu3=1;
 								break;
 

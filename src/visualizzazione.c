@@ -12,9 +12,9 @@ void inizializza_menu()
 	printf("\n*---------------------------------------*\n");
 	printf("|                gadget365	        |\n");
 	printf("*---------------------------------------*\n");
-	printf("|  a - Log-In Utente                    |\n");
-	printf("|  b - Registrazione Utente             |\n");
-	printf("|  c - Esci                             |\n");
+	printf("|  1 - Log-In Utente                    |\n");
+	printf("|  2 - Registrazione Utente             |\n");
+	printf("|  3 - Esci                             |\n");
 	printf("*---------------------------------------*\n");
 
 }
@@ -24,13 +24,13 @@ void visualizza_menu()
 	printf("\n*---------------------------------------*\n");
 	printf("|             Menu Cliente              |\n");
 	printf("*---------------------------------------*\n");
-	printf("|  a - Visualizza gadget                |\n");
-	printf("|  b - Ricerca gadget                   |\n");
-	printf("|  c - Effettua Ordine                  |\n");
-	printf("|  d - Visualizza Oridni                |\n");
-	printf("|  e - Modifica Dati Personali          |\n");
-	printf("|  f - Cancella Account                 |\n");
-	printf("|  g - Log Out                          |\n");
+	printf("|  1 - Visualizza gadget                |\n");
+	printf("|  2 - Ricerca gadget                   |\n");
+	printf("|  3 - Effettua Ordine                  |\n");
+	printf("|  4 - Visualizza Oridni                |\n");
+	printf("|  5 - Modifica Dati Personali          |\n");
+	printf("|  6 - Cancella Account                 |\n");
+	printf("|  7 - Log Out                          |\n");
 	printf("*---------------------------------------*\n");
 
 }
@@ -40,10 +40,10 @@ void visualizza_menu_modifica()
 	printf("\n*---------------------------------------*\n");
 	printf("|             Menu Modifica             |\n");
 	printf("*---------------------------------------*\n");
-	printf("|  a - Modifica P.Iva                   |\n");
-	printf("|  b - Modifica Rag. Sociale            |\n");
-	printf("|  c - Modifica Citta'                  |\n");
-	printf("|  d - Indietro                         |\n");
+	printf("|  1 - Modifica P.Iva                   |\n");
+	printf("|  2 - Modifica Rag. Sociale            |\n");
+	printf("|  3 - Modifica Citta'                  |\n");
+	printf("|  4 - Indietro                         |\n");
 	printf("*---------------------------------------*\n");
 
 }
@@ -54,10 +54,10 @@ void visualizza_menu_ricerca()
 	printf("\n*--------------------------------------*\n");
 	printf("|             Menu Ricerca              |\n");
 	printf("*---------------------------------------*\n");
-	printf("|  a - Per Nome                         |\n");
-	printf("|  b - Per Codice                       |\n");
-	printf("|  c - Per Colore                       |\n");
-	printf("|  d - Visualizza piu' venduto          |\n");
+	printf("|  1 - Per Nome                         |\n");
+	printf("|  2 - Per Codice                       |\n");
+	printf("|  3 - Per Colore                       |\n");
+	printf("|  4 - Visualizza piu' venduto          |\n");
 	printf("*---------------------------------------*\n");
 
 }
@@ -67,11 +67,11 @@ void visualizza_menu_modifica_gadget()
 	printf("\n*---------------------------------------*\n");
 	printf("|             Menu Modifica             |\n");
 	printf("*---------------------------------------*\n");
-	printf("|  a - Modifica Nome                    |\n");
-	printf("|  b - Modifica Descrizione             |\n");
-	printf("|  c - Modifica Colore                  |\n");
-	printf("|  d - Modifica Prezzo                  |\n");
-	printf("|  e - Indietro                         |\n");
+	printf("|  1 - Modifica Nome                    |\n");
+	printf("|  2 - Modifica Descrizione             |\n");
+	printf("|  3 - Modifica Colore                  |\n");
+	printf("|  4 - Modifica Prezzo                  |\n");
+	printf("|  5 - Indietro                         |\n");
 	printf("*---------------------------------------*\n");
 
 }
@@ -81,12 +81,14 @@ void visualizza_menu_gestore()
 	printf("\n*---------------------------------------*\n");
 	printf("|          Menu gestore                 |\n");
 	printf("*---------------------------------------*\n");
-	printf("|  a - Aggiungi Gadget                  |\n");
-	printf("|  b - Modifica Gadget                  |\n");
-	printf("|  c - Cancella Gadget                  |\n");
-	printf("|  d - Visualizza Ordini                |\n");
-	printf("|  e - Accetta Ordini	                |\n");
-	printf("|  f - Log Out                          |\n");
+	printf("|  1 - Aggiungi Gadget                  |\n");
+	printf("|  2 - Modifica Gadget                  |\n");
+	printf("|  3 - Cancella Gadget                  |\n");
+	printf("|  4 - Visualizza Ordini                |\n");
+	printf("|  5 - Accetta Ordini	                |\n");
+	printf("|  6 - Visualizza gadget                |\n");
+	printf("|  7 - Ricerca gadget                   |\n");
+	printf("|  8 - Log Out                          |\n");
 	printf("*---------------------------------------*\n");
 
 }
@@ -97,10 +99,10 @@ void visualizza_ricerca_appartamento()
 	printf("\n*---------------------------------------*\n");
 	printf("|        Ricerca gadget	        |\n");
 	printf("*---------------------------------------*\n");
-	printf("|  a - Ricerca per Nome                 |\n");
-	printf("|  b - Ricerca per Colore               |\n");
-	printf("|  c - Ricerca per codice               |\n");
-	printf("|  d - Indietro                         |\n");
+	printf("|  1 - Ricerca per Nome                 |\n");
+	printf("|  2 - Ricerca per Colore               |\n");
+	printf("|  3 - Ricerca per codice               |\n");
+	printf("|  4 - Indietro                         |\n");
 	printf("*---------------------------------------*\n");
 
 }
