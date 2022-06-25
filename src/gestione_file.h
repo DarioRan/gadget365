@@ -27,6 +27,7 @@ void apertura_file();
  * @retval "0" Se si e' presentato un errore.
  */
 int inserisci_gadget(gadget_t xgadget);
+
 /**@brief
  * Funzione che avendo come input una struct cliente_t, inserisce un record nel file "file_clienti". Ritorna come valore "1" se e' stato inserito con successo.
  * @param[INPUT] xcliente: cliente_t
@@ -34,6 +35,8 @@ int inserisci_gadget(gadget_t xgadget);
  * @retval "1" Se l'inserimento e' stato completato.
  * @retval "0" Se si e' presentato un errore.
  */
+
+
 int inserisci_cliente(cliente_t xcliente);
 /**@brief
  * Funzione che avendo come input una struct ordine_t, inserisce un record nel file "file_ordini". Ritorna come valore "1" se e' stato inserito con successo.

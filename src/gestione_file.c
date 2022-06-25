@@ -479,7 +479,7 @@ int modifica_stato_ordine(char* cod_ordine, int stato)
 	fclose(temp);
 	remove("ordini.csv");
 	rename("temp.csv","ordini.csv");
-	file_clienti=fopen("ordini.csv","r+b");
+	file_ordini=fopen("ordini.csv","r+b");
 
 	if(esito==1&&(stato==0 ||stato==1 || stato==2)){
 		xordine_trovato.stato=stato;

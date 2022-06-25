@@ -85,18 +85,18 @@ void effettua_ricerca()
 
 void modifica_gadget_utente(int scelta)
 {
-	char gadget[LUNG_CODICE];
+	char gadget[CARATTERI];
 	char mod[CARATTERI];
 	gadget_t xgadget;
 	int esito=0;
 	int esito2=0;
-	printf("\n|Inserire Codice Gadget: ");
+	printf("\n|Inserire Nome Gadget: ");
 	scanf("%s",gadget);
 	switch(scelta){
 	case 1:
 		printf("\n|Inserire Nome Gadget: ");
 		scanf("%s",mod);
-		esito=restituisci_gadget(gadget, &xgadget,1);
+		esito=restituisci_gadget(gadget, &xgadget,0);
 		strcpy(xgadget.nome_gadget,mod);
 		esito2=cancella_gadget(gadget);
 		esito2=inserisci_gadget(xgadget);
@@ -117,7 +117,7 @@ void modifica_gadget_utente(int scelta)
 	case 2:
 		printf("\n|Inserire Descrizione Gadget: ");
 		scanf("%s",mod);
-		esito=restituisci_gadget(gadget, &xgadget,1);
+		esito=restituisci_gadget(gadget, &xgadget,0);
 		strcpy(xgadget.desc,mod);
 		esito2=cancella_gadget(gadget);
 		esito2=inserisci_gadget(xgadget);
@@ -137,7 +137,7 @@ void modifica_gadget_utente(int scelta)
 	case 3:
 		printf("\n|Inserire Colore Gadget: ");
 		scanf("%s",mod);
-		esito=restituisci_gadget(gadget, &xgadget,1);
+		esito=restituisci_gadget(gadget, &xgadget,0);
 		strcpy(xgadget.colore,mod);
 		esito2=cancella_gadget(gadget);
 		esito2=inserisci_gadget(xgadget);
@@ -157,46 +157,33 @@ void modifica_gadget_utente(int scelta)
 	}
 }
 
-void modifica_prezzo_gadget(int scelta)
+void modifica_prezzo_gadget()
 {
-	char gadget[LUNG_CODICE];
-	float numero;
+	char gadget[CARATTERI];
+	float prezzo;
 	gadget_t xgadget;
 	int esito=0;
 	int esito2=0;
-	if(scelta==1)
-	{
-	printf("\n|Inserire Codice Gadget: ");
+	printf("\n|Inserire Nome Gadget: ");
 	scanf("%s",gadget);
 	printf("\n|Inserire Prezzo Gadget: ");
-	scanf("%f",&numero);
-	esito=restituisci_gadget(gadget, &xgadget,1);
-	xgadget.prezzo=numero;
+	scanf("%f",&prezzo);
+	esito=restituisci_gadget(gadget, &xgadget,0);
+	xgadget.prezzo=prezzo;
 	esito2=cancella_gadget(gadget);
 	esito2=inserisci_gadget(xgadget);
-	}
-	{
-		printf("\n|Inserire Codice Gadget: ");
-		scanf("%s",gadget);
-		printf("\n|Inserire Giacenza Gadget: ");
-		scanf("%f",&numero);
-		esito=restituisci_gadget(gadget, &xgadget,1);
-		xgadget.quantita=numero;
-		esito2=cancella_gadget(gadget);
-		esito2=inserisci_gadget(xgadget);
-	}
+
 	if(esito2==1)
 	{
-		printf("\n|gadget Modificato!|\n");
+		printf("\n|gadget Modificato!|");
 		visualizza_gadget(xgadget);
 		sleep(1);
 	}
 	else
 	{
-		printf("\n|Impossibile Trovare Gadget!|\n");
+		printf("\n|Impossibile Trovare Gadget!|");
 		sleep(1);
 	}
-
 
 }
 

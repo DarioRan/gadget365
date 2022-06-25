@@ -167,11 +167,9 @@ int main(void) {
 								modifica_gadget_utente(3);
 								break;
 							case 4:
-								modifica_prezzo_gadget(1);
+								modifica_prezzo_gadget();
 								break;
-							case 5:
-							    modifica_prezzo_gadget(2);
-							  	break;
+
 
 							default:
 								break;
