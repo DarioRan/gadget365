@@ -105,19 +105,16 @@ int emetti_ordine(ordine_t xordine)
 		nuova_giacenza=xgad.quantita-xordine.articoli_ordine[i].quantita;
 		nuova_venduti=xgad.venduti+xordine.articoli_ordine[i].quantita;
 
-
-		xgad.quantita=nuova_giacenza;
-		xgad.venduti=nuova_venduti;
-
-
 		if(nuova_giacenza<0){
 			nuova_giacenza=0;
 		}
 
+		xgad.quantita=nuova_giacenza;
+		xgad.venduti=nuova_venduti;
+
 		cancella_gadget(xgad.cod_gadget);
 		inserisci_gadget(xgad);
-		//esito2=modifica_gadget(xgad,nuova_giacenza,0);
-		//esito3=modifica_gadget(xgad,nuova_venduti,2);
+
 		if(esito==0||esito2==0||esito3==0)
 		{
 			esitoFinale=0;
