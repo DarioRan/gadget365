@@ -122,27 +122,28 @@ void visualizza_gadget(gadget_t xgadget)
 {
 	if(xgadget.quantita>0)
 	{
-	printf("\n*---------------------------------------*\n");
-	printf("|        COD: %s	        \n",xgadget.cod_gadget);
 	printf("*---------------------------------------*\n");
-	printf("|  - Nome: %s\n",xgadget.nome_gadget);
-	printf("|  - Descrizione: %s\n",xgadget.desc);
-	printf("|  - Colore: %s\n",xgadget.colore);
-	printf("|  - Prezzo: %.2f\n",xgadget.prezzo);
-	printf("|  - Quantita: %d\n",xgadget.quantita);
-	printf("|  - Venduti: %d\n",xgadget.venduti);
+	printf("|          Codice Gadget: %s          |\n",xgadget.cod_gadget);
 	printf("*---------------------------------------*\n");
+	printf("\t  - Nome: %s\t\n",xgadget.nome_gadget);
+	printf("\t  - Descrizione: %s\t\n",xgadget.desc);
+	printf("\t  - Colore: %s\t\n",xgadget.colore);
+	printf("\t  - Prezzo: %.2f\t\n",xgadget.prezzo);
+	printf("\t  - Quantita: %d\t\n",xgadget.quantita);
+	printf("\t  - Venduti: %d\t\n",xgadget.venduti);
+	printf("*---------------------------------------*\n");
+	//printf("*=======================================*\n");
 	}
 }
 
 
 void visualizza_gadget_recap(gadget_t xgadget)
 {
-	printf("\n*---------------------------------------*\n");
-	printf("|        Codice Gadget: %s	        \n",xgadget.cod_gadget);
 	printf("*---------------------------------------*\n");
-	printf("|  - Nome: %s\n",xgadget.nome_gadget);
-	printf("|  - Colore: %s\n",xgadget.colore);
+	printf("|          Codice Gadget: %s          |\n",xgadget.cod_gadget);
+	printf("*---------------------------------------*\n");
+	printf("\t  - Nome: %s\t\n",xgadget.nome_gadget);
+	printf("\t  - Colore: %s\t\n",xgadget.colore);
 	printf("*---------------------------------------*\n");
 }
 
@@ -155,10 +156,9 @@ void visualizza_ordine_recap(ordine_t xordine)
 	int esito=0;
 	restituisci_cliente(xordine.username_cliente,&xcliente);
 
-	printf("\n*---------------------------------------*\n");
-	printf("|        Codice Ordine: %s	        \n",xordine.cod_ordine);
-	printf("*---------------------------------------*\n");
-	printf("|  - Cliente: %s\n",xcliente.ragione_sociale);
+	printf("*=======================================*\n");
+	printf("|        Codice Ordine: %s	        | \n",xordine.cod_ordine);
+	printf("\t Cliente: %s\t\t\n",xcliente.ragione_sociale);
 
 	for(int i=0; i<xordine.n_gadget;i++)
 	{
@@ -170,22 +170,22 @@ void visualizza_ordine_recap(ordine_t xordine)
 			printf("Prodotto non disponibile\n");
 		}
 
-		printf("|  - Quantita' ordinata: %d\n",xordine.articoli_ordine[i].quantita);
-		printf("|  - Prezzo CAD: %.2f\n", xordine.articoli_ordine[i].prezzo_CAD);
+		printf("\t - Quantita' ordinata: %d\t\n",xordine.articoli_ordine[i].quantita);
+		printf("\t - Prezzo CAD: %.2f\t\n", xordine.articoli_ordine[i].prezzo_CAD);
 
 	}
 
 
-	printf("|  - Totale: %.2f\n", xordine.totale);
-	printf("|  - Commento: %s\n", xordine.commento);
+	printf("\t - Totale: %.2f\t\n", xordine.totale);
+	printf("\t - Commento: %s\t\n", xordine.commento);
 	if(xordine.stato==1)
 	{
-		printf("               |APPROVATO|\n\n");
+		printf("               |APPROVATO|\n");
 	}
 	else
 	{
 		if(xordine.stato==0){
-			printf("               |IN ATTESA|\n\n");
+			printf("               |IN ATTESA|\n");
 		}
 		else{
 			printf("               |NON APPROVATO|\n");
@@ -195,7 +195,7 @@ void visualizza_ordine_recap(ordine_t xordine)
 
 
 
-	printf("*---------------------------------------*\n");
+	printf("*=======================================*\n\n");
 }
 
 
