@@ -72,7 +72,7 @@ void visualizza_menu_modifica_gadget()
 	printf("|  3 - Modifica Colore                  |\n");
 	printf("|  4 - Modifica Prezzo                  |\n");
 	printf("|  5 - Modifica Giacenza                |\n");
-	printf("|  5 - Indietro                         |\n");
+	printf("|  6 - Indietro                         |\n");
 	printf("*---------------------------------------*\n");
 
 }
