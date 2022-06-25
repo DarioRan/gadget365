@@ -69,7 +69,8 @@ void effettua_ricerca()
 		scanf("%s",ricerca);
 		ricerca_gadget(ricerca,2);
 		break;
-
+	case 4:
+		visualizza_piu_venduti();
 	default:
 		break;
 	}

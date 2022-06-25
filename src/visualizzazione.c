@@ -54,9 +54,10 @@ void visualizza_menu_ricerca()
 	printf("\n*--------------------------------------*\n");
 	printf("|             Menu Ricerca              |\n");
 	printf("*---------------------------------------*\n");
-	printf("|  a - Per nome                         |\n");
-	printf("|  b - Per codice                       |\n");
-	printf("|  c - Per colore                       |\n");
+	printf("|  a - Per Nome                         |\n");
+	printf("|  b - Per Codice                       |\n");
+	printf("|  c - Per Colore                       |\n");
+	printf("|  d - Visualizza piu' venduto          |\n");
 	printf("*---------------------------------------*\n");
 
 }
