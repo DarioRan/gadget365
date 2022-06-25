@@ -13,13 +13,14 @@ int registrazione_gadget()
 	char codice[LUNG_CODICE],tipo[CARATTERI];
 	int esito=0;
 	gadget_t xgad;
-
+    fflush(stdin);
 	printf("\n|Inserire nome gadget: ");
-	scanf("%s",xgad.nome_gadget);
+	fgets(xgad.nome_gadget, CARATTERI, stdin);
 	printf("\n|Inserire colore gadget: ");
 	scanf("%s",xgad.colore);
+	fflush(stdin);
 	printf("\n|Inserire descrizione: ");
-	scanf("%s",xgad.desc);
+	fgets(xgad.desc, CARATTERI, stdin);
 	printf("\n|Inserire prezzo cad.: ");
 	scanf("%f",&xgad.prezzo);
 	printf("\n|Inserire quantita' disponibile: ");
