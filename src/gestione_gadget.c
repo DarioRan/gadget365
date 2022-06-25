@@ -84,7 +84,7 @@ void modifica_gadget_utente()
 {
 	int scelta;
 	int esito;
-	char* gadget;
+	char gadget[CARATTERI];
 	char* stringa_modifica;
 	int nuova_giacenza;
 	float prezzo;
