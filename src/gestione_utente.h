@@ -16,7 +16,7 @@
 
 /**@brief
  *
- * Funzione incaricata di gestire l'input di dati riguardanti i gadget.
+ * Funzione incaricata di gestire l'input di dati riguardanti i clienti.
  * @param[OUTPUT] esito: int
  * @retval "1" Se l'inserimento e' stato completato.
  * @retval "0" Se si e' presentato un errore.
