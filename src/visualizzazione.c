@@ -139,7 +139,7 @@ void visualizza_gadget(gadget_t xgadget)
 void visualizza_gadget_recap(gadget_t xgadget)
 {
 	printf("\n*---------------------------------------*\n");
-	printf("|        COD: %s	        |\n",xgadget.cod_gadget);
+	printf("|        Codice Gadget: %s	        \n",xgadget.cod_gadget);
 	printf("*---------------------------------------*\n");
 	printf("|  - Nome: %s\n",xgadget.nome_gadget);
 	printf("|  - Colore: %s\n",xgadget.colore);
@@ -156,7 +156,7 @@ void visualizza_ordine_recap(ordine_t xordine)
 	restituisci_cliente(xordine.username_cliente,&xcliente);
 
 	printf("\n*---------------------------------------*\n");
-	printf("|        COD: %s	        |\n",xordine.cod_ordine);
+	printf("|        Codice Ordine: %s	        \n",xordine.cod_ordine);
 	printf("*---------------------------------------*\n");
 	printf("|  - Cliente: %s\n",xcliente.ragione_sociale);
 
@@ -180,15 +180,15 @@ void visualizza_ordine_recap(ordine_t xordine)
 
 	if(xordine.stato==1)
 	{
-		printf("| APPROVATO |\n");
+		printf("               |APPROVATO|\n\n");
 	}
 	else
 	{
 		if(xordine.stato==0){
-			printf("| IN ATTESA |\n");
+			printf("               |IN ATTESA|\n\n");
 		}
 		else{
-			printf("| NON APPROVATO |\n");
+			printf("               |NON APPROVATO|\n");
 		}
 	}
 
