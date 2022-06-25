@@ -22,14 +22,11 @@ int main(void) {
 	//int menu1=0,menu2=0,menu3=0,scelta;
 
 
-
-
-
 	char nomeutente[CARATTERI],pass[CARATTERI],utente_corrente[CARATTERI],gadget[CARATTERI],codgadget[LUNG_CODICE];
 	int menu1=0,menu2=0,menu3=0;
 	int esito;
 
-	int scelta;
+	int scelta, scelta_modifica;
 
 	apertura_file();
 	while(menu1==0)
@@ -84,10 +81,9 @@ int main(void) {
 					case 5:
 						visualizza_menu_modifica();
 						printf("\n Inserire scelta: ");
-						scanf("%c",&scelta);
-						scelta=tolower(scelta);
+						scanf("%d",&scelta_modifica);
 
-						switch(scelta)
+						switch(scelta_modifica)
 						{
 						//a
 						case 1:

@@ -49,47 +49,47 @@ int accesso_cliente(char username[CARATTERI], char pass[CARATTERI])
 	//INSERIMENTO USER PASS
 
 	int res=0,res2=0;
-	int esito=0;
+	int esito_accesso=0;
 	res=strncmp(USERADMIN,username,9);
 	res2=strncmp(PASSADMIN,pass,6);
-    if(res==0)
-    {
+	if(res==0)
+	{
 
-    	if(res2==0)
-    	    {
-    	     printf("\n|Log-In Admin Avvenuto con Successo!|");
-    	     esito=2;
-    	    }
-    	else
-    	{
-    		 printf("\n|Password Errata!|");
-    	}
-    }
-    else
-    {
-    	cliente_t xutente;
-    		esito=restituisci_cliente(username,&xutente);
-    		if(esito==1)
-    		{
-    			if(strcmp(xutente.pass,pass)==0)
-    			{
-    				printf("\n|Log-In Avvenuto con Successo!|");
-    				sleep(1);
-    			}
-    			else
-    			{
-    				esito=0;
-    				printf("\n|Password Errata!|");
-    				sleep(1);
-    			}
-    		}
-    		else
-    		{
-    			printf("\n|Impossibile Trovare Username!|");
-    			sleep(1);
-    		}
-    }
-	return esito;
+		if(res2==0)
+		{
+			printf("\n|Log-In Admin Avvenuto con Successo!|");
+			esito_accesso=2;
+		}
+		else
+		{
+			printf("\n|Password Errata!|");
+		}
+	}
+	else
+	{
+		cliente_t xutente;
+		esito_accesso=restituisci_cliente(username,&xutente);
+		if(esito_accesso==1)
+		{
+			if(strcmp(xutente.pass,pass)==0)
+			{
+				printf("\n|Log-In Avvenuto con Successo!|");
+				sleep(1);
+			}
+			else
+			{
+				esito_accesso=0;
+				printf("\n|Password Errata!|");
+				sleep(1);
+			}
+		}
+		else
+		{
+			printf("\n|Impossibile Trovare Username!|");
+			sleep(1);
+		}
+	}
+	return esito_accesso;
 }
 //1 piva 2 ragsoc 3 citta
 void modifica_cliente(char username_corrente[CARATTERI],int scelta)
@@ -99,26 +99,25 @@ void modifica_cliente(char username_corrente[CARATTERI],int scelta)
 	int esito;
 	int esito2;
 	switch(scelta){
-
 	case 1:
 		printf("\n|Inserire P. Iva: ");
 		scanf("%s",mod);
-			esito=restituisci_cliente(username_corrente, &xcliente);
-			strcpy(xcliente.piva,mod);
-			esito2=cancella_cliente(username_corrente);
-			esito2=inserisci_cliente(xcliente);
-			if(esito2==1)
-			{
-				printf("\n|Utente Modificato!|");
-				visualizza_cliente(xcliente);
-				sleep(1);
-			}
-			else
-			{
-				printf("\n|Impossibile Trovare Username!|");
-				sleep(1);
-			}
-			break;
+		esito=restituisci_cliente(username_corrente, &xcliente);
+		strcpy(xcliente.piva,mod);
+		esito2=cancella_cliente(username_corrente);
+		esito2=inserisci_cliente(xcliente);
+		if(esito2==1)
+		{
+			printf("\n|Utente Modificato!|");
+			visualizza_cliente(xcliente);
+			sleep(1);
+		}
+		else
+		{
+			printf("\n|Impossibile Trovare Username!|");
+			sleep(1);
+		}
+		break;
 
 	case 2:
 		printf("\n|Inserire Rag. Sociale: ");

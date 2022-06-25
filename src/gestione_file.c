@@ -285,7 +285,7 @@ void restituisciALL_gadget()
 	do{
 
 		a=strcmp(codice,xgadget.cod_gadget);
-		if(a!=0)
+		if(a!=0 && xgadget.prezzo!=0 )
 		{
 			visualizza_gadget(xgadget);
 		}
@@ -393,7 +393,7 @@ void approva_ordini()
 	rewind(file_ordini);
 	fread(&xordine,sizeof(ordine_t), 1, file_ordini);
 	do{
-		if(xordine.stato==0){
+		if(xordine.stato==0 && xordine.totale!=0){
 			visualizza_ordine_recap(xordine);
 		}
 		fread(&xordine,sizeof(ordine_t), 1, file_ordini);
