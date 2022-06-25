@@ -16,6 +16,13 @@
 
 void apertura_file();
 int inserisci_gadget(gadget_t xgadget);
+/**@brief
+ * Questa funzione permette al programma di inserire una struct gadget nel file gadget.csv
+ * @param[in] xgadget
+ * @param[out] boh
+ * @retval 1 se ci è riuscita
+ * @retval 0 altrimenti
+ */
 int inserisci_cliente(cliente_t xcliente);
 int inserisci_ordine(ordine_t xordine);
 int restituisci_cliente(char ricerca[CARATTERI], cliente_t* risultato_cliente );
