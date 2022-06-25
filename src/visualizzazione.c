@@ -120,8 +120,10 @@ void visualizza_cliente(cliente_t xcliente)
 
 void visualizza_gadget(gadget_t xgadget)
 {
+	if(xgadget.quantita>0)
+	{
 	printf("\n*---------------------------------------*\n");
-	printf("|        COD: %s	        |\n",xgadget.cod_gadget);
+	printf("|        COD: %s	        \n",xgadget.cod_gadget);
 	printf("*---------------------------------------*\n");
 	printf("|  - Nome: %s\n",xgadget.nome_gadget);
 	printf("|  - Descrizione: %s\n",xgadget.desc);
@@ -130,6 +132,7 @@ void visualizza_gadget(gadget_t xgadget)
 	printf("|  - Quantita: %d\n",xgadget.quantita);
 	printf("|  - Venduti: %d\n",xgadget.venduti);
 	printf("*---------------------------------------*\n");
+	}
 }
 
 

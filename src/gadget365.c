@@ -25,7 +25,7 @@ int main(void) {
 
 
 
-	char nomeutente[CARATTERI],pass[CARATTERI],utente_corrente[CARATTERI],gadget[CARATTERI];
+	char nomeutente[CARATTERI],pass[CARATTERI],utente_corrente[CARATTERI],gadget[CARATTERI],codgadget[LUNG_CODICE];
 	int menu1=0,menu2=0,menu3=0;
 	int esito;
 
@@ -180,10 +180,10 @@ int main(void) {
 
 							}
 							break;
-							case 4:
-								printf("\n|Inserire Nome Gadget: ");
-								scanf("%s",gadget);
-								esito=cancella_gadget(gadget);
+							case 3:
+								printf("\n|Inserire Codice Gadget: ");
+								scanf("%s",codgadget);
+								esito=cancella_gadget(codgadget);
 								if(esito==1){
 									printf("|Gadget Cancellato!");
 								}

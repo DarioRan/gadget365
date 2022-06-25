@@ -242,7 +242,7 @@ int cancella_cliente(char username[CARATTERI])
 	return esito;
 }
 
-int cancella_gadget(char gadget[CARATTERI])
+int cancella_gadget(char gadget[LUNG_CODICE])
 {
 	int esito=0;
 	gadget_t xgadget;
