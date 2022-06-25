@@ -18,7 +18,7 @@ void apertura_file()
 
 	if(file_clienti!=NULL)
 	{
-		printf ("File clienti aperto correttamente\n");
+		//printf ("File clienti aperto correttamente\n");
 	}
 	else
 	{
@@ -27,7 +27,7 @@ void apertura_file()
 
 	if(file_ordini!=NULL)
 	{
-		printf ("File ordini aperto correttamente\n");
+	   //printf ("File ordini aperto correttamente\n");
 	}
 	else
 	{
@@ -36,7 +36,7 @@ void apertura_file()
 
 	if(file_gadget!=NULL)
 	{
-		printf ("File gadget aperto correttamente\n");
+		//printf ("File gadget aperto correttamente\n");
 	}
 	else
 	{

@@ -57,8 +57,9 @@ void effettua_ordine(char* username){
 
 	if(scelta==2 && n_articolo>0)
 	{
+		fflush(stdin);
 		printf("Inserire un commento: ");
-		scanf("%s",commento);
+		fgets(commento, CARATTERI, stdin);
 		strcpy(ordine.commento,commento);
 		ordine.n_gadget=n_articolo;
 		strcpy(ordine.username_cliente,username);
