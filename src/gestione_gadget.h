@@ -38,6 +38,10 @@ void modifica_gadget_utente();
 void effettua_ricerca();
 
 
+int modifica_gadget(gadget_t xgadget,float valore, int scelta);
+
+
+
 
 
 #endif /* GESTIONE_GADGET_H_ */

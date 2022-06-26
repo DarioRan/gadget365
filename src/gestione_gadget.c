@@ -308,7 +308,7 @@ int modifica_gadget(gadget_t xgadget,float valore, int scelta)
 	gadget_t gadget;
 	int esito=1;
 	int esito2=0;
-	int val_intero;
+
 
 	gadget=xgadget;
 	//esito=restituisci_gadget(gadget, &xgadget,0);
@@ -316,14 +316,12 @@ int modifica_gadget(gadget_t xgadget,float valore, int scelta)
 		switch(scelta){
 
 		case 0:
-			val_intero= (int)valore;
 			gadget.quantita=valore;
 			break;
 		case 1:
 			gadget.prezzo=valore;
 			break;
 		case 2:
-			val_intero= (int)valore;
 			gadget.venduti=valore;
 			break;
 
