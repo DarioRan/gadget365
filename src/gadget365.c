@@ -155,6 +155,7 @@ int main(void) {
 			break;
 
 		default:
+			printf("\n|Inserire scelta valida. \n");
 			break;
 
 		}
