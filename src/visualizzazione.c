@@ -167,8 +167,8 @@ void visualizza_ordine_recap(ordine_t xordine)
 	}
 
 
-	printf("\t - Totale: %.2f\t\n", xordine.totale);
-	printf("\t - Commento: %s\t\n", xordine.commento);
+	printf("- Totale: %.2f\t\n", xordine.totale);
+	printf("- Commento: %s\t\n", xordine.commento);
 	if(xordine.stato==1)
 	{
 		printf("               |APPROVATO|\n");

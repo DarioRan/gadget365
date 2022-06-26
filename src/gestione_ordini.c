@@ -70,7 +70,7 @@ void effettua_ordine(char* username){
 
 		itoa(rand(),codice,10);
 		strcpy(ordine.cod_ordine,codice);
-
+		printf("%f", ordine.totale);
 		esito=inserisci_ordine(ordine);
 		if(esito==1)
 		{

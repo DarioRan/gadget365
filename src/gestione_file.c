@@ -300,42 +300,50 @@ void visualizza_ordini_cliente(char* username)
 //visualizza i 3 più venduti
 void visualizza_piu_venduti()
 {
-	gadget_t xgadget,xgadget1,xgadget2,xgadget3, xscambio;
+	gadget_t xgadget,xgadget1,xgadget2,xgadget3, xscambio,xscambio2;
 	xgadget1.venduti=0;
 	xgadget2.venduti=0;
 	xgadget3.venduti=0;
+	char codice[LUNG_CODICE]="";
+	int a;
 	rewind(file_gadget);
 	fread(&xgadget,sizeof(gadget_t), 1, file_gadget);
 	do{
-		if(xgadget.venduti>xgadget1.venduti)
+
+		a=strcmp(codice,xgadget.cod_gadget);
+		if(a!=0 && xgadget.prezzo!=0 )
 		{
-			//scambio il nuovo con il primo
-			xscambio=xgadget1;
-			xgadget1=xgadget;
-
-			//scambio il primo con il secondo
-			xgadget=xgadget2;
-			xgadget2=xscambio;
-
-			//scambio il secondo con il terzo
-			xgadget3=xgadget;
-
-		}
-		else{
-			if(xgadget.venduti>xgadget2.venduti)
+			if(xgadget.venduti>xgadget1.venduti ||(xgadget.venduti==0 && xgadget1.venduti==0))
 			{
-				xscambio=xgadget2;
-				xgadget2=xgadget;
-				xgadget3=xscambio;
+				//scambio il nuovo con il primo
+				xscambio=xgadget1;
+				xgadget1=xgadget;
+
+				//scambio il primo con il secondo
+				xscambio2=xgadget2;
+				xgadget2=xscambio;
+
+				//scambio il secondo con il terzo
+				xgadget3=xscambio2;
 
 			}
 			else{
-				if(xgadget.venduti>xgadget3.venduti)
+				if(xgadget.venduti>xgadget2.venduti)
 				{
-					xgadget3=xgadget;
+					xscambio=xgadget2;
+					xgadget2=xgadget;
+					xgadget3=xscambio;
+
+				}
+				else{
+					if(xgadget.venduti>=xgadget3.venduti)
+					{
+						xgadget3=xgadget;
+					}
 				}
 			}
 		}
+		strcpy(codice,xgadget.cod_gadget);
 		fread(&xgadget,sizeof(gadget_t), 1, file_gadget);
 	}while(!feof(file_gadget));
 
