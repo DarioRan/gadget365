@@ -473,20 +473,32 @@ int modifica_stato_ordine(char* cod_ordine, int stato)
 
 int input_scelta()
 {
-	char scelta;
+	char scelta[CARATTERI];
+	char a;
 	int scelta_intero;
 	fflush(stdin);
-	scanf("%c",&scelta);
-	scelta_intero=(int)scelta;
+	scanf("%s",scelta);
+	while(strlen(scelta)>1)
+	{
+		printf("Inserire scelta valida! \n");
+		fflush(stdin);
+		scanf("%s",scelta);
+	}
+	a=scelta[0];
+	printf("contenuto di a: %c",a);
+	scelta_intero=(int)a;
+	printf("contenuto di sceltaint: %d",scelta_intero);
 	while(48>=scelta_intero || scelta_intero>=57)
 	{
 		printf("Inserire scelta valida! \n");
 		fflush(stdin);
-		scanf("%c",&scelta);
-		scelta_intero=(int)scelta;
+		scanf("%s",scelta);
+		scelta_intero=(int)a;
+
+
+
 	}
 	scelta_intero-=48;
-
 	return scelta_intero;
 
 
