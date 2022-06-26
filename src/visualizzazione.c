@@ -94,19 +94,6 @@ void visualizza_menu_gestore()
 
 }
 
-void visualizza_ricerca_appartamento()
-{
-
-	printf("\n*---------------------------------------*\n");
-	printf("|        Ricerca gadget	        |\n");
-	printf("*---------------------------------------*\n");
-	printf("|  1 - Ricerca per Nome                 |\n");
-	printf("|  2 - Ricerca per Colore               |\n");
-	printf("|  3 - Ricerca per codice               |\n");
-	printf("|  4 - Indietro                         |\n");
-	printf("*---------------------------------------*\n");
-
-}
 
 void visualizza_cliente(cliente_t xcliente)
 {

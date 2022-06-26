@@ -12,16 +12,56 @@
 #include <stdio.h>
 #include "strutture.h"
 #include "gestione_file.h"
-
+/**@brief
+ *
+ * Funzione incaricata di stampare a schermo il menu' principale.
+ */
 void inizializza_menu();
+/**@brief
+ *
+ * Funzione incaricata di stampare a schermo il menu' clienti.
+ */
 void visualizza_menu();
+/**@brief
+ *
+ * Funzione incaricata di stampare a schermo il menu' modifica clienti.
+ */
 void visualizza_menu_modifica();
+/**@brief
+ *
+ * Funzione incaricata di stampare a schermo il menu' gestore.
+ */
 void visualizza_menu_gestore();
+/**@brief
+ *
+ * Funzione incaricata di stampare a schermo il menu' ricerca.
+ */
 void visualizza_menu_ricerca();
-void visualizza_ricerca_appartamento();
+/**@brief
+ *
+ * Funzione incaricata di stampare a schermo informazioni riguardanti il gadget.
+ */
 void visualizza_gadget(gadget_t xgadget);
+/**@brief
+ *
+ * Funzione incaricata di stampare a schermo informazioni riguardanti il cliente.
+ */
+void visualizza_cliente(cliente_t xcliente);
+/**@brief
+ *
+ * Funzione incaricata di stampare a schermo il menu' modifica gadget.
+ */
 void visualizza_menu_modifica_gadget();
-void visualizza_menu_gestore();
+/**@brief
+ *
+ * Funzione incaricata di stampare a schermo informazioni basilari riguardanti il gadget.
+ */
+void visualizza_gadget_recap(gadget_t xgadget);
+/**@brief
+ *
+ * Funzione incaricata di stampare a schermo informazioni riguardanti l'ordine.
+ */
+void visualizza_ordine_recap(ordine_t xordine);
 
 
 

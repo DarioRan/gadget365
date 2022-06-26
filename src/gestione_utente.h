@@ -33,9 +33,6 @@ int registrazione_cliente();
  * @retval "0" Se si e' presentato un errore.
  */
 int accesso_cliente(char username[CARATTERI], char pass[CARATTERI]);
-void modifica_cliente_RagSoc(char username_corrente[CARATTERI],char rag[CARATTERI]);
-void modifica_cliente(char username_corrente[CARATTERI]);
-
 /**@brief
  *
  * Procedura incaricata di gestire la modifica utente. A seconda del valore del parametro "scelta" verranno modificati diversi parametri: p.iva (1), rag. sociale (2), citta' (3). Tramite la stringa "username_corrente" data in input siamo in grado, tramite la funzione "restituisci_cliente" di risalire al cliente da modificare. Una volta ottenuta la struct del cliente da modificare verra' modificato il parametro desiderato in una struct di appoggio e verra' cancellato il record dal file, in seguito verra' dunque caricato il record con la struct aggiornata.
