@@ -485,14 +485,17 @@ int input_scelta()
 		scanf("%s",scelta);
 	}
 	a=scelta[0];
-	printf("contenuto di a: %c",a);
 	scelta_intero=(int)a;
-	printf("contenuto di sceltaint: %d",scelta_intero);
 	while(48>=scelta_intero || scelta_intero>=57)
 	{
-		printf("Inserire scelta valida! \n");
-		fflush(stdin);
-		scanf("%s",scelta);
+			fflush(stdin);
+			scanf("%s",scelta);
+			while(strlen(scelta)>1)
+			{
+				printf("Inserire scelta valida! \n");
+				fflush(stdin);
+				scanf("%s",scelta);
+			}
 		scelta_intero=(int)a;
 
 
