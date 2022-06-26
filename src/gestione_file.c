@@ -485,11 +485,12 @@ int input_scelta()
 		printf("\nInserire scelta: ");
 		scanf("%s",scelta);
 	}
-	a=scelta[0];
-	scelta_intero=(int)a;
+	scelta_intero=(int)scelta[0];
 	while(48>=scelta_intero || scelta_intero>=57)
 	{
+		printf("\n|Inserire scelta valida. \n");
 		fflush(stdin);
+		printf("\nInserire scelta: ");
 		scanf("%s",scelta);
 		while(strlen(scelta)>1)
 		{
