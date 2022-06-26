@@ -1,0 +1,342 @@
+\hypertarget{gestione__file_8h}{}\doxysection{C\+:/\+Users/1drom/\+One\+Drive/\+Documenti/\+Git\+Hub/gadget365/src/gestione\+\_\+file.h File Reference}
+\label{gestione__file_8h}\index{C:/Users/1drom/OneDrive/Documenti/GitHub/gadget365/src/gestione\_file.h@{C:/Users/1drom/OneDrive/Documenti/GitHub/gadget365/src/gestione\_file.h}}
+{\ttfamily \#include \char`\"{}strutture.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}visualizzazione.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{gestione__file_8h_a9b9304a7c4e461919963dfbc351e1c5a}{apertura\+\_\+file}} ()
+\begin{DoxyCompactList}\small\item\em Procedura incaricata di aprire i file del programma, comunicando eventualmente delle criticita\textquotesingle{}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{gestione__file_8h_a4fc52c462c1d2fd43ff452250a0bb6b6}{inserisci\+\_\+gadget}} (\mbox{\hyperlink{structgadget__t}{gadget\+\_\+t}} xgadget)
+\begin{DoxyCompactList}\small\item\em Funzione che avendo come input una struct \mbox{\hyperlink{structgadget__t}{gadget\+\_\+t}}, inserisce un record nel file \char`\"{}file\+\_\+gadget\char`\"{}. Ritorna come valore \char`\"{}1\char`\"{} se e\textquotesingle{} stato inserito con successo. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{gestione__file_8h_aed9f88cb55c36aa7d4a48a41c4d6ceba}{inserisci\+\_\+cliente}} (\mbox{\hyperlink{structcliente__t}{cliente\+\_\+t}} xcliente)
+\begin{DoxyCompactList}\small\item\em Funzione che avendo come input una struct \mbox{\hyperlink{structcliente__t}{cliente\+\_\+t}}, inserisce un record nel file \char`\"{}file\+\_\+clienti\char`\"{}. Ritorna come valore \char`\"{}1\char`\"{} se e\textquotesingle{} stato inserito con successo. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{gestione__file_8h_acea95340577507bc3219aa22ec740769}{inserisci\+\_\+ordine}} (\mbox{\hyperlink{structordine__t}{ordine\+\_\+t}} xordine)
+\begin{DoxyCompactList}\small\item\em Funzione che avendo come input una struct \mbox{\hyperlink{structordine__t}{ordine\+\_\+t}}, inserisce un record nel file \char`\"{}file\+\_\+ordini\char`\"{}. Ritorna come valore \char`\"{}1\char`\"{} se e\textquotesingle{} stato inserito con successo. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{gestione__file_8h_ad65ec79cc1f577ca29541e8b5c5900ad}{restituisci\+\_\+cliente}} (char ricerca\mbox{[}\mbox{\hyperlink{strutture_8h_aab0b4ae424f7c60206f58fb67f5e1317}{CARATTERI}}\mbox{]}, \mbox{\hyperlink{structcliente__t}{cliente\+\_\+t}} $\ast$risultato\+\_\+cliente)
+\begin{DoxyCompactList}\small\item\em La funzione ha come input (per riferimento) una struct \mbox{\hyperlink{structcliente__t}{cliente\+\_\+t}} \char`\"{}risultato\+\_\+cliente\char`\"{} e una stringa \char`\"{}ricerca\char`\"{} contenente il nome del cliente da cui ottenere le informazioni. La funzione legge ogni record contenente nel file \char`\"{}file\+\_\+utenti\char`\"{} assegnando il valore letto a una struct \mbox{\hyperlink{structcliente__t}{cliente\+\_\+t}} di appoggio, comparando il nome della struct ottenuta con quello da ricercare, finche\textquotesingle{} esso non viene trovato. Una volta trovato, la funzione interrompe la lettura, assegna la struct di appoggio a \char`\"{}risultato\+\_\+cliente\char`\"{} e ritorna un valore pari ad \char`\"{}1\char`\"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gestione__file_8h_adb0b57cf56452a115671a4ea16e7f042}{ricerca\+\_\+gadget}} (char ricerca\mbox{[}\mbox{\hyperlink{strutture_8h_aab0b4ae424f7c60206f58fb67f5e1317}{CARATTERI}}\mbox{]}, int scelta)
+\begin{DoxyCompactList}\small\item\em La procedura ha come input una stringa \char`\"{}ricerca\char`\"{} contenente il nome/colore/codice del gadget da cui visualizzare le informazioni. A seconda del contenuto del parametro \char`\"{}scelta\char`\"{}, la ricerca avverra\textquotesingle{} per nome (0) codice(1) o colore(2). La funzione visualizzera\textquotesingle{} ogni record nel file \char`\"{}file\+\_\+gadget\char`\"{} che avra\textquotesingle{} in comune una sottostringa con il parametro dato in input. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{gestione__file_8h_a15066710ca41030b53dcc79bef97ba0a}{restituisci\+\_\+gadget}} (char ricerca\mbox{[}\mbox{\hyperlink{strutture_8h_aab0b4ae424f7c60206f58fb67f5e1317}{CARATTERI}}\mbox{]}, \mbox{\hyperlink{structgadget__t}{gadget\+\_\+t}} $\ast$risultato\+\_\+gadget, int scelta)
+\begin{DoxyCompactList}\small\item\em La funzione ha come input (per riferimento) una struct \mbox{\hyperlink{structgadget__t}{gadget\+\_\+t}} \char`\"{}risultato\+\_\+gadget\char`\"{} e una stringa \char`\"{}ricerca\char`\"{} contenente il nome del gadget da cui ottenere le informazioni. A seconda del valore del parametro \char`\"{}scelta\char`\"{}, la ricerca puo\textquotesingle{} avvenire per nome(0) o per codice(1). La funzione legge ogni record contenente nel file \char`\"{}file\+\_\+gadget\char`\"{} assegnando il valore letto a una struct \mbox{\hyperlink{structgadget__t}{gadget\+\_\+t}} di appoggio, comparando il nome o il codice della struct ottenuta con quello da ricercare, finche\textquotesingle{} esso non viene trovato. Una volta trovato, la funzione interrompe la lettura, assegna la struct di appoggio a \char`\"{}risultato\+\_\+gadget\char`\"{} e ritorna un valore pari ad \char`\"{}1\char`\"{}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{gestione__file_8h_a96f528b92da2ef07807f84cef8cffe66}{cancella\+\_\+gadget}} (char $\ast$gadget)
+\begin{DoxyCompactList}\small\item\em Funzione che avendo come input una stringa \char`\"{}gadget\char`\"{} contenente il codice del gadget da cancellare, legge ogni record presente nel file \char`\"{}file\+\_\+gadget\char`\"{} assegnandoli ad una struct di appoggioed in seguito riscrivendoli su un secondo file. Il record che avra\textquotesingle{} lo stesso codice del parametro dato in input non verra\textquotesingle{} riscritto. Verra\textquotesingle{} in seguito cancellato il vecchio \char`\"{}file\+\_\+gadget\char`\"{} e verra\textquotesingle{} rinominato in \char`\"{}file\+\_\+gadget\char`\"{} il nuovo file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{gestione__file_8h_ab7f6f4b651ed65634302161e39b25b64}{cancella\+\_\+cliente}} (char $\ast$username)
+\begin{DoxyCompactList}\small\item\em Funzione che avendo come input una stringa \char`\"{}username\char`\"{} contenente l\textquotesingle{}username dell\textquotesingle{}utente da cancellare, legge ogni record presente nel file \char`\"{}file\+\_\+clienti\char`\"{} assegnandoli ad una struct di appoggio ed in seguito riscrivendoli su un secondo file. Il record che avra\textquotesingle{} lo stesso username del parametro dato in input non verra\textquotesingle{} riscritto. Verra\textquotesingle{} in seguito cancellato il vecchio \char`\"{}file\+\_\+clienti\char`\"{} e verra\textquotesingle{} rinominato in \char`\"{}file\+\_\+clienti\char`\"{} il nuovo file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gestione__file_8h_a69ef63a4311b3baff481cd4fc0a6ee83}{visualizza\+\_\+ordini\+\_\+cliente}} (char $\ast$username)
+\begin{DoxyCompactList}\small\item\em Procedura che avendo come input una stringa \char`\"{}username\char`\"{} contenente l\textquotesingle{}username dell\textquotesingle{}utente di cui visualizzare gli ordini, legge ogni record presente nel file \char`\"{}file\+\_\+ordini\char`\"{} assegnandoli ad una struct di appoggio. Se il nome dell\textquotesingle{}ordine contenuto nella struct di appoggio e\textquotesingle{} uguale al parametro dato in input allora verranno visualizzati le informazioni di quell\textquotesingle{}ordine. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gestione__file_8h_af4865bddcc0ebd0c8049f919892bc913}{restituisci\+ALL\+\_\+gadget}} ()
+\begin{DoxyCompactList}\small\item\em Procedura che visualizza tutti i gadget presenti nel file \char`\"{}file\+\_\+gadget\char`\"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gestione__file_8h_a69ad3be750674092ec03dc4fb2853894}{visualizza\+\_\+piu\+\_\+venduti}} ()
+\begin{DoxyCompactList}\small\item\em Procedura che leggendo tutti i gadget presenti nel file \char`\"{}file\+\_\+gadget\char`\"{} e assegnandoli ad una struct di appoggio, memorizza in 3 variabili d\textquotesingle{}appoggio i gadget con il valore piu\textquotesingle{} alto nel parametro \char`\"{}venduti\char`\"{} in maniera decrescente. Infine essi vengono visualizzati. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{gestione__file_8h_a6e6b6159ec076eb4d8164a81801864e3}{restituisci\+\_\+ordine}} (char $\ast$codice\+\_\+ordine, \mbox{\hyperlink{structordine__t}{ordine\+\_\+t}} $\ast$risultato\+\_\+ordine)
+\begin{DoxyCompactList}\small\item\em La funzione ha come input (per riferimento) una struct \mbox{\hyperlink{structordine__t}{ordine\+\_\+t}} \char`\"{}risultato\+\_\+ordine\char`\"{} e una stringa \char`\"{}codice\+\_\+ordine\char`\"{} contenente il codice dell\textquotesingle{} ordine da cui ottenere le informazioni. La funzione legge ogni record contenente nel file \char`\"{}file\+\_\+ordini\char`\"{} assegnando il valore letto a una struct \mbox{\hyperlink{structordine__t}{ordine\+\_\+t}} di appoggio, comparando il codice della struct ottenuta con quello da ricercare, finche\textquotesingle{} esso non viene trovato. Una volta trovato, la funzione interrompe la lettura, assegna la struct di appoggio a \char`\"{}risultato\+\_\+ordine\char`\"{} e ritorna un valore pari ad \char`\"{}1\char`\"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gestione__file_8h_a82efb5997f92c5314b44cbc6acf1a630}{approva\+\_\+ordini}} ()
+\begin{DoxyCompactList}\small\item\em Procedura legge tutti i record presenti nel file \char`\"{}file\+\_\+ordini\char`\"{} assegnandoli ad una struct \mbox{\hyperlink{structordine__t}{ordine\+\_\+t}} di appoggio, visualizzando gli ordini che possiedono il parametro stato equivalente a \char`\"{}0\char`\"{}. Successivamente inserendo il codice di un ordine puo\textquotesingle{} decidere se approvarlo (1) o rifiutarlo (2). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{gestione__file_8h_a1d3d50ac5c975b4e6e6bf43073d2372b}{modifica\+\_\+stato\+\_\+ordine}} (char $\ast$cod\+\_\+ordine, int stato)
+\begin{DoxyCompactList}\small\item\em Funzione che avendo come input una stringa \char`\"{}cod\+\_\+ordine\char`\"{} contenente il codice dell\textquotesingle{}ordine da modificare e il parametro \char`\"{}stato\char`\"{} contenente il valore del nuovo stato, legge ogni record presente nel file \char`\"{}file\+\_\+ordini\char`\"{} assegnandoli ad una struct di appoggio. Il record che avra\textquotesingle{} lo stesso codice del parametro \char`\"{}cod\+\_\+ordine\char`\"{} dato in input verra\textquotesingle{} modificato con il nuovo stato. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{gestione__file_8h_a9b9304a7c4e461919963dfbc351e1c5a}\label{gestione__file_8h_a9b9304a7c4e461919963dfbc351e1c5a}} 
+\index{gestione\_file.h@{gestione\_file.h}!apertura\_file@{apertura\_file}}
+\index{apertura\_file@{apertura\_file}!gestione\_file.h@{gestione\_file.h}}
+\doxysubsubsection{\texorpdfstring{apertura\_file()}{apertura\_file()}}
+{\footnotesize\ttfamily void apertura\+\_\+file (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Procedura incaricata di aprire i file del programma, comunicando eventualmente delle criticita\textquotesingle{}. 
+
+\mbox{\Hypertarget{gestione__file_8h_a82efb5997f92c5314b44cbc6acf1a630}\label{gestione__file_8h_a82efb5997f92c5314b44cbc6acf1a630}} 
+\index{gestione\_file.h@{gestione\_file.h}!approva\_ordini@{approva\_ordini}}
+\index{approva\_ordini@{approva\_ordini}!gestione\_file.h@{gestione\_file.h}}
+\doxysubsubsection{\texorpdfstring{approva\_ordini()}{approva\_ordini()}}
+{\footnotesize\ttfamily void approva\+\_\+ordini (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Procedura legge tutti i record presenti nel file \char`\"{}file\+\_\+ordini\char`\"{} assegnandoli ad una struct \mbox{\hyperlink{structordine__t}{ordine\+\_\+t}} di appoggio, visualizzando gli ordini che possiedono il parametro stato equivalente a \char`\"{}0\char`\"{}. Successivamente inserendo il codice di un ordine puo\textquotesingle{} decidere se approvarlo (1) o rifiutarlo (2). 
+
+\mbox{\Hypertarget{gestione__file_8h_ab7f6f4b651ed65634302161e39b25b64}\label{gestione__file_8h_ab7f6f4b651ed65634302161e39b25b64}} 
+\index{gestione\_file.h@{gestione\_file.h}!cancella\_cliente@{cancella\_cliente}}
+\index{cancella\_cliente@{cancella\_cliente}!gestione\_file.h@{gestione\_file.h}}
+\doxysubsubsection{\texorpdfstring{cancella\_cliente()}{cancella\_cliente()}}
+{\footnotesize\ttfamily int cancella\+\_\+cliente (\begin{DoxyParamCaption}\item[{char $\ast$}]{username }\end{DoxyParamCaption})}
+
+
+
+Funzione che avendo come input una stringa \char`\"{}username\char`\"{} contenente l\textquotesingle{}username dell\textquotesingle{}utente da cancellare, legge ogni record presente nel file \char`\"{}file\+\_\+clienti\char`\"{} assegnandoli ad una struct di appoggio ed in seguito riscrivendoli su un secondo file. Il record che avra\textquotesingle{} lo stesso username del parametro dato in input non verra\textquotesingle{} riscritto. Verra\textquotesingle{} in seguito cancellato il vecchio \char`\"{}file\+\_\+clienti\char`\"{} e verra\textquotesingle{} rinominato in \char`\"{}file\+\_\+clienti\char`\"{} il nuovo file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}\+INPUT\mbox{]}} & username\+: char\mbox{[}50\mbox{]} \\
+\hline
+{\em \mbox{[}\+OTPUT\mbox{]}} & esito\+: int \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 1} & Se l\textquotesingle{}inserimento e\textquotesingle{} stato completato. \\
+\hline
+{\em 0} & Se si e\textquotesingle{} presentato un errore. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{gestione__file_8h_a96f528b92da2ef07807f84cef8cffe66}\label{gestione__file_8h_a96f528b92da2ef07807f84cef8cffe66}} 
+\index{gestione\_file.h@{gestione\_file.h}!cancella\_gadget@{cancella\_gadget}}
+\index{cancella\_gadget@{cancella\_gadget}!gestione\_file.h@{gestione\_file.h}}
+\doxysubsubsection{\texorpdfstring{cancella\_gadget()}{cancella\_gadget()}}
+{\footnotesize\ttfamily int cancella\+\_\+gadget (\begin{DoxyParamCaption}\item[{char $\ast$}]{gadget }\end{DoxyParamCaption})}
+
+
+
+Funzione che avendo come input una stringa \char`\"{}gadget\char`\"{} contenente il codice del gadget da cancellare, legge ogni record presente nel file \char`\"{}file\+\_\+gadget\char`\"{} assegnandoli ad una struct di appoggioed in seguito riscrivendoli su un secondo file. Il record che avra\textquotesingle{} lo stesso codice del parametro dato in input non verra\textquotesingle{} riscritto. Verra\textquotesingle{} in seguito cancellato il vecchio \char`\"{}file\+\_\+gadget\char`\"{} e verra\textquotesingle{} rinominato in \char`\"{}file\+\_\+gadget\char`\"{} il nuovo file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}\+INPUT\mbox{]}} & gadget\+: char\mbox{[}6\mbox{]} \\
+\hline
+{\em \mbox{[}\+OTPUT\mbox{]}} & esito\+: int \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 1} & Se l\textquotesingle{}inserimento e\textquotesingle{} stato completato. \\
+\hline
+{\em 0} & Se si e\textquotesingle{} presentato un errore. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{gestione__file_8h_aed9f88cb55c36aa7d4a48a41c4d6ceba}\label{gestione__file_8h_aed9f88cb55c36aa7d4a48a41c4d6ceba}} 
+\index{gestione\_file.h@{gestione\_file.h}!inserisci\_cliente@{inserisci\_cliente}}
+\index{inserisci\_cliente@{inserisci\_cliente}!gestione\_file.h@{gestione\_file.h}}
+\doxysubsubsection{\texorpdfstring{inserisci\_cliente()}{inserisci\_cliente()}}
+{\footnotesize\ttfamily int inserisci\+\_\+cliente (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcliente__t}{cliente\+\_\+t}}}]{xcliente }\end{DoxyParamCaption})}
+
+
+
+Funzione che avendo come input una struct \mbox{\hyperlink{structcliente__t}{cliente\+\_\+t}}, inserisce un record nel file \char`\"{}file\+\_\+clienti\char`\"{}. Ritorna come valore \char`\"{}1\char`\"{} se e\textquotesingle{} stato inserito con successo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}\+INPUT\mbox{]}} & xcliente\+: \mbox{\hyperlink{structcliente__t}{cliente\+\_\+t}} \\
+\hline
+{\em \mbox{[}\+OTPUT\mbox{]}} & esito\+: int \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 1} & Se l\textquotesingle{}inserimento e\textquotesingle{} stato completato. \\
+\hline
+{\em 0} & Se si e\textquotesingle{} presentato un errore. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{gestione__file_8h_a4fc52c462c1d2fd43ff452250a0bb6b6}\label{gestione__file_8h_a4fc52c462c1d2fd43ff452250a0bb6b6}} 
+\index{gestione\_file.h@{gestione\_file.h}!inserisci\_gadget@{inserisci\_gadget}}
+\index{inserisci\_gadget@{inserisci\_gadget}!gestione\_file.h@{gestione\_file.h}}
+\doxysubsubsection{\texorpdfstring{inserisci\_gadget()}{inserisci\_gadget()}}
+{\footnotesize\ttfamily int inserisci\+\_\+gadget (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structgadget__t}{gadget\+\_\+t}}}]{xgadget }\end{DoxyParamCaption})}
+
+
+
+Funzione che avendo come input una struct \mbox{\hyperlink{structgadget__t}{gadget\+\_\+t}}, inserisce un record nel file \char`\"{}file\+\_\+gadget\char`\"{}. Ritorna come valore \char`\"{}1\char`\"{} se e\textquotesingle{} stato inserito con successo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}\+INPUT\mbox{]}} & xgadget\+: \mbox{\hyperlink{structgadget__t}{gadget\+\_\+t}} \\
+\hline
+{\em \mbox{[}\+OTPUT\mbox{]}} & esito\+: int \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 1} & Se l\textquotesingle{}inserimento e\textquotesingle{} stato completato. \\
+\hline
+{\em 0} & Se si e\textquotesingle{} presentato un errore. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{gestione__file_8h_acea95340577507bc3219aa22ec740769}\label{gestione__file_8h_acea95340577507bc3219aa22ec740769}} 
+\index{gestione\_file.h@{gestione\_file.h}!inserisci\_ordine@{inserisci\_ordine}}
+\index{inserisci\_ordine@{inserisci\_ordine}!gestione\_file.h@{gestione\_file.h}}
+\doxysubsubsection{\texorpdfstring{inserisci\_ordine()}{inserisci\_ordine()}}
+{\footnotesize\ttfamily int inserisci\+\_\+ordine (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structordine__t}{ordine\+\_\+t}}}]{xordine }\end{DoxyParamCaption})}
+
+
+
+Funzione che avendo come input una struct \mbox{\hyperlink{structordine__t}{ordine\+\_\+t}}, inserisce un record nel file \char`\"{}file\+\_\+ordini\char`\"{}. Ritorna come valore \char`\"{}1\char`\"{} se e\textquotesingle{} stato inserito con successo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}\+INPUT\mbox{]}} & xordine\+: \mbox{\hyperlink{structordine__t}{ordine\+\_\+t}} \\
+\hline
+{\em \mbox{[}\+OTPUT\mbox{]}} & esito\+: int \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 1} & Se l\textquotesingle{}inserimento e\textquotesingle{} stato completato. \\
+\hline
+{\em 0} & Se si e\textquotesingle{} presentato un errore. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{gestione__file_8h_a1d3d50ac5c975b4e6e6bf43073d2372b}\label{gestione__file_8h_a1d3d50ac5c975b4e6e6bf43073d2372b}} 
+\index{gestione\_file.h@{gestione\_file.h}!modifica\_stato\_ordine@{modifica\_stato\_ordine}}
+\index{modifica\_stato\_ordine@{modifica\_stato\_ordine}!gestione\_file.h@{gestione\_file.h}}
+\doxysubsubsection{\texorpdfstring{modifica\_stato\_ordine()}{modifica\_stato\_ordine()}}
+{\footnotesize\ttfamily int modifica\+\_\+stato\+\_\+ordine (\begin{DoxyParamCaption}\item[{char $\ast$}]{cod\+\_\+ordine,  }\item[{int}]{stato }\end{DoxyParamCaption})}
+
+
+
+Funzione che avendo come input una stringa \char`\"{}cod\+\_\+ordine\char`\"{} contenente il codice dell\textquotesingle{}ordine da modificare e il parametro \char`\"{}stato\char`\"{} contenente il valore del nuovo stato, legge ogni record presente nel file \char`\"{}file\+\_\+ordini\char`\"{} assegnandoli ad una struct di appoggio. Il record che avra\textquotesingle{} lo stesso codice del parametro \char`\"{}cod\+\_\+ordine\char`\"{} dato in input verra\textquotesingle{} modificato con il nuovo stato. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}\+INPUT\mbox{]}} & cod\+\_\+ordine\+: char\mbox{[}50\mbox{]} \\
+\hline
+{\em \mbox{[}\+INPUT\mbox{]}} & stato\+: int \\
+\hline
+{\em \mbox{[}\+OTPUT\mbox{]}} & esito\+: int \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 1} & Se l\textquotesingle{}inserimento e\textquotesingle{} stato completato. \\
+\hline
+{\em 0} & Se si e\textquotesingle{} presentato un errore. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{gestione__file_8h_ad65ec79cc1f577ca29541e8b5c5900ad}\label{gestione__file_8h_ad65ec79cc1f577ca29541e8b5c5900ad}} 
+\index{gestione\_file.h@{gestione\_file.h}!restituisci\_cliente@{restituisci\_cliente}}
+\index{restituisci\_cliente@{restituisci\_cliente}!gestione\_file.h@{gestione\_file.h}}
+\doxysubsubsection{\texorpdfstring{restituisci\_cliente()}{restituisci\_cliente()}}
+{\footnotesize\ttfamily int restituisci\+\_\+cliente (\begin{DoxyParamCaption}\item[{char}]{ricerca\mbox{[}\+CARATTERI\mbox{]},  }\item[{\mbox{\hyperlink{structcliente__t}{cliente\+\_\+t}} $\ast$}]{risultato\+\_\+cliente }\end{DoxyParamCaption})}
+
+
+
+La funzione ha come input (per riferimento) una struct \mbox{\hyperlink{structcliente__t}{cliente\+\_\+t}} \char`\"{}risultato\+\_\+cliente\char`\"{} e una stringa \char`\"{}ricerca\char`\"{} contenente il nome del cliente da cui ottenere le informazioni. La funzione legge ogni record contenente nel file \char`\"{}file\+\_\+utenti\char`\"{} assegnando il valore letto a una struct \mbox{\hyperlink{structcliente__t}{cliente\+\_\+t}} di appoggio, comparando il nome della struct ottenuta con quello da ricercare, finche\textquotesingle{} esso non viene trovato. Una volta trovato, la funzione interrompe la lettura, assegna la struct di appoggio a \char`\"{}risultato\+\_\+cliente\char`\"{} e ritorna un valore pari ad \char`\"{}1\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}\+INPUT\mbox{]}} & ricerca\+: char\mbox{[}50\mbox{]} \\
+\hline
+{\em \mbox{[}\+INPUT\mbox{]}} & $\ast$risultato\+\_\+cliente\+: \mbox{\hyperlink{structcliente__t}{cliente\+\_\+t}} \\
+\hline
+{\em \mbox{[}\+OTPUT\mbox{]}} & trovato\+: int \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 1} & Se l\textquotesingle{}inserimento e\textquotesingle{} stato completato. \\
+\hline
+{\em 0} & Se si e\textquotesingle{} presentato un errore. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{gestione__file_8h_a15066710ca41030b53dcc79bef97ba0a}\label{gestione__file_8h_a15066710ca41030b53dcc79bef97ba0a}} 
+\index{gestione\_file.h@{gestione\_file.h}!restituisci\_gadget@{restituisci\_gadget}}
+\index{restituisci\_gadget@{restituisci\_gadget}!gestione\_file.h@{gestione\_file.h}}
+\doxysubsubsection{\texorpdfstring{restituisci\_gadget()}{restituisci\_gadget()}}
+{\footnotesize\ttfamily int restituisci\+\_\+gadget (\begin{DoxyParamCaption}\item[{char}]{ricerca\mbox{[}\+CARATTERI\mbox{]},  }\item[{\mbox{\hyperlink{structgadget__t}{gadget\+\_\+t}} $\ast$}]{risultato\+\_\+gadget,  }\item[{int}]{scelta }\end{DoxyParamCaption})}
+
+
+
+La funzione ha come input (per riferimento) una struct \mbox{\hyperlink{structgadget__t}{gadget\+\_\+t}} \char`\"{}risultato\+\_\+gadget\char`\"{} e una stringa \char`\"{}ricerca\char`\"{} contenente il nome del gadget da cui ottenere le informazioni. A seconda del valore del parametro \char`\"{}scelta\char`\"{}, la ricerca puo\textquotesingle{} avvenire per nome(0) o per codice(1). La funzione legge ogni record contenente nel file \char`\"{}file\+\_\+gadget\char`\"{} assegnando il valore letto a una struct \mbox{\hyperlink{structgadget__t}{gadget\+\_\+t}} di appoggio, comparando il nome o il codice della struct ottenuta con quello da ricercare, finche\textquotesingle{} esso non viene trovato. Una volta trovato, la funzione interrompe la lettura, assegna la struct di appoggio a \char`\"{}risultato\+\_\+gadget\char`\"{} e ritorna un valore pari ad \char`\"{}1\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}\+INPUT\mbox{]}} & ricerca\+: char\mbox{[}50\mbox{]} \\
+\hline
+{\em \mbox{[}\+INPUT\mbox{]}} & $\ast$risultato\+\_\+gadget\+: \mbox{\hyperlink{structgadget__t}{gadget\+\_\+t}} \\
+\hline
+{\em \mbox{[}\+INPUT\mbox{]}} & scelta\+: int \\
+\hline
+{\em \mbox{[}\+OTPUT\mbox{]}} & trovato\+: int \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 1} & Se l\textquotesingle{}inserimento e\textquotesingle{} stato completato. \\
+\hline
+{\em 0} & Se si e\textquotesingle{} presentato un errore. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{gestione__file_8h_a6e6b6159ec076eb4d8164a81801864e3}\label{gestione__file_8h_a6e6b6159ec076eb4d8164a81801864e3}} 
+\index{gestione\_file.h@{gestione\_file.h}!restituisci\_ordine@{restituisci\_ordine}}
+\index{restituisci\_ordine@{restituisci\_ordine}!gestione\_file.h@{gestione\_file.h}}
+\doxysubsubsection{\texorpdfstring{restituisci\_ordine()}{restituisci\_ordine()}}
+{\footnotesize\ttfamily int restituisci\+\_\+ordine (\begin{DoxyParamCaption}\item[{char $\ast$}]{codice\+\_\+ordine,  }\item[{\mbox{\hyperlink{structordine__t}{ordine\+\_\+t}} $\ast$}]{risultato\+\_\+ordine }\end{DoxyParamCaption})}
+
+
+
+La funzione ha come input (per riferimento) una struct \mbox{\hyperlink{structordine__t}{ordine\+\_\+t}} \char`\"{}risultato\+\_\+ordine\char`\"{} e una stringa \char`\"{}codice\+\_\+ordine\char`\"{} contenente il codice dell\textquotesingle{} ordine da cui ottenere le informazioni. La funzione legge ogni record contenente nel file \char`\"{}file\+\_\+ordini\char`\"{} assegnando il valore letto a una struct \mbox{\hyperlink{structordine__t}{ordine\+\_\+t}} di appoggio, comparando il codice della struct ottenuta con quello da ricercare, finche\textquotesingle{} esso non viene trovato. Una volta trovato, la funzione interrompe la lettura, assegna la struct di appoggio a \char`\"{}risultato\+\_\+ordine\char`\"{} e ritorna un valore pari ad \char`\"{}1\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}\+INPUT\mbox{]}} & codice\+\_\+ordine\+: char\mbox{[}50\mbox{]} \\
+\hline
+{\em \mbox{[}\+INPUT\mbox{]}} & $\ast$risultato\+\_\+ordine\+: \mbox{\hyperlink{structordine__t}{ordine\+\_\+t}} \\
+\hline
+{\em \mbox{[}\+OTPUT\mbox{]}} & trovato\+: int \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 1} & Se l\textquotesingle{}inserimento e\textquotesingle{} stato completato. \\
+\hline
+{\em 0} & Se si e\textquotesingle{} presentato un errore. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{gestione__file_8h_af4865bddcc0ebd0c8049f919892bc913}\label{gestione__file_8h_af4865bddcc0ebd0c8049f919892bc913}} 
+\index{gestione\_file.h@{gestione\_file.h}!restituisciALL\_gadget@{restituisciALL\_gadget}}
+\index{restituisciALL\_gadget@{restituisciALL\_gadget}!gestione\_file.h@{gestione\_file.h}}
+\doxysubsubsection{\texorpdfstring{restituisciALL\_gadget()}{restituisciALL\_gadget()}}
+{\footnotesize\ttfamily void restituisci\+ALL\+\_\+gadget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Procedura che visualizza tutti i gadget presenti nel file \char`\"{}file\+\_\+gadget\char`\"{}. 
+
+\mbox{\Hypertarget{gestione__file_8h_adb0b57cf56452a115671a4ea16e7f042}\label{gestione__file_8h_adb0b57cf56452a115671a4ea16e7f042}} 
+\index{gestione\_file.h@{gestione\_file.h}!ricerca\_gadget@{ricerca\_gadget}}
+\index{ricerca\_gadget@{ricerca\_gadget}!gestione\_file.h@{gestione\_file.h}}
+\doxysubsubsection{\texorpdfstring{ricerca\_gadget()}{ricerca\_gadget()}}
+{\footnotesize\ttfamily void ricerca\+\_\+gadget (\begin{DoxyParamCaption}\item[{char}]{ricerca\mbox{[}\+CARATTERI\mbox{]},  }\item[{int}]{scelta }\end{DoxyParamCaption})}
+
+
+
+La procedura ha come input una stringa \char`\"{}ricerca\char`\"{} contenente il nome/colore/codice del gadget da cui visualizzare le informazioni. A seconda del contenuto del parametro \char`\"{}scelta\char`\"{}, la ricerca avverra\textquotesingle{} per nome (0) codice(1) o colore(2). La funzione visualizzera\textquotesingle{} ogni record nel file \char`\"{}file\+\_\+gadget\char`\"{} che avra\textquotesingle{} in comune una sottostringa con il parametro dato in input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}\+INPUT\mbox{]}} & ricerca\+: char\mbox{[}50\mbox{]} \\
+\hline
+{\em \mbox{[}\+INPUT\mbox{]}} & scelta\+: int \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{gestione__file_8h_a69ef63a4311b3baff481cd4fc0a6ee83}\label{gestione__file_8h_a69ef63a4311b3baff481cd4fc0a6ee83}} 
+\index{gestione\_file.h@{gestione\_file.h}!visualizza\_ordini\_cliente@{visualizza\_ordini\_cliente}}
+\index{visualizza\_ordini\_cliente@{visualizza\_ordini\_cliente}!gestione\_file.h@{gestione\_file.h}}
+\doxysubsubsection{\texorpdfstring{visualizza\_ordini\_cliente()}{visualizza\_ordini\_cliente()}}
+{\footnotesize\ttfamily void visualizza\+\_\+ordini\+\_\+cliente (\begin{DoxyParamCaption}\item[{char $\ast$}]{username }\end{DoxyParamCaption})}
+
+
+
+Procedura che avendo come input una stringa \char`\"{}username\char`\"{} contenente l\textquotesingle{}username dell\textquotesingle{}utente di cui visualizzare gli ordini, legge ogni record presente nel file \char`\"{}file\+\_\+ordini\char`\"{} assegnandoli ad una struct di appoggio. Se il nome dell\textquotesingle{}ordine contenuto nella struct di appoggio e\textquotesingle{} uguale al parametro dato in input allora verranno visualizzati le informazioni di quell\textquotesingle{}ordine. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}\+INPUT\mbox{]}} & username\+: char\mbox{[}50\mbox{]} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{gestione__file_8h_a69ad3be750674092ec03dc4fb2853894}\label{gestione__file_8h_a69ad3be750674092ec03dc4fb2853894}} 
+\index{gestione\_file.h@{gestione\_file.h}!visualizza\_piu\_venduti@{visualizza\_piu\_venduti}}
+\index{visualizza\_piu\_venduti@{visualizza\_piu\_venduti}!gestione\_file.h@{gestione\_file.h}}
+\doxysubsubsection{\texorpdfstring{visualizza\_piu\_venduti()}{visualizza\_piu\_venduti()}}
+{\footnotesize\ttfamily void visualizza\+\_\+piu\+\_\+venduti (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Procedura che leggendo tutti i gadget presenti nel file \char`\"{}file\+\_\+gadget\char`\"{} e assegnandoli ad una struct di appoggio, memorizza in 3 variabili d\textquotesingle{}appoggio i gadget con il valore piu\textquotesingle{} alto nel parametro \char`\"{}venduti\char`\"{} in maniera decrescente. Infine essi vengono visualizzati. 
+

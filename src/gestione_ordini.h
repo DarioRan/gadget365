@@ -27,10 +27,10 @@ void effettua_ordine(char* username);
  *
  * Funzione che a seconda dei gadget presenti nell'ordine, utilizza la funzione "restituisci_gadget" per ottenere i gadget desitderati in una struct di appoggio gadget_t per poi andare a modificare le giacenze e il numero di gadget venduti. Quindi in seguito cancella il gadget dal file "file_gadget" e inserisce la struct con le modifiche.
  * @param[INPUT] xordine: ordine_t
+ * @param[OUTPUT] esitofinale: int
  * @retval "0" Se l'inserimento e' stato completato.
  * @retval "1" Se si e' presentato un errore.
  */
-
 int emetti_ordine(ordine_t xordine);
 
 

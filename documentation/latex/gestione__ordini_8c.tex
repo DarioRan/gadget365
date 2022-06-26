@@ -1,0 +1,52 @@
+\hypertarget{gestione__ordini_8c}{}\doxysection{C\+:/\+Users/1drom/\+One\+Drive/\+Documenti/\+Git\+Hub/gadget365/src/gestione\+\_\+ordini.c File Reference}
+\label{gestione__ordini_8c}\index{C:/Users/1drom/OneDrive/Documenti/GitHub/gadget365/src/gestione\_ordini.c@{C:/Users/1drom/OneDrive/Documenti/GitHub/gadget365/src/gestione\_ordini.c}}
+{\ttfamily \#include \char`\"{}gestione\+\_\+ordini.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{gestione__ordini_8c_a335bb0bbdce58d21cba3e57b2d48c7da}{effettua\+\_\+ordine}} (char $\ast$username)
+\begin{DoxyCompactList}\small\item\em Procedura incaricata di assemblare ed inserire nel file \char`\"{}file\+\_\+ordini\char`\"{} un nuovo ordine. Tramite una struct di appoggio \mbox{\hyperlink{structgadget__t}{gadget\+\_\+t}}, utilizzando la funzione \char`\"{}restituisci\+\_\+gadget\char`\"{} ottiene le informazioni dei gadget acquistati utilizzandole per comporre l\textquotesingle{}ordine. Verranno dunque aggiornati i parametri della struct \mbox{\hyperlink{structordine__t}{ordine\+\_\+t}} la quale verra\textquotesingle{} inserita sotto forma di record nel file \char`\"{}file\+\_\+ordini\char`\"{}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{gestione__ordini_8c_ab04ebb6a3e4aaa112c281be4bc0492f7}{emetti\+\_\+ordine}} (\mbox{\hyperlink{structordine__t}{ordine\+\_\+t}} xordine)
+\begin{DoxyCompactList}\small\item\em Funzione che a seconda dei gadget presenti nell\textquotesingle{}ordine, utilizza la funzione \char`\"{}restituisci\+\_\+gadget\char`\"{} per ottenere i gadget desitderati in una struct di appoggio \mbox{\hyperlink{structgadget__t}{gadget\+\_\+t}} per poi andare a modificare le giacenze e il numero di gadget venduti. Quindi in seguito cancella il gadget dal file \char`\"{}file\+\_\+gadget\char`\"{} e inserisce la struct con le modifiche. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{gestione__ordini_8c_a335bb0bbdce58d21cba3e57b2d48c7da}\label{gestione__ordini_8c_a335bb0bbdce58d21cba3e57b2d48c7da}} 
+\index{gestione\_ordini.c@{gestione\_ordini.c}!effettua\_ordine@{effettua\_ordine}}
+\index{effettua\_ordine@{effettua\_ordine}!gestione\_ordini.c@{gestione\_ordini.c}}
+\doxysubsubsection{\texorpdfstring{effettua\_ordine()}{effettua\_ordine()}}
+{\footnotesize\ttfamily void effettua\+\_\+ordine (\begin{DoxyParamCaption}\item[{char $\ast$}]{username }\end{DoxyParamCaption})}
+
+
+
+Procedura incaricata di assemblare ed inserire nel file \char`\"{}file\+\_\+ordini\char`\"{} un nuovo ordine. Tramite una struct di appoggio \mbox{\hyperlink{structgadget__t}{gadget\+\_\+t}}, utilizzando la funzione \char`\"{}restituisci\+\_\+gadget\char`\"{} ottiene le informazioni dei gadget acquistati utilizzandole per comporre l\textquotesingle{}ordine. Verranno dunque aggiornati i parametri della struct \mbox{\hyperlink{structordine__t}{ordine\+\_\+t}} la quale verra\textquotesingle{} inserita sotto forma di record nel file \char`\"{}file\+\_\+ordini\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}\+INPUT\mbox{]}} & username\+: char$\ast$ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{gestione__ordini_8c_ab04ebb6a3e4aaa112c281be4bc0492f7}\label{gestione__ordini_8c_ab04ebb6a3e4aaa112c281be4bc0492f7}} 
+\index{gestione\_ordini.c@{gestione\_ordini.c}!emetti\_ordine@{emetti\_ordine}}
+\index{emetti\_ordine@{emetti\_ordine}!gestione\_ordini.c@{gestione\_ordini.c}}
+\doxysubsubsection{\texorpdfstring{emetti\_ordine()}{emetti\_ordine()}}
+{\footnotesize\ttfamily int emetti\+\_\+ordine (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structordine__t}{ordine\+\_\+t}}}]{xordine }\end{DoxyParamCaption})}
+
+
+
+Funzione che a seconda dei gadget presenti nell\textquotesingle{}ordine, utilizza la funzione \char`\"{}restituisci\+\_\+gadget\char`\"{} per ottenere i gadget desitderati in una struct di appoggio \mbox{\hyperlink{structgadget__t}{gadget\+\_\+t}} per poi andare a modificare le giacenze e il numero di gadget venduti. Quindi in seguito cancella il gadget dal file \char`\"{}file\+\_\+gadget\char`\"{} e inserisce la struct con le modifiche. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}\+INPUT\mbox{]}} & xordine\+: \mbox{\hyperlink{structordine__t}{ordine\+\_\+t}} \\
+\hline
+{\em \mbox{[}\+OUTPUT\mbox{]}} & esitofinale\+: int \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & Se l\textquotesingle{}inserimento e\textquotesingle{} stato completato. \\
+\hline
+{\em 1} & Se si e\textquotesingle{} presentato un errore. \\
+\hline
+\end{DoxyRetVals}

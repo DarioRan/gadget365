@@ -129,7 +129,7 @@ void modifica_gadget_utente()
 			break;
 		case 3:
 			//COLORE
-			printf("\n|Inserire Descrizione Gadget: ");
+			printf("\n|Inserire Colore Gadget: ");
 			fflush(stdin);
 			fgets(stringa_modifica,CARATTERI,stdin);
 			strcpy(xgad.colore,stringa_modifica);
