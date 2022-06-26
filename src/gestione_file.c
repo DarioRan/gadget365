@@ -488,14 +488,15 @@ int input_scelta()
 	scelta_intero=(int)a;
 	while(48>=scelta_intero || scelta_intero>=57)
 	{
+		fflush(stdin);
+		scanf("%s",scelta);
+		while(strlen(scelta)>1)
+		{
+			printf("Inserire scelta valida! \n");
 			fflush(stdin);
 			scanf("%s",scelta);
-			while(strlen(scelta)>1)
-			{
-				printf("Inserire scelta valida! \n");
-				fflush(stdin);
-				scanf("%s",scelta);
-			}
+		}
+		a=scelta[0];
 		scelta_intero=(int)a;
 
 
