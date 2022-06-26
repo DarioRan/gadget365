@@ -480,8 +480,9 @@ int input_scelta()
 	scanf("%s",scelta);
 	while(strlen(scelta)>1)
 	{
-		printf("Inserire scelta valida! \n");
+		printf("\n|Inserire scelta valida. \n");
 		fflush(stdin);
+		printf("\nInserire scelta: ");
 		scanf("%s",scelta);
 	}
 	a=scelta[0];
@@ -492,8 +493,9 @@ int input_scelta()
 			scanf("%s",scelta);
 			while(strlen(scelta)>1)
 			{
-				printf("Inserire scelta valida! \n");
+				printf("\n|Inserire scelta valida. \n");
 				fflush(stdin);
+				printf("\nInserire scelta: ");
 				scanf("%s",scelta);
 			}
 		scelta_intero=(int)a;
