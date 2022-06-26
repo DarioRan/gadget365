@@ -21,10 +21,14 @@ int registrazione_gadget()
 	fflush(stdin);
 	printf("\n|Inserire descrizione: ");
 	fgets(xgad.desc, CARATTERI, stdin);
+	do{
 	printf("\n|Inserire prezzo cad.: ");
 	scanf("%f",&xgad.prezzo);
+	}while(xgad.prezzo<0);
+	do{
 	printf("\n|Inserire quantita' disponibile: ");
 	scanf("%d",&xgad.quantita);
+    }while(xgad.quantita<0);
 	xgad.venduti=0;
 	itoa(rand(),codice,10);
 	strcpy(xgad.cod_gadget,codice);

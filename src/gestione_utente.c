@@ -160,5 +160,13 @@ void modifica_cliente(char username_corrente[CARATTERI])
 		}
 		break;
 
+	default:
+		if(scelta!=4)
+		{
+		printf("\n|Inserire scelta valida!|");
+		}
+		break;
+
+
 	}
 }

@@ -29,8 +29,11 @@ void effettua_ordine(char* username){
 		if(esito==1)
 		{
 			visualizza_gadget(xgad);
+			do{
 			printf("\n\n|Inserire quantita gadget: ");
 			scanf("%d",&ordine.articoli_ordine[n_articolo].quantita);
+			}while(ordine.articoli_ordine[n_articolo].quantita<0);
+
 			if(xgad.quantita>=ordine.articoli_ordine[n_articolo].quantita && ordine.stato==1)
 			{
 				ordine.stato=1;
