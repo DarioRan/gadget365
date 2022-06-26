@@ -121,6 +121,10 @@ int main(void) {
 								if(esito==1){
 									printf("|Gadget Cancellato!");
 								}
+								else
+								{
+									printf("\n|Gadget non trovato.\n");
+								}
 								break;
 
 							case 5:
