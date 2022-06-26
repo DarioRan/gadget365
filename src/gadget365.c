@@ -89,9 +89,6 @@ int main(void) {
 							menu2=1;
 							break;
 
-						case 8:
-							visualizza_piu_venduti();
-							break;
 
 						default:
 
