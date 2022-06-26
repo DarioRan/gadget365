@@ -11,6 +11,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
+
 #include "strutture.h"
 #include "gestione_file.h"
 #include "visualizzazione.h"

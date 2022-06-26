@@ -8,15 +8,18 @@
 #ifndef GESTIONE_ORDINI_H_
 #define GESTIONE_ORDINI_H_
 
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+
 #include "strutture.h"
 #include "gestione_file.h"
 #include "gestione_gadget.h"
 #include "gestione_ordini.h"
 
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+
 /**@brief
  *
  * Procedura incaricata di assemblare ed inserire nel file "file_ordini" un nuovo ordine. Tramite una struct di appoggio gadget_t, utilizzando la funzione "restituisci_gadget" ottiene le informazioni dei gadget acquistati utilizzandole per comporre l'ordine. Verranno dunque aggiornati i parametri della struct ordine_t la quale verra' inserita sotto forma di record nel file "file_ordini".

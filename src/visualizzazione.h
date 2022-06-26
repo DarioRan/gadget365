@@ -10,8 +10,10 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+
 #include "strutture.h"
 #include "gestione_file.h"
+
 /**@brief
  *
  * Funzione incaricata di stampare a schermo il menu' principale.

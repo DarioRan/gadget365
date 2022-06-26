@@ -20,18 +20,18 @@ int main(void) {
 
 	setbuf(stdout, NULL);
 
-	char nomeutente[CARATTERI],pass[CARATTERI],utente_corrente[CARATTERI],gadget[CARATTERI],codgadget[LUNG_CODICE];
+	char nomeutente[CARATTERI],pass[CARATTERI],utente_corrente[CARATTERI],codgadget[LUNG_CODICE];
 	int menu1=0,menu2=0,menu3=0;
 	int esito;
 
-	int scelta, scelta_modifica;
+	int scelta;
 
 	apertura_file();
 	while(menu1==0)
 	{
 		inizializza_menu();
 		printf("\n Inserire scelta: ");
-		scanf("%d",&scelta);
+		scelta=input_scelta();
 
 		switch(scelta)
 		{
@@ -51,7 +51,7 @@ int main(void) {
 				while(menu2==0){
 					visualizza_menu();
 					printf("\n Inserire scelta: ");
-					scanf("%d",&scelta);
+					scelta=input_scelta();
 
 					switch(scelta)
 					{
@@ -96,7 +96,6 @@ int main(void) {
 						default:
 
 							break;
-
 					}
 				}
 			}
@@ -109,7 +108,7 @@ int main(void) {
 					while(menu3==0){
 						visualizza_menu_gestore();
 						printf("\n Inserire scelta: ");
-						scanf("%d",&scelta);
+						scelta=input_scelta();
 
 						switch(scelta){
 						case 1:
@@ -140,8 +139,6 @@ int main(void) {
 							case 8:
 								menu3=1;
 								break;
-
-
 						}
 
 					}

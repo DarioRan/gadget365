@@ -8,11 +8,6 @@
 #include "gestione_utente.h"
 
 
-
-char USERADMIN[CARATTERI]="admin_365";
-char PASSADMIN[CARATTERI]="gadget";
-
-
 int registrazione_cliente()
 {
 

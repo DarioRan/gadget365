@@ -7,11 +7,17 @@
 
 #ifndef GESTIONE_UTENTE_H_
 #define GESTIONE_UTENTE_H_
-#include "strutture.h"
-#include "gestione_file.h"
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+
+#include "strutture.h"
+#include "gestione_file.h"
+
+
+#define USERADMIN "admin_365"
+
+#define PASSADMIN "gadget"
 
 
 /**@brief

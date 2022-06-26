@@ -7,12 +7,21 @@
 
 #ifndef GESTIONE_FILE_H_
 #define GESTIONE_FILE_H_
-#include "strutture.h"
-#include "visualizzazione.h"
+
 #include <ctype.h>
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+
+#include "strutture.h"
+#include "visualizzazione.h"
+
+#define FILE_CLIENTI "clienti.csv"
+#define FILE_ORDINI "ordini.csv"
+#define FILE_GADGET "gadget.csv"
+
+
+
 /**@brief
  *
  * Procedura incaricata di aprire i file del programma, comunicando eventualmente delle criticita'.
@@ -123,7 +132,7 @@ void approva_ordini();
  */
 int modifica_stato_ordine(char* cod_ordine, int stato);
 
-
+int input_scelta();
 
 
 

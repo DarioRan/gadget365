@@ -12,9 +12,9 @@ FILE *file_ordini;
 
 void apertura_file()
 {
-	file_clienti=fopen("clienti.csv","r+b");
-	file_gadget=fopen("gadget.csv","r+b");
-	file_ordini=fopen("ordini.csv","r+b");
+	file_clienti=fopen(FILE_CLIENTI,"r+b");
+	file_gadget=fopen(FILE_GADGET,"r+b");
+	file_ordini=fopen(FILE_ORDINI,"r+b");
 
 	if(file_clienti==NULL)
 	{
@@ -27,7 +27,7 @@ void apertura_file()
 
 	if(file_gadget==NULL)
 	{
-		printf ("Errore gadget file prenotazioni\n");
+		printf ("Errore apertura file gadget\n");
 	}
 
 }
@@ -220,9 +220,9 @@ int cancella_cliente(char* username)
 
 	fclose(file_clienti);
 	fclose(temp);
-	remove("clienti.csv");
-	rename("temp.csv","clienti.csv");
-	file_clienti=fopen("clienti.csv","r+b");
+	remove(FILE_CLIENTI);
+	rename("temp.csv",FILE_CLIENTI);
+	file_clienti=fopen(FILE_CLIENTI,"r+b");
 	return esito;
 }
 
@@ -250,9 +250,9 @@ int cancella_gadget(char* gadget)
 
 	fclose(file_gadget);
 	fclose(temp);
-	remove("gadget.csv");
-	rename("temp.csv","gadget.csv");
-	file_gadget=fopen("gadget.csv","r+b");
+	remove(FILE_GADGET);
+	rename("temp.csv",FILE_GADGET);
+	file_gadget=fopen(FILE_GADGET,"r+b");
 
 	return esito;
 }
@@ -459,9 +459,9 @@ int modifica_stato_ordine(char* cod_ordine, int stato)
 
 	fclose(file_ordini);
 	fclose(temp);
-	remove("ordini.csv");
-	rename("temp.csv","ordini.csv");
-	file_ordini=fopen("ordini.csv","r+b");
+	remove(FILE_ORDINI);
+	rename("temp.csv",FILE_ORDINI);
+	file_ordini=fopen(FILE_ORDINI,"r+b");
 
 	if(esito==1&&(stato==0 ||stato==1 || stato==2))
 	{
@@ -471,5 +471,25 @@ int modifica_stato_ordine(char* cod_ordine, int stato)
 	return esito;
 }
 
+int input_scelta()
+{
+	char scelta;
+	int scelta_intero;
+	fflush(stdin);
+	scanf("%c",&scelta);
+	scelta_intero=(int)scelta;
+	while(48>=scelta_intero || scelta_intero>=57)
+	{
+		printf("Inserire scelta valida! \n");
+		fflush(stdin);
+		scanf("%c",&scelta);
+		scelta_intero=(int)scelta;
+	}
+	scelta_intero-=48;
+
+	return scelta_intero;
+
+
+}
 
 

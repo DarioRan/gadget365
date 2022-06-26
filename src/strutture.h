@@ -7,6 +7,7 @@
 
 #ifndef STRUTTURE_H_
 #define STRUTTURE_H_
+
 #define CARATTERI 50
 #define LUNG_CODICE 6
 #define MAX_ART_ORDINE 10
