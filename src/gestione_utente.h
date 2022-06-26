@@ -42,7 +42,6 @@ void modifica_cliente(char username_corrente[CARATTERI]);
  * @param[INPUT] username_corrente: char[50]
  * @param[INPUT] scelta: int
  */
-void modifica_cliente(char username_corrente[CARATTERI],int scelta);
 
 
 

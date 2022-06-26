@@ -16,29 +16,16 @@ void apertura_file()
 	file_gadget=fopen("gadget.csv","r+b");
 	file_ordini=fopen("ordini.csv","r+b");
 
-	if(file_clienti!=NULL)
-	{
-		//printf ("File clienti aperto correttamente\n");
-	}
-	else
+	if(file_clienti==NULL)
 	{
 		printf ("Errore apertura file clienti\n");
 	}
-
-	if(file_ordini!=NULL)
-	{
-	   //printf ("File ordini aperto correttamente\n");
-	}
-	else
+	if(file_ordini==NULL)
 	{
 		printf ("Errore apertura file ordini\n");
 	}
 
-	if(file_gadget!=NULL)
-	{
-		//printf ("File gadget aperto correttamente\n");
-	}
-	else
+	if(file_gadget==NULL)
 	{
 		printf ("Errore gadget file prenotazioni\n");
 	}
@@ -124,7 +111,6 @@ int restituisci_gadget(char ricerca[CARATTERI], gadget_t* risultato_gadget, int 
 	fread(&xgadget,sizeof(gadget_t), 1, file_gadget);
 	do
 	{
-
 		if(scelta==0)
 		{
 			if(strcmp(xgadget.nome_gadget,ricerca)==0)
@@ -150,7 +136,6 @@ int restituisci_gadget(char ricerca[CARATTERI], gadget_t* risultato_gadget, int 
 			}
 		}
 
-
 	}while(!feof(file_gadget) && trovato==0);
 
 	if(trovato==1)
@@ -171,7 +156,8 @@ void ricerca_gadget(char ricerca[CARATTERI], int scelta )
 	do
 	{
 		//CONVERTE IN LOWER CASE (non case sensitive)
-		for(int i = 0; ricerca[i]; i++){
+		for(int i = 0; ricerca[i]; i++)
+		{
 			ricerca[i] = tolower(ricerca[i]);
 			nome_gadget_LOW[i] = tolower(xgadget.nome_gadget[i]);
 			colore_gadget_LOW[i] = tolower(xgadget.colore[i]);
@@ -205,7 +191,6 @@ void ricerca_gadget(char ricerca[CARATTERI], int scelta )
 			}
 			fread(&xgadget,sizeof(gadget_t), 1, file_gadget);
 			break;
-
 		}
 
 	}while(!feof(file_gadget));
@@ -238,11 +223,10 @@ int cancella_cliente(char* username)
 	remove("clienti.csv");
 	rename("temp.csv","clienti.csv");
 	file_clienti=fopen("clienti.csv","r+b");
-
 	return esito;
 }
 
-int cancella_gadget(char gadget[LUNG_CODICE])
+int cancella_gadget(char* gadget)
 {
 	int esito=0;
 	gadget_t xgadget;
@@ -292,7 +276,6 @@ void restituisciALL_gadget()
 		strcpy(codice,xgadget.cod_gadget);
 		fread(&xgadget,sizeof(gadget_t), 1, file_gadget);
 
-
 	}while(!feof(file_gadget));
 
 }
@@ -303,9 +286,12 @@ void visualizza_ordini_cliente(char* username)
 	rewind(file_ordini);
 	fread(&xordine,sizeof(ordine_t), 1, file_ordini);
 	do{
-		if(strcmp(xordine.username_cliente,username)==0){
+
+		if(strcmp(xordine.username_cliente,username)==0)
+		{
 			visualizza_ordine_recap(xordine);
 		}
+
 		fread(&xordine,sizeof(ordine_t), 1, file_ordini);
 	}while(!feof(file_ordini));
 
@@ -332,7 +318,6 @@ void visualizza_piu_venduti()
 			xgadget2=xscambio;
 
 			//scambio il secondo con il terzo
-
 			xgadget3=xgadget;
 
 		}
@@ -354,12 +339,9 @@ void visualizza_piu_venduti()
 		fread(&xgadget,sizeof(gadget_t), 1, file_gadget);
 	}while(!feof(file_gadget));
 
-
 	visualizza_gadget(xgadget1);
 	visualizza_gadget(xgadget2);
 	visualizza_gadget(xgadget3);
-
-
 
 }
 
@@ -368,15 +350,15 @@ int restituisci_ordine(char* codice_ordine, ordine_t* risultato_ordine)
 	ordine_t xordine;
 	int trovato=0;
 	rewind(file_ordini);
-		fread(&xordine,sizeof(ordine_t), 1, file_ordini);
-		do{
-			if(strcmp(xordine.cod_ordine,codice_ordine)==0){
-				trovato=1;
-			}
-			else{
+	fread(&xordine,sizeof(ordine_t), 1, file_ordini);
+	do{
+		if(strcmp(xordine.cod_ordine,codice_ordine)==0){
+			trovato=1;
+		}
+		else{
 			fread(&xordine,sizeof(ordine_t), 1, file_ordini);
-			}
-		}while(!feof(file_ordini) && trovato==0);
+		}
+	}while(!feof(file_ordini) && trovato==0);
 
 	if(trovato==1)
 	{
@@ -393,7 +375,8 @@ void approva_ordini()
 	rewind(file_ordini);
 	fread(&xordine,sizeof(ordine_t), 1, file_ordini);
 	do{
-		if(xordine.stato==0 && xordine.totale!=0){
+		if(xordine.stato==0 && xordine.totale!=0)
+		{
 			visualizza_ordine_recap(xordine);
 		}
 		fread(&xordine,sizeof(ordine_t), 1, file_ordini);
@@ -449,7 +432,6 @@ void approva_ordini()
 		}
 	}
 
-
 }
 
 int modifica_stato_ordine(char* cod_ordine, int stato)
@@ -481,7 +463,8 @@ int modifica_stato_ordine(char* cod_ordine, int stato)
 	rename("temp.csv","ordini.csv");
 	file_ordini=fopen("ordini.csv","r+b");
 
-	if(esito==1&&(stato==0 ||stato==1 || stato==2)){
+	if(esito==1&&(stato==0 ||stato==1 || stato==2))
+	{
 		xordine_trovato.stato=stato;
 		esito=inserisci_ordine(xordine_trovato);
 	}

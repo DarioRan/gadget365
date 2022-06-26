@@ -85,7 +85,7 @@ void modifica_gadget_utente()
 	int scelta;
 	int esito;
 	char gadget[CARATTERI];
-	char* stringa_modifica;
+	char stringa_modifica[CARATTERI];
 	int nuova_giacenza;
 	float prezzo;
 
@@ -106,7 +106,7 @@ void modifica_gadget_utente()
 			//NOME
 			printf("\n|Inserire Nome Gadget: ");
 			fflush(stdin);
-			fgets(stringa_modifica,CARATTERI,stdin);
+			fgets(stringa_modifica, CARATTERI, stdin);
 			strcpy(xgad.nome_gadget,stringa_modifica);
 			esito=cancella_gadget(xgad.cod_gadget);
 			if(esito==1)
@@ -151,7 +151,7 @@ void modifica_gadget_utente()
 			//GAICENZA
 			printf("\n|Inserire Giacenza Gadget: ");
 			scanf("%d",&nuova_giacenza);
-			esito=modifica_gadget(xgad,nuova_giacenza,1);
+			esito=modifica_gadget(xgad,nuova_giacenza,0);
 			break;
 		default:
 
@@ -303,11 +303,12 @@ void modifica_prezzo_gadget()
 }
 
 //0 quantità, 1 prezzo, 2 venduti
-int modifica_gadget(gadget_t xgadget,int valore, int scelta)
+int modifica_gadget(gadget_t xgadget,float valore, int scelta)
 {
 	gadget_t gadget;
 	int esito=1;
 	int esito2=0;
+	int val_intero;
 
 	gadget=xgadget;
 	//esito=restituisci_gadget(gadget, &xgadget,0);
@@ -315,12 +316,14 @@ int modifica_gadget(gadget_t xgadget,int valore, int scelta)
 		switch(scelta){
 
 		case 0:
+			val_intero= (int)valore;
 			gadget.quantita=valore;
 			break;
 		case 1:
 			gadget.prezzo=valore;
 			break;
 		case 2:
+			val_intero= (int)valore;
 			gadget.venduti=valore;
 			break;
 

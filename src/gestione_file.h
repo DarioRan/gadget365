@@ -78,7 +78,7 @@ int restituisci_gadget(char ricerca[CARATTERI], gadget_t* risultato_gadget, int 
  * @retval "1" Se l'inserimento e' stato completato.
  * @retval "0" Se si e' presentato un errore.
  */
-int cancella_gadget(char gadget[LUNG_CODICE]);
+int cancella_gadget(char* gadget);
 /**@brief
  * Funzione che avendo come input una stringa "username" contenente l'username dell'utente da cancellare, legge ogni record presente nel file "file_clienti" assegnandoli ad una struct di appoggio ed in seguito riscrivendoli su un secondo file. Il record che avra' lo stesso username del parametro dato in input non verra' riscritto. Verra' in seguito cancellato il vecchio "file_clienti" e verra' rinominato in "file_clienti" il nuovo file.
  * @param[INPUT] username: char[50]

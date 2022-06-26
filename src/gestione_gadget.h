@@ -17,7 +17,6 @@
 
 int registrazione_gadget();
 void effettua_ricerca();
-void modifica_gadget_utente();
 /**@brief
  *
  * Funzione incaricata di gestire l'input di dati riguardanti i gadget.
@@ -31,7 +30,7 @@ int registrazione_gadget();
  * Procedura che a seconda del valore del parametro "scelta", modifica un determinato parametro del gadget. **in progresso**
  * @param[INPUT] scelta: int
  */
-void modifica_gadget_utente(int scelta);
+void modifica_gadget_utente();
 /**@brief
  *
  * Procedura che a seconda del valore del parametro "scelta" inserito da tastiera, chiama la funzione ricerca_gadget nelle seguenti modalita': ricerca per nome(0), ricerca per codice(1), ricerca per colore(2).
