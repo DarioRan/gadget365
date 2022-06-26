@@ -30,7 +30,7 @@ void effettua_ordine(char* username);
  * @retval "0" Se l'inserimento e' stato completato.
  * @retval "1" Se si e' presentato un errore.
  */
- */
+
 int emetti_ordine(ordine_t xordine);
 
 
