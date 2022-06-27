@@ -172,8 +172,9 @@ void ricerca_gadget(char ricerca[CARATTERI], int scelta )
 			{
 				visualizza_gadget(xgadget);
 			}
-			fread(&xgadget,sizeof(gadget_t), 1, file_gadget);
 			strcpy(codice,xgadget.cod_gadget);
+			fread(&xgadget,sizeof(gadget_t), 1, file_gadget);
+
 			break;
 
 		case 1:
@@ -182,8 +183,9 @@ void ricerca_gadget(char ricerca[CARATTERI], int scelta )
 			{
 				visualizza_gadget(xgadget);
 			}
-			fread(&xgadget,sizeof(gadget_t), 1, file_gadget);
 			strcpy(codice,xgadget.cod_gadget);
+			fread(&xgadget,sizeof(gadget_t), 1, file_gadget);
+
 			break;
 
 		case 2:
@@ -192,8 +194,9 @@ void ricerca_gadget(char ricerca[CARATTERI], int scelta )
 			{
 				visualizza_gadget(xgadget);
 			}
-			fread(&xgadget,sizeof(gadget_t), 1, file_gadget);
 			strcpy(codice,xgadget.cod_gadget);
+			fread(&xgadget,sizeof(gadget_t), 1, file_gadget);
+
 			break;
 		}
 
