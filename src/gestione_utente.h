@@ -13,6 +13,7 @@
 
 #include "strutture.h"
 #include "gestione_file.h"
+#include "utiles.h"
 
 
 #define USERADMIN "admin_365"

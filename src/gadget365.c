@@ -42,10 +42,11 @@ int main(void) {
 		{
 
 		case 1:
-			printf("|Inserire nome utente: ");
+			puts("|Inserire nome utente: ");
 			get_stringa(nomeutente);
-			printf("|Inserire password: ");
+			puts("|Inserire password: ");
 			get_stringa(pass);
+			printf("%s %s ", nomeutente, pass);
 			esito=accesso_cliente(nomeutente,pass);
 			if(esito==1)
 			{

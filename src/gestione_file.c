@@ -69,7 +69,6 @@ int inserisci_cliente(cliente_t xcliente)
 	return esito;
 }
 
-//0 username 1 codice
 int restituisci_cliente(char ricerca[CARATTERI], cliente_t* risultato_cliente )
 {
 	cliente_t xcliente;
@@ -403,7 +402,7 @@ void approva_ordini()
 	rewind(file_ordini);
 	fread(&xordine,sizeof(ordine_t), 1, file_ordini);
 	do{
-		if(xordine.stato==0 && xordine.totale!=0)
+		if(xordine.stato==STATO_ATTESA && xordine.totale!=0)
 		{
 			visualizza_ordine_recap(xordine);
 		}
@@ -422,20 +421,20 @@ void approva_ordini()
 	}
 	else
 	{
-		if(xordine.stato==1 || xordine.stato==2)
+		if(xordine.stato==STATO_APPROVATO || xordine.stato==STATO_NON_APPROVATO)
 		{
 			printf("Ordine gia' valutato");
 		}
 		else
 		{
-			printf("1 - Approvare\n2 - Rifiutare ");
-			scanf("%d",&approvazione);
+			printf("%d - Approvare\n%d - Rifiutare ",STATO_APPROVATO, STATO_NON_APPROVATO);
+			approvazione=input_scelta();
 
-			if(approvazione==1)
+			if(approvazione==STATO_APPROVATO)
 			{
 				if(emetti_ordine(xordine)==1)
 				{
-					stato=1;
+					stato=STATO_APPROVATO;
 				}
 				else
 				{
@@ -445,13 +444,13 @@ void approva_ordini()
 			}
 			else
 			{
-				if(approvazione==2)
+				if(approvazione==STATO_NON_APPROVATO)
 				{
-					stato=2;
+					stato=STATO_NON_APPROVATO;
 				}
 
 			}
-			if(stato!=0)
+			if(stato!=STATO_ATTESA)
 			{
 				modifica_stato_ordine(xordine.cod_ordine,stato);
 				printf("Ordine aggiornato\n");

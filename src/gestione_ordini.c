@@ -19,7 +19,7 @@ void effettua_ordine(char* username){
 	gadget_t xgad;
 	ordine_t ordine;
 	ordine.totale=0;
-	ordine.stato=1;
+	ordine.stato=STATO_APPROVATO;
 
 	printf("\n| CREAZIONE ORDINE |");
 
@@ -37,12 +37,12 @@ void effettua_ordine(char* username){
 
 			if(xgad.quantita>=ordine.articoli_ordine[n_articolo].quantita && ordine.stato==1)
 			{
-				ordine.stato=1;
+				ordine.stato=STATO_APPROVATO;
 
 			}
 			else
 			{
-				ordine.stato=0;
+				ordine.stato=STATO_NON_APPROVATO;
 			}
 			ordine.articoli_ordine[n_articolo].prezzo_CAD=xgad.prezzo;
 			ordine.totale+=ordine.articoli_ordine[n_articolo].prezzo_CAD*ordine.articoli_ordine[n_articolo].quantita;
@@ -55,7 +55,7 @@ void effettua_ordine(char* username){
 		}
 		printf("\n\n|Continuare: 1, Chiudere ordine: 2, Annullare: 3 ");
 		printf("\n|Inserire scelta: ");
-		scanf("%d",&scelta);
+		scelta=input_scelta();
 
 	}
 	while(scelta==1);
@@ -82,7 +82,7 @@ void effettua_ordine(char* username){
 			printf("\n| Errore nella registrazione dell'ordine |");
 			sleep(1);
 		}
-		if (ordine.stato==1)
+		if (ordine.stato==STATO_APPROVATO)
 		{
 			emetti_ordine(ordine);
 		}
@@ -96,8 +96,10 @@ void effettua_ordine(char* username){
 
 int emetti_ordine(ordine_t xordine)
 {
-	//MODIFICARE STATO
-	int esito,esito2,esito3, esitoFinale=1;
+	int esito=0;
+	int esito2=0;
+	int esito3=0;
+	int esitoFinale=1;
 	int nuova_giacenza=0;
 	int nuova_venduti=0;
 

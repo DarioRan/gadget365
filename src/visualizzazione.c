@@ -169,13 +169,13 @@ void visualizza_ordine_recap(ordine_t xordine)
 
 	printf("- Totale: %.2f\t\n", xordine.totale);
 	printf("- Commento: %s\t\n", xordine.commento);
-	if(xordine.stato==1)
+	if(xordine.stato==STATO_APPROVATO)
 	{
 		printf("               |APPROVATO|\n");
 	}
 	else
 	{
-		if(xordine.stato==0){
+		if(xordine.stato==STATO_ATTESA){
 			printf("               |IN ATTESA|\n");
 		}
 		else{
