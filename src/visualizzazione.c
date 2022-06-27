@@ -133,8 +133,8 @@ void visualizza_gadget_recap(gadget_t xgadget)
 	printf("*---------------------------------------*\n");
 	printf("|          Codice Gadget: %s          |\n",xgadget.cod_gadget);
 	printf("*---------------------------------------*\n");
-	printf("\t  - Nome: %s\t\n",xgadget.nome_gadget);
-	printf("\t  - Colore: %s\t\n",xgadget.colore);
+	printf("|\t  - Nome: %s\t\n",xgadget.nome_gadget);
+	printf("|\t  - Colore: %s\t\n",xgadget.colore);
 	printf("*---------------------------------------*\n");
 }
 
@@ -163,6 +163,7 @@ void visualizza_ordine_recap(ordine_t xordine)
 
 		printf("\t - Quantita' ordinata: %d\t\n",xordine.articoli_ordine[i].quantita);
 		printf("\t - Prezzo CAD: %.2f\t\n", xordine.articoli_ordine[i].prezzo_CAD);
+		printf("\t======================\n");
 
 	}
 

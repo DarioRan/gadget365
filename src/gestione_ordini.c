@@ -18,13 +18,14 @@ void effettua_ordine(char* username){
 
 	gadget_t xgad;
 	ordine_t ordine;
+	ordine.totale=0;
 	ordine.stato=1;
 
 	printf("\n| CREAZIONE ORDINE |");
 
 	do{
 		printf("\n\n|Inserire codice gadget: ");
-		scanf("%s",ordine.articoli_ordine[n_articolo].cod_gadget);
+		get_stringa(ordine.articoli_ordine[n_articolo].cod_gadget);
 		esito=restituisci_gadget(ordine.articoli_ordine[n_articolo].cod_gadget,&xgad,1);
 		if(esito==1)
 		{
@@ -70,7 +71,6 @@ void effettua_ordine(char* username){
 
 		itoa(rand(),codice,10);
 		strcpy(ordine.cod_ordine,codice);
-		printf("%f", ordine.totale);
 		esito=inserisci_ordine(ordine);
 		if(esito==1)
 		{

@@ -13,22 +13,20 @@ int registrazione_gadget()
 	char codice[LUNG_CODICE];
 	int esito=0;
 	gadget_t xgad;
-	fflush(stdin);
 	printf("\n|Inserire nome gadget: ");
-	fgets(xgad.nome_gadget, CARATTERI, stdin);
+	get_stringa(xgad.nome_gadget);
 	printf("\n|Inserire colore gadget: ");
-	scanf("%s",xgad.colore);
-	fflush(stdin);
+	get_stringa(xgad.colore);
 	printf("\n|Inserire descrizione: ");
-	fgets(xgad.desc, CARATTERI, stdin);
+	get_stringa(xgad.desc);
 	do{
-	printf("\n|Inserire prezzo cad.: ");
-	scanf("%f",&xgad.prezzo);
+		printf("\n|Inserire prezzo cad.: ");
+		scanf("%f",&xgad.prezzo);
 	}while(xgad.prezzo<0);
 	do{
-	printf("\n|Inserire quantita' disponibile: ");
-	scanf("%d",&xgad.quantita);
-    }while(xgad.quantita<0);
+		printf("\n|Inserire quantita' disponibile: ");
+		scanf("%d",&xgad.quantita);
+	}while(xgad.quantita<0);
 	xgad.venduti=0;
 	itoa(rand(),codice,10);
 	strcpy(xgad.cod_gadget,codice);
@@ -58,19 +56,19 @@ void effettua_ricerca()
 	{
 	case 1:
 		printf("Inserire nome gadget: ");
-		scanf("%s",ricerca);
+		get_stringa(ricerca);
 		ricerca_gadget(ricerca,0);
 		break;
 
 	case 2:
 		printf("Inserire codice gadget: ");
-		scanf("%s",ricerca);
+		get_stringa(ricerca);
 		ricerca_gadget(ricerca,1);
 		break;
 
 	case 3:
 		printf("Inserire colore gadget: ");
-		scanf("%s",ricerca);
+		get_stringa(ricerca);
 		ricerca_gadget(ricerca,2);
 		break;
 	case 4:
@@ -99,7 +97,7 @@ void modifica_gadget_utente()
 	printf("\n Inserire scelta: ");
 	scelta=input_scelta();
 	printf("\n|Inserire Codice Gadget: ");
-	scanf("%s",gadget);
+	get_stringa(gadget);
 
 	esito=restituisci_gadget(gadget,&xgad,1);
 
@@ -184,13 +182,12 @@ void modifica_prezzo_gadget()
 	char gadget[CARATTERI];
 	float prezzo;
 	gadget_t xgadget;
-	int esito=0;
 	int esito2=0;
 	printf("\n|Inserire Nome Gadget: ");
-	scanf("%s",gadget);
+	get_stringa(gadget);
 	printf("\n|Inserire Prezzo Gadget: ");
 	scanf("%f",&prezzo);
-	esito=restituisci_gadget(gadget, &xgadget,0);
+	restituisci_gadget(gadget, &xgadget,0);
 	xgadget.prezzo=prezzo;
 	esito2=cancella_gadget(gadget);
 	esito2=inserisci_gadget(xgadget);

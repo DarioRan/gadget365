@@ -35,10 +35,8 @@ void apertura_file()
 int inserisci_gadget(gadget_t xgadget)
 {
 	int esito=0;
-	//rewind(file_utenti);
 	fseek(file_gadget, sizeof(gadget_t), SEEK_END);
-	fwrite(&xgadget,sizeof(gadget_t), 1, file_gadget);
-	esito=1;
+	esito=fwrite(&xgadget,sizeof(gadget_t), 1, file_gadget);
 	return esito;
 }
 
@@ -46,10 +44,8 @@ int inserisci_gadget(gadget_t xgadget)
 int inserisci_ordine(ordine_t xordine)
 {
 	int esito=0;
-	//rewind(file_utenti);
 	fseek(file_ordini, sizeof(ordine_t), SEEK_END);
-	fwrite(&xordine,sizeof(ordine_t), 1, file_ordini);
-	esito=1;
+	esito=fwrite(&xordine,sizeof(ordine_t), 1, file_ordini);
 	return esito;
 }
 
@@ -79,6 +75,7 @@ int restituisci_cliente(char ricerca[CARATTERI], cliente_t* risultato_cliente )
 	cliente_t xcliente;
 	int trovato=0;
 	rewind(file_clienti);
+
 	fread(&xcliente,sizeof(cliente_t), 1, file_clienti);
 	do
 	{
@@ -280,6 +277,27 @@ void restituisciALL_gadget()
 
 }
 
+void restituisciALL_ordini()
+{
+	ordine_t xordine;
+	rewind(file_ordini);
+	char codice[LUNG_CODICE]="";
+	int a=0;
+	fread(&xordine,sizeof(ordine_t), 1, file_ordini);
+	do{
+
+		a=strcmp(codice,xordine.cod_ordine);
+		if(a!=0 && xordine.n_gadget!=0 )
+		{
+			visualizza_ordine_recap(xordine);
+		}
+		strcpy(codice,xordine.cod_ordine);
+		fread(&xordine,sizeof(ordine_t), 1, file_ordini);
+
+	}while(!feof(file_ordini));
+
+}
+
 void visualizza_ordini_cliente(char* username)
 {
 	ordine_t xordine;
@@ -355,10 +373,6 @@ void visualizza_piu_venduti()
 
 
 
-
-
-
-
 int restituisci_ordine(char* codice_ordine, ordine_t* risultato_ordine)
 {
 	ordine_t xordine;
@@ -396,8 +410,8 @@ void approva_ordini()
 		fread(&xordine,sizeof(ordine_t), 1, file_ordini);
 	}while(!feof(file_ordini));
 
-	printf("|Inserire codice ordine da approvare o rifiutare: |");
-	scanf("%s",codice_ordine);
+	printf("Inserire codice ordine da approvare o rifiutare: ");
+	get_stringa(codice_ordine);
 
 	esito=restituisci_ordine(codice_ordine,&xordine);
 
@@ -485,41 +499,5 @@ int modifica_stato_ordine(char* cod_ordine, int stato)
 	return esito;
 }
 
-int input_scelta()
-{
-	char scelta[CARATTERI];
-	char a;
-	int scelta_intero;
-	fflush(stdin);
-	scanf("%s",scelta);
-	while(strlen(scelta)>1)
-	{
-		printf("\n|Inserire scelta valida. \n");
-		fflush(stdin);
-		printf("\nInserire scelta: ");
-		scanf("%s",scelta);
-	}
-	scelta_intero=(int)scelta[0];
-	while(48>=scelta_intero || scelta_intero>=57)
-	{
-		printf("\n|Inserire scelta valida. \n");
-		fflush(stdin);
-		printf("\nInserire scelta: ");
-		scanf("%s",scelta);
-		while(strlen(scelta)>1)
-		{
-			printf("Inserire scelta valida! \n");
-			fflush(stdin);
-			scanf("%s",scelta);
-		}
-		a=scelta[0];
-		scelta_intero=(int)a;
-
-	}
-	scelta_intero-=48;
-	return scelta_intero;
-
-
-}
 
 

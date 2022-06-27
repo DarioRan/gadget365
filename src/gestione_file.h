@@ -134,6 +134,8 @@ int modifica_stato_ordine(char* cod_ordine, int stato);
 
 int input_scelta();
 
+void restituisciALL_ordini();
+
 
 
 

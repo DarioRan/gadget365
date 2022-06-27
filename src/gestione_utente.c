@@ -14,17 +14,17 @@ int registrazione_cliente()
 	int esito=0;
 	cliente_t xutente;
 	printf("\n|Inserire ragione sociale: ");
-	scanf("%s",xutente.ragione_sociale);
+	get_stringa(xutente.ragione_sociale);
 	printf("\n|Inserire P. IVA: ");
-	scanf("%s",xutente.piva);
+	get_stringa(xutente.piva);
 	printf("\n|Inserire citta': ");
-	scanf("%s",xutente.citta);
+	get_stringa(xutente.citta);
 	printf("\n|Inserire email: ");
-	scanf("%s",xutente.email);
+	get_stringa(xutente.email);
 	printf("\n|Inserire username utente: ");
-	scanf("%s",xutente.username);
+	get_stringa(xutente.username);
 	printf("\n|Inserire password utente: ");
-	scanf("%s",xutente.pass);
+	get_stringa(xutente.pass);
 
 	if(inserisci_cliente(xutente)==1)
 	{
@@ -102,7 +102,7 @@ void modifica_cliente(char username_corrente[CARATTERI])
 	switch(scelta){
 	case 1:
 		printf("\n|Inserire P. Iva: ");
-		scanf("%s",mod);
+		get_stringa(mod);
 		esito=restituisci_cliente(username_corrente, &xcliente);
 		strcpy(xcliente.piva,mod);
 		esito2=cancella_cliente(username_corrente);
@@ -122,7 +122,7 @@ void modifica_cliente(char username_corrente[CARATTERI])
 
 	case 2:
 		printf("\n|Inserire Rag. Sociale: ");
-		scanf("%s",mod);
+		get_stringa(mod);
 		esito=restituisci_cliente(username_corrente, &xcliente);
 		strcpy(xcliente.ragione_sociale,mod);
 		esito2=cancella_cliente(username_corrente);
@@ -142,7 +142,7 @@ void modifica_cliente(char username_corrente[CARATTERI])
 
 	case 3:
 		printf("\n|Inserire Citta': ");
-		scanf("%s",mod);
+		get_stringa(mod);
 		esito=restituisci_cliente(username_corrente, &xcliente);
 		strcpy(xcliente.citta,mod);
 		esito2=cancella_cliente(username_corrente);

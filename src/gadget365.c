@@ -15,6 +15,7 @@
 #include "gestione_utente.h"
 #include "gestione_ordini.h"
 #include "gestione_gadget.h"
+#include "Utiles.h"
 
 int main(void) {
 
@@ -38,11 +39,10 @@ int main(void) {
 
 		case 1:
 			printf("\n|Inserire nome utente: ");
-			scanf("%s",nomeutente);
+			get_stringa(nomeutente);
 			printf("\n|Inserire password: ");
-			scanf("%s",pass);
+			get_stringa(pass);
 			esito=accesso_cliente(nomeutente,pass);
-
 			if(esito==1)
 			{
 				strcpy(utente_corrente,nomeutente);
@@ -76,23 +76,23 @@ int main(void) {
 						modifica_cliente(utente_corrente);
 						break;
 
-						case 6:
-							esito=cancella_cliente(utente_corrente);
-							if(esito==1)
-							{
-								printf("\n|Utente eliminato con successo!");
-								menu2=1;
-							}
-							break;
-
-						case 7:
+					case 6:
+						esito=cancella_cliente(utente_corrente);
+						if(esito==1)
+						{
+							printf("\n|Utente eliminato con successo!");
 							menu2=1;
-							break;
+						}
+						break;
+
+					case 7:
+						menu2=1;
+						break;
 
 
-						default:
+					default:
 
-							break;
+						break;
 					}
 				}
 			}
@@ -112,34 +112,40 @@ int main(void) {
 							registrazione_gadget();
 							break;
 						case 2:
-							 modifica_gadget_utente();
+							modifica_gadget_utente();
 							break;
-							case 3:
-								printf("\n|Inserire Codice Gadget: ");
-								scanf("%s",codgadget);
-								esito=cancella_gadget(codgadget);
-								if(esito==1){
-									printf("|Gadget Cancellato!");
-								}
-								else
-								{
-									printf("\n|Gadget non trovato.\n");
-								}
-								break;
+						case 3:
+							printf("\n|Inserire Codice Gadget: ");
+							get_stringa(codgadget);
+							esito=cancella_gadget(codgadget);
+							if(esito==1){
+								printf("|Gadget Cancellato!");
+							}
+							else
+							{
+								printf("\n|Gadget non trovato.\n");
+							}
+							break;
 
-							case 5:
-								approva_ordini();
-								break;
-							case 6:
-								restituisciALL_gadget();
-								break;
+						case 4:
+							restituisciALL_ordini();
+							break;
 
-							case 7:
-								effettua_ricerca();
-								break;
-							case 8:
-								menu3=1;
-								break;
+						case 5:
+							approva_ordini();
+							break;
+
+						case 6:
+							restituisciALL_gadget();
+							break;
+
+						case 7:
+							effettua_ricerca();
+							break;
+
+						case 8:
+							menu3=1;
+							break;
 						}
 
 					}
