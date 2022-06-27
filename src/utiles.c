@@ -11,27 +11,26 @@ int input_scelta()
 	char scelta[CARATTERI];
 	char a;
 	int scelta_intero;
-	fflush(stdin);
-	scanf("%s",scelta);
+
+	get_stringa(scelta);
 	while(strlen(scelta)>1)
 	{
 		printf("\n|Inserire scelta valida. \n");
-		fflush(stdin);
 		printf("\nInserire scelta: ");
-		scanf("%s",scelta);
+		get_stringa(scelta);
+
 	}
 	scelta_intero=(int)scelta[0];
 	while(48>=scelta_intero || scelta_intero>=57)
 	{
 		printf("\n|Inserire scelta valida. \n");
-		fflush(stdin);
 		printf("\nInserire scelta: ");
-		scanf("%s",scelta);
+		get_stringa(scelta);
 		while(strlen(scelta)>1)
 		{
 			printf("Inserire scelta valida! \n");
-			fflush(stdin);
-			scanf("%s",scelta);
+			get_stringa(scelta);
+
 		}
 		a=scelta[0];
 		scelta_intero=(int)a;
@@ -45,11 +44,9 @@ int input_scelta()
 
 void get_stringa(char stringa[CARATTERI])
 {
-	char c;
-	fflush(stdin);
-	fgets(stringa, CARATTERI, stdin);
+	//fflush_buffer();
+	fgets(stringa, CARATTERI,stdin);
 	stringa[strcspn(stringa, "\n")] = 0;
 
-
-
 }
+

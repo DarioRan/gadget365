@@ -18,10 +18,15 @@
 
 int main(void) {
 
-	setbuf(stdout, NULL);
+	setvbuf(stdout, NULL,_IONBF,0);
 
-	char nomeutente[CARATTERI],pass[CARATTERI],utente_corrente[CARATTERI],codgadget[LUNG_CODICE];
-	int menu1=0,menu2=0,menu3=0;
+	char nomeutente[CARATTERI];
+	char pass[CARATTERI];
+	char utente_corrente[CARATTERI];
+	char codgadget[LUNG_CODICE];
+	int menu1=0;
+	int menu2=0;
+	int menu3=0;
 	int esito;
 
 	int scelta;
@@ -37,9 +42,9 @@ int main(void) {
 		{
 
 		case 1:
-			printf("\n|Inserire nome utente: ");
+			printf("|Inserire nome utente: ");
 			get_stringa(nomeutente);
-			printf("\n|Inserire password: ");
+			printf("|Inserire password: ");
 			get_stringa(pass);
 			esito=accesso_cliente(nomeutente,pass);
 			if(esito==1)
