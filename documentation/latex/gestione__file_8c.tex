@@ -25,7 +25,7 @@ int \mbox{\hyperlink{gestione__file_8c_a96f528b92da2ef07807f84cef8cffe66}{cancel
 void \mbox{\hyperlink{gestione__file_8c_af4865bddcc0ebd0c8049f919892bc913}{restituisci\+ALL\+\_\+gadget}} ()
 \begin{DoxyCompactList}\small\item\em Procedura che visualizza tutti i gadget presenti nel file \char`\"{}file\+\_\+gadget\char`\"{}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{gestione__file_8c_a98edc715c69551e41e2f7704e811ecbf}{restituisci\+ALL\+\_\+ordini}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Procedura legge tutti i record presenti nel file \char`\"{}file\+\_\+ordini\char`\"{} e li visualizza. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{gestione__file_8c_a69ef63a4311b3baff481cd4fc0a6ee83}{visualizza\+\_\+ordini\+\_\+cliente}} (char $\ast$username)
 \begin{DoxyCompactList}\small\item\em Procedura che avendo come input una stringa \char`\"{}username\char`\"{} contenente l\textquotesingle{}username dell\textquotesingle{}utente di cui visualizzare gli ordini, legge ogni record presente nel file \char`\"{}file\+\_\+ordini\char`\"{} assegnandoli ad una struct di appoggio. Se il nome dell\textquotesingle{}ordine contenuto nella struct di appoggio e\textquotesingle{} uguale al parametro dato in input allora verranno visualizzati le informazioni di quell\textquotesingle{}ordine. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{gestione__file_8c_a69ad3be750674092ec03dc4fb2853894}{visualizza\+\_\+piu\+\_\+venduti}} ()
@@ -87,7 +87,7 @@ Funzione che avendo come input una stringa \char`\"{}username\char`\"{} contenen
 \end{DoxyParams}
 
 \begin{DoxyRetVals}{Return values}
-{\em 1} & Se l\textquotesingle{}inserimento e\textquotesingle{} stato completato. \\
+{\em 1} & Se e\textquotesingle{} stato cancellato. \\
 \hline
 {\em 0} & Se si e\textquotesingle{} presentato un errore. \\
 \hline
@@ -111,7 +111,7 @@ Funzione che avendo come input una stringa \char`\"{}gadget\char`\"{} contenente
 \end{DoxyParams}
 
 \begin{DoxyRetVals}{Return values}
-{\em 1} & Se l\textquotesingle{}inserimento e\textquotesingle{} stato completato. \\
+{\em 1} & Se e\textquotesingle{} stato cancellato. \\
 \hline
 {\em 0} & Se si e\textquotesingle{} presentato un errore. \\
 \hline
@@ -263,7 +263,7 @@ La funzione ha come input (per riferimento) una struct \mbox{\hyperlink{structga
 \end{DoxyParams}
 
 \begin{DoxyRetVals}{Return values}
-{\em 1} & Se l\textquotesingle{}inserimento e\textquotesingle{} stato completato. \\
+{\em 1} & Se e\textquotesingle{} stato trovato. \\
 \hline
 {\em 0} & Se si e\textquotesingle{} presentato un errore. \\
 \hline
@@ -309,6 +309,10 @@ Procedura che visualizza tutti i gadget presenti nel file \char`\"{}file\+\_\+ga
 \index{restituisciALL\_ordini@{restituisciALL\_ordini}!gestione\_file.c@{gestione\_file.c}}
 \doxysubsubsection{\texorpdfstring{restituisciALL\_ordini()}{restituisciALL\_ordini()}}
 {\footnotesize\ttfamily void restituisci\+ALL\+\_\+ordini (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Procedura legge tutti i record presenti nel file \char`\"{}file\+\_\+ordini\char`\"{} e li visualizza. 
 
 \mbox{\Hypertarget{gestione__file_8c_adb0b57cf56452a115671a4ea16e7f042}\label{gestione__file_8c_adb0b57cf56452a115671a4ea16e7f042}} 
 \index{gestione\_file.c@{gestione\_file.c}!ricerca\_gadget@{ricerca\_gadget}}
