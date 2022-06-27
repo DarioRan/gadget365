@@ -24,17 +24,19 @@ void effettua_ordine(char* username){
 	printf("\n| CREAZIONE ORDINE |");
 
 	do{
+		//inseriamo gadget nell'ordine se viene trovato
 		printf("\n\n|Inserire codice gadget: ");
 		get_stringa(ordine.articoli_ordine[n_articolo].cod_gadget);
 		esito=restituisci_gadget(ordine.articoli_ordine[n_articolo].cod_gadget,&xgad,1);
 		if(esito==1)
 		{
+			//recap gadget
 			visualizza_gadget(xgad);
 			do{
 			printf("\n\n|Inserire quantita gadget: ");
 			ordine.articoli_ordine[n_articolo].quantita=input_int();
 			}while(ordine.articoli_ordine[n_articolo].quantita<0);
-
+            //se la quantita richiesta < quella che c'è allora viene emesso se no viene messo in attesa
 			if(xgad.quantita>=ordine.articoli_ordine[n_articolo].quantita && ordine.stato==1)
 			{
 				ordine.stato=STATO_APPROVATO;
@@ -44,6 +46,7 @@ void effettua_ordine(char* username){
 			{
 				ordine.stato=STATO_ATTESA;
 			}
+			//calcolo prezzo
 			ordine.articoli_ordine[n_articolo].prezzo_CAD=xgad.prezzo;
 			ordine.totale+=ordine.articoli_ordine[n_articolo].prezzo_CAD*ordine.articoli_ordine[n_articolo].quantita;
 
