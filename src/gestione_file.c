@@ -12,6 +12,7 @@ FILE *file_ordini;
 
 void apertura_file()
 {
+	// con la modalità r+b si può scrivere e leggere file binari esistenti
 	file_clienti=fopen(FILE_CLIENTI,"r+b");
 	file_gadget=fopen(FILE_GADGET,"r+b");
 	file_ordini=fopen(FILE_ORDINI,"r+b");
@@ -34,6 +35,7 @@ void apertura_file()
 
 int inserisci_gadget(gadget_t xgadget)
 {
+
 	int esito=0;
 	fseek(file_gadget, sizeof(gadget_t), SEEK_END);
 	esito=fwrite(&xgadget,sizeof(gadget_t), 1, file_gadget);
@@ -54,9 +56,9 @@ int inserisci_cliente(cliente_t xcliente)
 {
 	int esito=0;
 	cliente_t xut;
+	//controlla che l'username del cliente, non è presente
 	if(restituisci_cliente(xcliente.username, &xut)==0)
 	{
-		//rewind(file_utenti);
 		fseek(file_clienti, sizeof(cliente_t), SEEK_END);
 		fwrite(&xcliente,sizeof(cliente_t), 1, file_clienti);
 		esito=1;
@@ -74,7 +76,7 @@ int restituisci_cliente(char ricerca[CARATTERI], cliente_t* risultato_cliente )
 	cliente_t xcliente;
 	int trovato=0;
 	rewind(file_clienti);
-
+	//scorre i vari record e per ogni record effettua una strcmp per vedere se COINCIDONO
 	fread(&xcliente,sizeof(cliente_t), 1, file_clienti);
 	do
 	{
@@ -161,6 +163,7 @@ void ricerca_gadget(char ricerca[CARATTERI], int scelta )
 
 		switch(scelta)
 		{
+		//ricerca su SOTTOSTRINGA
 		case 0:
 
 			if(strstr(nome_gadget_LOW,ricerca)!=NULL)
@@ -201,6 +204,8 @@ int cancella_cliente(char* username)
 
 	rewind(file_clienti);
 
+	//Genera file temporaneo e scrive sul file tutti i record il cui condice non coincide
+
 	do{
 		fread(&xcliente,sizeof(cliente_t), 1, file_clienti);
 		if(strcmp(xcliente.username,username)!=0)
@@ -209,11 +214,12 @@ int cancella_cliente(char* username)
 		}
 		else
 		{
+			//Se coincide, non lo scrive e con esito indica che è stato trovato
 			esito=1;
 
 		}
 	}while(!feof(file_clienti));
-
+	//Chiude entrambi i file e il file temporaneo viene rinominato
 	fclose(file_clienti);
 	fclose(temp);
 	remove(FILE_CLIENTI);
@@ -263,7 +269,7 @@ void restituisciALL_gadget()
 	int a=0;
 	fread(&xgadget,sizeof(gadget_t), 1, file_gadget);
 	do{
-
+		//viene inserita una strcmp poichè nei buffer rimane lo stesso gadget e dà problemi
 		a=strcmp(codice,xgadget.cod_gadget);
 		if(a!=0 && xgadget.prezzo!=0 )
 		{
@@ -332,21 +338,24 @@ void visualizza_piu_venduti()
 		{
 			if(xgadget.venduti>xgadget1.venduti ||(xgadget.venduti==0 && xgadget1.venduti==0))
 			{
-				//scambio il nuovo con il primo
+				//scambio il primo con il nuovo
 				xscambio=xgadget1;
 				xgadget1=xgadget;
 
-				//scambio il primo con il secondo
+				//scambio il secondo con il primo
 				xscambio2=xgadget2;
 				xgadget2=xscambio;
 
-				//scambio il secondo con il terzo
+				//scambio il terzo con il secondo
 				xgadget3=xscambio2;
+
+				//si shiftano gli elementi
 
 			}
 			else{
 				if(xgadget.venduti>xgadget2.venduti)
 				{
+					//scambia il secondo con il nuovo e shifta
 					xscambio=xgadget2;
 					xgadget2=xgadget;
 					xgadget3=xscambio;
@@ -397,8 +406,11 @@ int restituisci_ordine(char* codice_ordine, ordine_t* risultato_ordine)
 void approva_ordini()
 {
 	ordine_t xordine;
-	int esito=0, approvazione=0,stato=0;
+	int esito=0;
+	int approvazione=0;
+	int stato=0;
 	char codice_ordine[LUNG_CODICE];
+	//VISUALIZZA ORDINI IN ATTESA
 	rewind(file_ordini);
 	fread(&xordine,sizeof(ordine_t), 1, file_ordini);
 	do{
@@ -421,6 +433,7 @@ void approva_ordini()
 	}
 	else
 	{
+		//Se l'ordine non è in attesa, non fa niente
 		if(xordine.stato==STATO_APPROVATO || xordine.stato==STATO_NON_APPROVATO)
 		{
 			printf("Ordine gia' valutato");
@@ -463,6 +476,9 @@ void approva_ordini()
 
 int modifica_stato_ordine(char* cod_ordine, int stato)
 {
+	//Lo stesso della cancellazione e successivamente si riscrive il nuovo gadget modificato e
+	//si rinomina il file temp
+
 	ordine_t xordine, xordine_trovato;
 	int esito=0;
 	FILE *temp;

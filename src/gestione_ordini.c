@@ -33,10 +33,10 @@ void effettua_ordine(char* username){
 			//recap gadget
 			visualizza_gadget(xgad);
 			do{
-			printf("\n\n|Inserire quantita gadget: ");
-			ordine.articoli_ordine[n_articolo].quantita=input_int();
+				printf("\n\n|Inserire quantita gadget: ");
+				ordine.articoli_ordine[n_articolo].quantita=input_int();
 			}while(ordine.articoli_ordine[n_articolo].quantita<0);
-            //se la quantita richiesta < quella che c'è allora viene emesso se no viene messo in attesa
+			//se la quantita richiesta < quella che c'è allora viene emesso se no viene messo in attesa
 			if(xgad.quantita>=ordine.articoli_ordine[n_articolo].quantita && ordine.stato==1)
 			{
 				ordine.stato=STATO_APPROVATO;
@@ -62,7 +62,7 @@ void effettua_ordine(char* username){
 
 	}
 	while(scelta==1);
-
+	//se si vuole chiudere l'ordine e sono stati insriti degli articoli
 	if(scelta==2 && n_articolo>0)
 	{
 		fflush(stdin);
@@ -71,7 +71,7 @@ void effettua_ordine(char* username){
 		strcpy(ordine.commento,commento);
 		ordine.n_gadget=n_articolo;
 		strcpy(ordine.username_cliente,username);
-
+		//genera il codice random
 		itoa(rand(),codice,10);
 		strcpy(ordine.cod_ordine,codice);
 		esito=inserisci_ordine(ordine);
@@ -107,13 +107,14 @@ int emetti_ordine(ordine_t xordine)
 	int nuova_venduti=0;
 
 	gadget_t xgad;
-
+	//modifica giacenze e venduti
 	for(int i=0;i<xordine.n_gadget;i++){
 		esito=restituisci_gadget(xordine.articoli_ordine[i].cod_gadget,&xgad,1);
 		nuova_giacenza=xgad.quantita-xordine.articoli_ordine[i].quantita;
 		nuova_venduti=xgad.venduti+xordine.articoli_ordine[i].quantita;
 
 		if(nuova_giacenza<0){
+			//nel caso in cui la richiesta è maggiore della quant. disponibile, quantità = 0
 			nuova_giacenza=0;
 		}
 
@@ -125,6 +126,7 @@ int emetti_ordine(ordine_t xordine)
 
 		if(esito==0||esito2==0||esito3==0)
 		{
+			//se ci sono stati problemi esitofinale = 0
 			esitoFinale=0;
 		}
 	}
