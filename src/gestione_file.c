@@ -149,6 +149,8 @@ void ricerca_gadget(char ricerca[CARATTERI], int scelta )
 	gadget_t xgadget;
 	char nome_gadget_LOW[CARATTERI];
 	char colore_gadget_LOW[CARATTERI];
+	char* codice;
+	int a;
 	rewind(file_gadget);
 	fread(&xgadget,sizeof(gadget_t), 1, file_gadget);
 	do
@@ -165,30 +167,33 @@ void ricerca_gadget(char ricerca[CARATTERI], int scelta )
 		{
 		//ricerca su SOTTOSTRINGA
 		case 0:
-
-			if(strstr(nome_gadget_LOW,ricerca)!=NULL)
+			a=strcmp(codice,xgadget.cod_gadget);
+			if(strstr(nome_gadget_LOW,ricerca)!=NULL && a!=0)
 			{
 				visualizza_gadget(xgadget);
 			}
 			fread(&xgadget,sizeof(gadget_t), 1, file_gadget);
+			strcpy(codice,xgadget.cod_gadget);
 			break;
 
 		case 1:
-
-			if(strstr(xgadget.cod_gadget,ricerca)!=NULL)
+			a=strcmp(codice,xgadget.cod_gadget);
+			if(strstr(xgadget.cod_gadget,ricerca)!=NULL && a!=0)
 			{
 				visualizza_gadget(xgadget);
 			}
 			fread(&xgadget,sizeof(gadget_t), 1, file_gadget);
+			strcpy(codice,xgadget.cod_gadget);
 			break;
 
 		case 2:
-
-			if(strstr(colore_gadget_LOW,ricerca)!=NULL)
+			a=strcmp(codice,xgadget.cod_gadget);
+			if(strstr(colore_gadget_LOW,ricerca)!=NULL && a!=0)
 			{
 				visualizza_gadget(xgadget);
 			}
 			fread(&xgadget,sizeof(gadget_t), 1, file_gadget);
+			strcpy(codice,xgadget.cod_gadget);
 			break;
 		}
 
