@@ -16,58 +16,60 @@
 \DoxyCodeLine{12 \textcolor{preprocessor}{\#define LUNG\_CODICE 6}}
 \DoxyCodeLine{13 \textcolor{preprocessor}{\#define MAX\_ART\_ORDINE 10}}
 \DoxyCodeLine{14 }
-\DoxyCodeLine{15 }
-\DoxyCodeLine{16 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
-\DoxyCodeLine{17 \{}
-\DoxyCodeLine{18     \textcolor{keywordtype}{char} ragione\_sociale[\mbox{\hyperlink{strutture_8h_aab0b4ae424f7c60206f58fb67f5e1317}{CARATTERI}}];}
-\DoxyCodeLine{19     \textcolor{keywordtype}{char} piva[\mbox{\hyperlink{strutture_8h_aab0b4ae424f7c60206f58fb67f5e1317}{CARATTERI}}];}
-\DoxyCodeLine{20     \textcolor{keywordtype}{char} citta[\mbox{\hyperlink{strutture_8h_aab0b4ae424f7c60206f58fb67f5e1317}{CARATTERI}}];}
-\DoxyCodeLine{21     \textcolor{keywordtype}{char} email[\mbox{\hyperlink{strutture_8h_aab0b4ae424f7c60206f58fb67f5e1317}{CARATTERI}}];}
-\DoxyCodeLine{22 }
-\DoxyCodeLine{23     \textcolor{keywordtype}{char} username[\mbox{\hyperlink{strutture_8h_aab0b4ae424f7c60206f58fb67f5e1317}{CARATTERI}}];}
-\DoxyCodeLine{24     \textcolor{keywordtype}{char} pass[\mbox{\hyperlink{strutture_8h_aab0b4ae424f7c60206f58fb67f5e1317}{CARATTERI}}];}
-\DoxyCodeLine{25 }
-\DoxyCodeLine{26     \textcolor{keywordtype}{float} \mbox{\hyperlink{structcliente__t_af971353e9e0e565008909fb5cd52a2f0}{valutazione}};}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define STATO\_ATTESA 0}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define STATO\_APPROVATO 1}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define STATO\_NON\_APPROVATO 2}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23     \textcolor{keywordtype}{char} ragione\_sociale[\mbox{\hyperlink{strutture_8h_aab0b4ae424f7c60206f58fb67f5e1317}{CARATTERI}}];}
+\DoxyCodeLine{24     \textcolor{keywordtype}{char} piva[\mbox{\hyperlink{strutture_8h_aab0b4ae424f7c60206f58fb67f5e1317}{CARATTERI}}];}
+\DoxyCodeLine{25     \textcolor{keywordtype}{char} citta[\mbox{\hyperlink{strutture_8h_aab0b4ae424f7c60206f58fb67f5e1317}{CARATTERI}}];}
+\DoxyCodeLine{26     \textcolor{keywordtype}{char} email[\mbox{\hyperlink{strutture_8h_aab0b4ae424f7c60206f58fb67f5e1317}{CARATTERI}}];}
 \DoxyCodeLine{27 }
-\DoxyCodeLine{28 \}\mbox{\hyperlink{structcliente__t}{cliente\_t}};}
-\DoxyCodeLine{29 }
-\DoxyCodeLine{30 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
-\DoxyCodeLine{31 \{}
-\DoxyCodeLine{32     \textcolor{keywordtype}{char} cod\_gadget[\mbox{\hyperlink{strutture_8h_a4250a458b6326b1137015f7035adfa50}{LUNG\_CODICE}}];}
-\DoxyCodeLine{33     \textcolor{keywordtype}{char} nome\_gadget[\mbox{\hyperlink{strutture_8h_aab0b4ae424f7c60206f58fb67f5e1317}{CARATTERI}}];}
-\DoxyCodeLine{34     \textcolor{keywordtype}{char} desc[\mbox{\hyperlink{strutture_8h_aab0b4ae424f7c60206f58fb67f5e1317}{CARATTERI}}];}
-\DoxyCodeLine{35     \textcolor{keywordtype}{char} colore[\mbox{\hyperlink{strutture_8h_aab0b4ae424f7c60206f58fb67f5e1317}{CARATTERI}}];}
-\DoxyCodeLine{36     \textcolor{comment}{//Tipologia}}
-\DoxyCodeLine{37     \textcolor{keywordtype}{float} \mbox{\hyperlink{structgadget__t_a0688ed2198a87310fc68d11719791b28}{prezzo}};}
-\DoxyCodeLine{38     \textcolor{keywordtype}{int} \mbox{\hyperlink{structgadget__t_a4f740dac121865f893f6738fb7f5a786}{quantita}};}
-\DoxyCodeLine{39     \textcolor{keywordtype}{int} \mbox{\hyperlink{structgadget__t_a951697a93638873e83391de915eaed76}{venduti}};}
-\DoxyCodeLine{40 }
-\DoxyCodeLine{41 \}\mbox{\hyperlink{structgadget__t}{gadget\_t}};}
+\DoxyCodeLine{28     \textcolor{keywordtype}{char} username[\mbox{\hyperlink{strutture_8h_aab0b4ae424f7c60206f58fb67f5e1317}{CARATTERI}}];}
+\DoxyCodeLine{29     \textcolor{keywordtype}{char} pass[\mbox{\hyperlink{strutture_8h_aab0b4ae424f7c60206f58fb67f5e1317}{CARATTERI}}];}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \}\mbox{\hyperlink{structcliente__t}{cliente\_t}};}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{34 \{}
+\DoxyCodeLine{35     \textcolor{keywordtype}{char} cod\_gadget[\mbox{\hyperlink{strutture_8h_a4250a458b6326b1137015f7035adfa50}{LUNG\_CODICE}}];}
+\DoxyCodeLine{36     \textcolor{keywordtype}{char} nome\_gadget[\mbox{\hyperlink{strutture_8h_aab0b4ae424f7c60206f58fb67f5e1317}{CARATTERI}}];}
+\DoxyCodeLine{37     \textcolor{keywordtype}{char} desc[\mbox{\hyperlink{strutture_8h_aab0b4ae424f7c60206f58fb67f5e1317}{CARATTERI}}];}
+\DoxyCodeLine{38     \textcolor{keywordtype}{char} colore[\mbox{\hyperlink{strutture_8h_aab0b4ae424f7c60206f58fb67f5e1317}{CARATTERI}}];}
+\DoxyCodeLine{39     \textcolor{keywordtype}{float} \mbox{\hyperlink{structgadget__t_a0688ed2198a87310fc68d11719791b28}{prezzo}};}
+\DoxyCodeLine{40     \textcolor{keywordtype}{int} \mbox{\hyperlink{structgadget__t_a4f740dac121865f893f6738fb7f5a786}{quantita}};}
+\DoxyCodeLine{41     \textcolor{keywordtype}{int} \mbox{\hyperlink{structgadget__t_a951697a93638873e83391de915eaed76}{venduti}};}
 \DoxyCodeLine{42 }
-\DoxyCodeLine{43 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
-\DoxyCodeLine{44 \{}
-\DoxyCodeLine{45     \textcolor{keywordtype}{char} cod\_gadget[\mbox{\hyperlink{strutture_8h_a4250a458b6326b1137015f7035adfa50}{LUNG\_CODICE}}];}
-\DoxyCodeLine{46     \textcolor{keywordtype}{int} \mbox{\hyperlink{structarticoli__ordine__t_a4f740dac121865f893f6738fb7f5a786}{quantita}};}
-\DoxyCodeLine{47     \textcolor{keywordtype}{float} \mbox{\hyperlink{structarticoli__ordine__t_a674271fe5f5ce59b01594b4ac4d73cf5}{prezzo\_CAD}};}
-\DoxyCodeLine{48 }
-\DoxyCodeLine{49 \}\mbox{\hyperlink{structarticoli__ordine__t}{articoli\_ordine\_t}};}
+\DoxyCodeLine{43 \}\mbox{\hyperlink{structgadget__t}{gadget\_t}};}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{46 \{}
+\DoxyCodeLine{47     \textcolor{keywordtype}{char} cod\_gadget[\mbox{\hyperlink{strutture_8h_a4250a458b6326b1137015f7035adfa50}{LUNG\_CODICE}}];}
+\DoxyCodeLine{48     \textcolor{keywordtype}{int} \mbox{\hyperlink{structarticoli__ordine__t_a4f740dac121865f893f6738fb7f5a786}{quantita}};}
+\DoxyCodeLine{49     \textcolor{keywordtype}{float} \mbox{\hyperlink{structarticoli__ordine__t_a674271fe5f5ce59b01594b4ac4d73cf5}{prezzo\_CAD}};}
 \DoxyCodeLine{50 }
-\DoxyCodeLine{51 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
-\DoxyCodeLine{52 \{}
-\DoxyCodeLine{53     \textcolor{keywordtype}{char} cod\_ordine[\mbox{\hyperlink{strutture_8h_a4250a458b6326b1137015f7035adfa50}{LUNG\_CODICE}}];}
-\DoxyCodeLine{54     \mbox{\hyperlink{structarticoli__ordine__t}{articoli\_ordine\_t}} articoli\_ordine[\mbox{\hyperlink{strutture_8h_a007c1c04971d6c21f2d60d18ae2f290d}{MAX\_ART\_ORDINE}}];}
-\DoxyCodeLine{55     \textcolor{keywordtype}{int} \mbox{\hyperlink{structordine__t_a9eb991f7b8f057fa03a30d76e5f8b660}{n\_gadget}};}
-\DoxyCodeLine{56     \textcolor{keywordtype}{int} \mbox{\hyperlink{structordine__t_a7ad5255f64c97f0121ae1a81d02608cb}{stato}};  \textcolor{comment}{//0 non confermata 1 confermata}}
-\DoxyCodeLine{57     \textcolor{keywordtype}{float} \mbox{\hyperlink{structordine__t_ae69918bb45df13b5cba748dbdf6344e3}{totale}};}
-\DoxyCodeLine{58     \textcolor{keywordtype}{char} commento[\mbox{\hyperlink{strutture_8h_aab0b4ae424f7c60206f58fb67f5e1317}{CARATTERI}}];}
-\DoxyCodeLine{59     \textcolor{keywordtype}{char} username\_cliente[\mbox{\hyperlink{strutture_8h_aab0b4ae424f7c60206f58fb67f5e1317}{CARATTERI}}];}
-\DoxyCodeLine{60 }
-\DoxyCodeLine{61 \}\mbox{\hyperlink{structordine__t}{ordine\_t}};}
+\DoxyCodeLine{51 \}\mbox{\hyperlink{structarticoli__ordine__t}{articoli\_ordine\_t}};}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{54 \{}
+\DoxyCodeLine{55     \textcolor{keywordtype}{char} cod\_ordine[\mbox{\hyperlink{strutture_8h_a4250a458b6326b1137015f7035adfa50}{LUNG\_CODICE}}];}
+\DoxyCodeLine{56     \mbox{\hyperlink{structarticoli__ordine__t}{articoli\_ordine\_t}} articoli\_ordine[\mbox{\hyperlink{strutture_8h_a007c1c04971d6c21f2d60d18ae2f290d}{MAX\_ART\_ORDINE}}];}
+\DoxyCodeLine{57     \textcolor{keywordtype}{int} \mbox{\hyperlink{structordine__t_a9eb991f7b8f057fa03a30d76e5f8b660}{n\_gadget}};}
+\DoxyCodeLine{58     \textcolor{keywordtype}{int} \mbox{\hyperlink{structordine__t_a7ad5255f64c97f0121ae1a81d02608cb}{stato}};  \textcolor{comment}{//0 in attesa 1 approvato 2 non approvato}}
+\DoxyCodeLine{59     \textcolor{keywordtype}{float} \mbox{\hyperlink{structordine__t_ae69918bb45df13b5cba748dbdf6344e3}{totale}};}
+\DoxyCodeLine{60     \textcolor{keywordtype}{char} commento[\mbox{\hyperlink{strutture_8h_aab0b4ae424f7c60206f58fb67f5e1317}{CARATTERI}}];}
+\DoxyCodeLine{61     \textcolor{keywordtype}{char} username\_cliente[\mbox{\hyperlink{strutture_8h_aab0b4ae424f7c60206f58fb67f5e1317}{CARATTERI}}];}
 \DoxyCodeLine{62 }
-\DoxyCodeLine{63 }
+\DoxyCodeLine{63 \}\mbox{\hyperlink{structordine__t}{ordine\_t}};}
 \DoxyCodeLine{64 }
 \DoxyCodeLine{65 }
 \DoxyCodeLine{66 }
-\DoxyCodeLine{67 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* STRUTTURE\_H\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* STRUTTURE\_H\_ */}\textcolor{preprocessor}{}}
 
 \end{DoxyCode}

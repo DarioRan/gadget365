@@ -5,7 +5,7 @@ var indexSectionsWithContent =
   2: "gsuv",
   3: "acegimrv",
   4: "acdefnpqrstuv",
-  5: "cflmpu"
+  5: "cflmpsu"
 };
 
 var indexSectionNames =
