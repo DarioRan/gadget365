@@ -67,19 +67,29 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">gestione_file.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="strutture_8h_source.html">strutture.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="visualizzazione_8h_source.html">visualizzazione.h</a>&quot;</code><br />
-<code>#include &lt;ctype.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;ctype.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="strutture_8h_source.html">strutture.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="visualizzazione_8h_source.html">visualizzazione.h</a>&quot;</code><br />
 </div>
 <p><a href="gestione__file_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:abff60afb5a6c3c2393ae51b597523893"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gestione__file_8h.html#abff60afb5a6c3c2393ae51b597523893">FILE_CLIENTI</a>&#160;&#160;&#160;&quot;clienti.csv&quot;</td></tr>
+<tr class="separator:abff60afb5a6c3c2393ae51b597523893"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac767c228fa8860a69f43b326630d87c9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gestione__file_8h.html#ac767c228fa8860a69f43b326630d87c9">FILE_ORDINI</a>&#160;&#160;&#160;&quot;ordini.csv&quot;</td></tr>
+<tr class="separator:ac767c228fa8860a69f43b326630d87c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4b83ff51c28f59e9bee28f7544e5146"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gestione__file_8h.html#ae4b83ff51c28f59e9bee28f7544e5146">FILE_GADGET</a>&#160;&#160;&#160;&quot;gadget.csv&quot;</td></tr>
+<tr class="separator:ae4b83ff51c28f59e9bee28f7544e5146"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a9b9304a7c4e461919963dfbc351e1c5a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gestione__file_8h.html#a9b9304a7c4e461919963dfbc351e1c5a">apertura_file</a> ()</td></tr>
@@ -127,7 +137,54 @@ Functions</h2></td></tr>
 <tr class="memitem:a1d3d50ac5c975b4e6e6bf43073d2372b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gestione__file_8h.html#a1d3d50ac5c975b4e6e6bf43073d2372b">modifica_stato_ordine</a> (char *cod_ordine, int stato)</td></tr>
 <tr class="memdesc:a1d3d50ac5c975b4e6e6bf43073d2372b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funzione che avendo come input una stringa "cod_ordine" contenente il codice dell'ordine da modificare e il parametro "stato" contenente il valore del nuovo stato, legge ogni record presente nel file "file_ordini" assegnandoli ad una struct di appoggio. Il record che avra' lo stesso codice del parametro "cod_ordine" dato in input verra' modificato con il nuovo stato.  <a href="gestione__file_8h.html#a1d3d50ac5c975b4e6e6bf43073d2372b">More...</a><br /></td></tr>
 <tr class="separator:a1d3d50ac5c975b4e6e6bf43073d2372b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba019cf9f72872ce6bbafecba0f86c7e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gestione__file_8h.html#aba019cf9f72872ce6bbafecba0f86c7e">input_scelta</a> ()</td></tr>
+<tr class="separator:aba019cf9f72872ce6bbafecba0f86c7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98edc715c69551e41e2f7704e811ecbf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gestione__file_8h.html#a98edc715c69551e41e2f7704e811ecbf">restituisciALL_ordini</a> ()</td></tr>
+<tr class="separator:a98edc715c69551e41e2f7704e811ecbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="abff60afb5a6c3c2393ae51b597523893" name="abff60afb5a6c3c2393ae51b597523893"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abff60afb5a6c3c2393ae51b597523893">&#9670;&nbsp;</a></span>FILE_CLIENTI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FILE_CLIENTI&#160;&#160;&#160;&quot;clienti.csv&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae4b83ff51c28f59e9bee28f7544e5146" name="ae4b83ff51c28f59e9bee28f7544e5146"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4b83ff51c28f59e9bee28f7544e5146">&#9670;&nbsp;</a></span>FILE_GADGET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FILE_GADGET&#160;&#160;&#160;&quot;gadget.csv&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac767c228fa8860a69f43b326630d87c9" name="ac767c228fa8860a69f43b326630d87c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac767c228fa8860a69f43b326630d87c9">&#9670;&nbsp;</a></span>FILE_ORDINI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FILE_ORDINI&#160;&#160;&#160;&quot;ordini.csv&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a9b9304a7c4e461919963dfbc351e1c5a" name="a9b9304a7c4e461919963dfbc351e1c5a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9b9304a7c4e461919963dfbc351e1c5a">&#9670;&nbsp;</a></span>apertura_file()</h2>
@@ -232,6 +289,23 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="aba019cf9f72872ce6bbafecba0f86c7e" name="aba019cf9f72872ce6bbafecba0f86c7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba019cf9f72872ce6bbafecba0f86c7e">&#9670;&nbsp;</a></span>input_scelta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int input_scelta </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -540,6 +614,23 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Procedura che visualizza tutti i gadget presenti nel file "file_gadget". </p>
+
+</div>
+</div>
+<a id="a98edc715c69551e41e2f7704e811ecbf" name="a98edc715c69551e41e2f7704e811ecbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98edc715c69551e41e2f7704e811ecbf">&#9670;&nbsp;</a></span>restituisciALL_ordini()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void restituisciALL_ordini </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

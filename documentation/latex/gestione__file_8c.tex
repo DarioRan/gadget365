@@ -24,6 +24,8 @@ int \mbox{\hyperlink{gestione__file_8c_a96f528b92da2ef07807f84cef8cffe66}{cancel
 \begin{DoxyCompactList}\small\item\em Funzione che avendo come input una stringa \char`\"{}gadget\char`\"{} contenente il codice del gadget da cancellare, legge ogni record presente nel file \char`\"{}file\+\_\+gadget\char`\"{} assegnandoli ad una struct di appoggioed in seguito riscrivendoli su un secondo file. Il record che avra\textquotesingle{} lo stesso codice del parametro dato in input non verra\textquotesingle{} riscritto. Verra\textquotesingle{} in seguito cancellato il vecchio \char`\"{}file\+\_\+gadget\char`\"{} e verra\textquotesingle{} rinominato in \char`\"{}file\+\_\+gadget\char`\"{} il nuovo file. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{gestione__file_8c_af4865bddcc0ebd0c8049f919892bc913}{restituisci\+ALL\+\_\+gadget}} ()
 \begin{DoxyCompactList}\small\item\em Procedura che visualizza tutti i gadget presenti nel file \char`\"{}file\+\_\+gadget\char`\"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gestione__file_8c_a98edc715c69551e41e2f7704e811ecbf}{restituisci\+ALL\+\_\+ordini}} ()
+\item 
 void \mbox{\hyperlink{gestione__file_8c_a69ef63a4311b3baff481cd4fc0a6ee83}{visualizza\+\_\+ordini\+\_\+cliente}} (char $\ast$username)
 \begin{DoxyCompactList}\small\item\em Procedura che avendo come input una stringa \char`\"{}username\char`\"{} contenente l\textquotesingle{}username dell\textquotesingle{}utente di cui visualizzare gli ordini, legge ogni record presente nel file \char`\"{}file\+\_\+ordini\char`\"{} assegnandoli ad una struct di appoggio. Se il nome dell\textquotesingle{}ordine contenuto nella struct di appoggio e\textquotesingle{} uguale al parametro dato in input allora verranno visualizzati le informazioni di quell\textquotesingle{}ordine. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{gestione__file_8c_a69ad3be750674092ec03dc4fb2853894}{visualizza\+\_\+piu\+\_\+venduti}} ()
@@ -301,6 +303,12 @@ La funzione ha come input (per riferimento) una struct \mbox{\hyperlink{structor
 
 
 Procedura che visualizza tutti i gadget presenti nel file \char`\"{}file\+\_\+gadget\char`\"{}. 
+
+\mbox{\Hypertarget{gestione__file_8c_a98edc715c69551e41e2f7704e811ecbf}\label{gestione__file_8c_a98edc715c69551e41e2f7704e811ecbf}} 
+\index{gestione\_file.c@{gestione\_file.c}!restituisciALL\_ordini@{restituisciALL\_ordini}}
+\index{restituisciALL\_ordini@{restituisciALL\_ordini}!gestione\_file.c@{gestione\_file.c}}
+\doxysubsubsection{\texorpdfstring{restituisciALL\_ordini()}{restituisciALL\_ordini()}}
+{\footnotesize\ttfamily void restituisci\+ALL\+\_\+ordini (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{gestione__file_8c_adb0b57cf56452a115671a4ea16e7f042}\label{gestione__file_8c_adb0b57cf56452a115671a4ea16e7f042}} 
 \index{gestione\_file.c@{gestione\_file.c}!ricerca\_gadget@{ricerca\_gadget}}

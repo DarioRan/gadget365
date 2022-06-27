@@ -10,13 +10,6 @@ int \mbox{\hyperlink{gestione__utente_8c_acd7764fedc297faca70ab12ac2cfe4bb}{acce
 \begin{DoxyCompactList}\small\item\em Funzione incaricata di gestire il log-\/in utente. Se le credenziali date in input sono equivalenti a quelle dell\textquotesingle{}admin allora verra\textquotesingle{} restituito il valore \char`\"{}2\char`\"{}, altrimenti utilizzando la funzione \char`\"{}restituisci\+\_\+cliente\char`\"{}, si controlla se e\textquotesingle{} presente un cliente nel file \char`\"{}file\+\_\+clienti\char`\"{} con determinate credenziali. Se le credenziali sono corrette, verra\textquotesingle{} restituito il valore \char`\"{}1\char`\"{}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{gestione__utente_8c_a95e018a2b922309ed98a49e4ee7a5d4d}{modifica\+\_\+cliente}} (char username\+\_\+corrente\mbox{[}\mbox{\hyperlink{strutture_8h_aab0b4ae424f7c60206f58fb67f5e1317}{CARATTERI}}\mbox{]})
 \begin{DoxyCompactList}\small\item\em Procedura incaricata di gestire la modifica utente. A seconda del valore del parametro \char`\"{}scelta\char`\"{} inserito da tastiera verranno modificati diversi parametri\+: p.\+iva (1), rag. sociale (2), citta\textquotesingle{} (3). Tramite la stringa \char`\"{}username\+\_\+corrente\char`\"{} data in input siamo in grado, tramite la funzione \char`\"{}restituisci\+\_\+cliente\char`\"{} di risalire al cliente da modificare. Una volta ottenuta la struct del cliente da modificare verra\textquotesingle{} modificato il parametro desiderato in una struct di appoggio e verra\textquotesingle{} cancellato il record dal file, in seguito verra\textquotesingle{} dunque caricato il record con la struct aggiornata. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Variables}
-\begin{DoxyCompactItemize}
-\item 
-char \mbox{\hyperlink{gestione__utente_8c_ab34457bea6979cb183bf0dc240c3f3b8}{USERADMIN}} \mbox{[}\mbox{\hyperlink{strutture_8h_aab0b4ae424f7c60206f58fb67f5e1317}{CARATTERI}}\mbox{]} =\char`\"{}admin\+\_\+365\char`\"{}
-\item 
-char \mbox{\hyperlink{gestione__utente_8c_aac7203fcb5e58f29309f1b19fa8298b6}{PASSADMIN}} \mbox{[}\mbox{\hyperlink{strutture_8h_aab0b4ae424f7c60206f58fb67f5e1317}{CARATTERI}}\mbox{]} =\char`\"{}gadget\char`\"{}
-\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -85,18 +78,3 @@ Funzione incaricata di gestire l\textquotesingle{}input di dati riguardanti i cl
 {\em 0} & Se si e\textquotesingle{} presentato un errore. \\
 \hline
 \end{DoxyRetVals}
-
-
-\doxysubsection{Variable Documentation}
-\mbox{\Hypertarget{gestione__utente_8c_aac7203fcb5e58f29309f1b19fa8298b6}\label{gestione__utente_8c_aac7203fcb5e58f29309f1b19fa8298b6}} 
-\index{gestione\_utente.c@{gestione\_utente.c}!PASSADMIN@{PASSADMIN}}
-\index{PASSADMIN@{PASSADMIN}!gestione\_utente.c@{gestione\_utente.c}}
-\doxysubsubsection{\texorpdfstring{PASSADMIN}{PASSADMIN}}
-{\footnotesize\ttfamily char PASSADMIN\mbox{[}\mbox{\hyperlink{strutture_8h_aab0b4ae424f7c60206f58fb67f5e1317}{CARATTERI}}\mbox{]} =\char`\"{}gadget\char`\"{}}
-
-\mbox{\Hypertarget{gestione__utente_8c_ab34457bea6979cb183bf0dc240c3f3b8}\label{gestione__utente_8c_ab34457bea6979cb183bf0dc240c3f3b8}} 
-\index{gestione\_utente.c@{gestione\_utente.c}!USERADMIN@{USERADMIN}}
-\index{USERADMIN@{USERADMIN}!gestione\_utente.c@{gestione\_utente.c}}
-\doxysubsubsection{\texorpdfstring{USERADMIN}{USERADMIN}}
-{\footnotesize\ttfamily char USERADMIN\mbox{[}\mbox{\hyperlink{strutture_8h_aab0b4ae424f7c60206f58fb67f5e1317}{CARATTERI}}\mbox{]} =\char`\"{}admin\+\_\+365\char`\"{}}
-
