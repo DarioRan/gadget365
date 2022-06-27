@@ -149,7 +149,7 @@ void ricerca_gadget(char ricerca[CARATTERI], int scelta )
 	gadget_t xgadget;
 	char nome_gadget_LOW[CARATTERI];
 	char colore_gadget_LOW[CARATTERI];
-	char* codice;
+	char codice[LUNG_CODICE]="";
 	int a;
 	rewind(file_gadget);
 	fread(&xgadget,sizeof(gadget_t), 1, file_gadget);
