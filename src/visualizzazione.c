@@ -152,11 +152,18 @@ void visualizza_ordine_recap(ordine_t xordine)
 	cliente_t xcliente;
 	gadget_t xgad;
 	int esito=0;
-	restituisci_cliente(xordine.username_cliente,&xcliente);
+	int esito2=0;
+	esito2=restituisci_cliente(xordine.username_cliente,&xcliente);
 
 	printf("*=======================================*\n");
 	printf("|        Codice Ordine: %s	        | \n",xordine.cod_ordine);
-	printf("\t Cliente: %s\t\t\n",xcliente.ragione_sociale);
+	if(esito2==0)
+	{
+		printf("\t Cliente non disponibile \n");
+	}else
+	{
+		printf("\t Cliente: %s\t\t\n",xcliente.ragione_sociale);
+	}
 
 	for(int i=0; i<xordine.n_gadget;i++)
 	{
