@@ -97,7 +97,7 @@ void modifica_cliente(char username_corrente[CARATTERI])
 
 	visualizza_menu_modifica();
 	printf("\n Inserire scelta: ");
-	scanf("%d",&scelta);
+	scelta=input_scelta();
 
 	switch(scelta){
 	case 1:

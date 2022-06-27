@@ -16,6 +16,8 @@
 
 void get_stringa(char stringa[CARATTERI]);
 int input_scelta();
+int input_int();
+float input_float();
 
 
 #endif /* UTILES_H_ */

@@ -46,7 +46,6 @@ int main(void) {
 			get_stringa(nomeutente);
 			puts("|Inserire password: ");
 			get_stringa(pass);
-			printf("%s %s ", nomeutente, pass);
 			esito=accesso_cliente(nomeutente,pass);
 			if(esito==1)
 			{

@@ -15,6 +15,8 @@
 
 #include "strutture.h"
 #include "visualizzazione.h"
+#include "gestione_ordini.h"
+#include "utiles.h"
 
 #define FILE_CLIENTI "clienti.csv"
 #define FILE_ORDINI "ordini.csv"
@@ -60,7 +62,7 @@ int inserisci_ordine(ordine_t xordine);
  * @param[INPUT] ricerca: char[50]
  * @param[INPUT] *risultato_cliente: cliente_t
  * @param[OTPUT] trovato: int
- * @retval "1" Se l'inserimento e' stato completato.
+ * @retval "1" Se e' stato trovato.
  * @retval "0" Se si e' presentato un errore.
  */
 int restituisci_cliente(char ricerca[CARATTERI], cliente_t* risultato_cliente );

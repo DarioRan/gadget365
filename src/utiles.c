@@ -42,6 +42,22 @@ int input_scelta()
 
 }
 
+float input_float()
+{
+	float val;
+	scanf("%f",&val);
+	getchar();
+	return val;
+}
+
+int input_int()
+{
+	int val_int;
+	scanf("%d",&val_int);
+	getchar();
+	return val_int;
+}
+
 void get_stringa(char stringa[CARATTERI])
 {
 	//fflush_buffer();

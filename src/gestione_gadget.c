@@ -13,30 +13,31 @@ int registrazione_gadget()
 	char codice[LUNG_CODICE];
 	int esito=0;
 	gadget_t xgad;
-	printf("\n|Inserire nome gadget: ");
+	puts("\n|Inserire nome gadget: ");
 	get_stringa(xgad.nome_gadget);
-	printf("\n|Inserire colore gadget: ");
+	puts("\n|Inserire colore gadget: ");
 	get_stringa(xgad.colore);
-	printf("\n|Inserire descrizione: ");
+	puts("\n|Inserire descrizione: ");
 	get_stringa(xgad.desc);
 	do{
-		printf("\n|Inserire prezzo cad.: ");
-		scanf("%f",&xgad.prezzo);
+		puts("\n|Inserire prezzo cad.: ");
+		xgad.prezzo=input_float();
 	}while(xgad.prezzo<0);
+
 	do{
-		printf("\n|Inserire quantita' disponibile: ");
-		scanf("%d",&xgad.quantita);
+		puts("\n|Inserire quantita' disponibile: ");
+		xgad.quantita=input_int();
 	}while(xgad.quantita<0);
+
 	xgad.venduti=0;
 	itoa(rand(),codice,10);
 	strcpy(xgad.cod_gadget,codice);
 
-
 	if(inserisci_gadget(xgad)==1)
 	{
-		printf("|Gadget Inserito Correttamente|"); //////////////////
+		printf("|Gadget Inserito Correttamente|");
 		esito=1;
-		sleep(1);
+		//sleep(1);
 	}
 
 	return esito;
@@ -145,14 +146,14 @@ void modifica_gadget_utente()
 		case 4:
 			//PREZZO
 			printf("\n|Inserire Prezzo Gadget: ");
-			scanf("%f",&prezzo);
+			prezzo=input_float();
 			esito=modifica_gadget(xgad,prezzo,1);
 			break;
 
 		case 5:
 			//GAICENZA
 			printf("\n|Inserire Giacenza Gadget: ");
-			scanf("%d",&nuova_giacenza);
+			nuova_giacenza=input_int();
 			esito=modifica_gadget(xgad,nuova_giacenza,0);
 			break;
 		default:

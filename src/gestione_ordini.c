@@ -12,7 +12,7 @@ void effettua_ordine(char* username){
 	srand(time(NULL));
 	int scelta;
 	int esito;
-	int codice[LUNG_CODICE];
+	char codice[LUNG_CODICE];
 	int n_articolo=0;
 	char commento[CARATTERI];
 
@@ -32,7 +32,7 @@ void effettua_ordine(char* username){
 			visualizza_gadget(xgad);
 			do{
 			printf("\n\n|Inserire quantita gadget: ");
-			scanf("%d",&ordine.articoli_ordine[n_articolo].quantita);
+			ordine.articoli_ordine[n_articolo].quantita=input_int();
 			}while(ordine.articoli_ordine[n_articolo].quantita<0);
 
 			if(xgad.quantita>=ordine.articoli_ordine[n_articolo].quantita && ordine.stato==1)
@@ -42,7 +42,7 @@ void effettua_ordine(char* username){
 			}
 			else
 			{
-				ordine.stato=STATO_NON_APPROVATO;
+				ordine.stato=STATO_ATTESA;
 			}
 			ordine.articoli_ordine[n_articolo].prezzo_CAD=xgad.prezzo;
 			ordine.totale+=ordine.articoli_ordine[n_articolo].prezzo_CAD*ordine.articoli_ordine[n_articolo].quantita;
@@ -75,12 +75,12 @@ void effettua_ordine(char* username){
 		if(esito==1)
 		{
 			printf("\n| Oridne registrato correttamente! |");
-			sleep(1);
+			//sleep(1);
 		}
 		else
 		{
 			printf("\n| Errore nella registrazione dell'ordine |");
-			sleep(1);
+			//sleep(1);
 		}
 		if (ordine.stato==STATO_APPROVATO)
 		{
@@ -117,8 +117,8 @@ int emetti_ordine(ordine_t xordine)
 		xgad.quantita=nuova_giacenza;
 		xgad.venduti=nuova_venduti;
 
-		cancella_gadget(xgad.cod_gadget);
-		inserisci_gadget(xgad);
+		esito2=cancella_gadget(xgad.cod_gadget);
+		esito3=inserisci_gadget(xgad);
 
 		if(esito==0||esito2==0||esito3==0)
 		{
