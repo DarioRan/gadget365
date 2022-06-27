@@ -177,34 +177,6 @@ void modifica_gadget_utente()
 }
 
 
-void modifica_prezzo_gadget()
-{
-	char gadget[CARATTERI];
-	float prezzo;
-	gadget_t xgadget;
-	int esito2=0;
-	printf("\n|Inserire Nome Gadget: ");
-	get_stringa(gadget);
-	printf("\n|Inserire Prezzo Gadget: ");
-	scanf("%f",&prezzo);
-	restituisci_gadget(gadget, &xgadget,0);
-	xgadget.prezzo=prezzo;
-	esito2=cancella_gadget(gadget);
-	esito2=inserisci_gadget(xgadget);
-
-	if(esito2==1)
-	{
-		printf("\n|gadget Modificato!|");
-		visualizza_gadget(xgadget);
-		sleep(1);
-	}
-	else
-	{
-		printf("\n|Impossibile Trovare Gadget!|");
-		sleep(1);
-	}
-
-}
 
 //0 quantità, 1 prezzo, 2 venduti
 int modifica_gadget(gadget_t xgadget,float valore, int scelta)

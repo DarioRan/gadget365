@@ -76,7 +76,7 @@ void ricerca_gadget(char ricerca[CARATTERI], int scelta );
  * @param[INPUT] *risultato_gadget: gadget_t
  * @param[INPUT] scelta: int
  * @param[OTPUT] trovato: int
- * @retval "1" Se l'inserimento e' stato completato.
+ * @retval "1" Se e' stato trovato.
  * @retval "0" Se si e' presentato un errore.
  */
 int restituisci_gadget(char ricerca[CARATTERI], gadget_t* risultato_gadget, int scelta );
@@ -84,7 +84,7 @@ int restituisci_gadget(char ricerca[CARATTERI], gadget_t* risultato_gadget, int 
  * Funzione che avendo come input una stringa "gadget" contenente il codice del gadget da cancellare, legge ogni record presente nel file "file_gadget" assegnandoli ad una struct di appoggioed in seguito riscrivendoli su un secondo file. Il record che avra' lo stesso codice del parametro dato in input non verra' riscritto. Verra' in seguito cancellato il vecchio "file_gadget" e verra' rinominato in "file_gadget" il nuovo file.
  * @param[INPUT] gadget: char[6]
  * @param[OTPUT] esito: int
- * @retval "1" Se l'inserimento e' stato completato.
+ * @retval "1" Se e' stato cancellato.
  * @retval "0" Se si e' presentato un errore.
  */
 int cancella_gadget(char* gadget);
@@ -92,7 +92,7 @@ int cancella_gadget(char* gadget);
  * Funzione che avendo come input una stringa "username" contenente l'username dell'utente da cancellare, legge ogni record presente nel file "file_clienti" assegnandoli ad una struct di appoggio ed in seguito riscrivendoli su un secondo file. Il record che avra' lo stesso username del parametro dato in input non verra' riscritto. Verra' in seguito cancellato il vecchio "file_clienti" e verra' rinominato in "file_clienti" il nuovo file.
  * @param[INPUT] username: char[50]
  * @param[OTPUT] esito: int
- * @retval "1" Se l'inserimento e' stato completato.
+ * @retval "1" Se e' stato cancellato.
  * @retval "0" Se si e' presentato un errore.
  */
 int cancella_cliente(char* username);
@@ -132,8 +132,9 @@ void approva_ordini();
  */
 int modifica_stato_ordine(char* cod_ordine, int stato);
 
-int input_scelta();
-
+/**@brief
+ * Procedura legge tutti i record presenti nel file "file_ordini" e li visualizza
+ */
 void restituisciALL_ordini();
 
 
