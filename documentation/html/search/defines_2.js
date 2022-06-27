@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['max_5fart_5fordine_0',['MAX_ART_ORDINE',['../strutture_8h.html#a007c1c04971d6c21f2d60d18ae2f290d',1,'strutture.h']]]
+  ['lung_5fcodice_0',['LUNG_CODICE',['../strutture_8h.html#a4250a458b6326b1137015f7035adfa50',1,'strutture.h']]]
 ];

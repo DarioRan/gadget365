@@ -1,11 +1,20 @@
 \hypertarget{gestione__file_8h}{}\doxysection{C\+:/\+Users/1drom/\+One\+Drive/\+Documenti/\+Git\+Hub/gadget365/src/gestione\+\_\+file.h File Reference}
 \label{gestione__file_8h}\index{C:/Users/1drom/OneDrive/Documenti/GitHub/gadget365/src/gestione\_file.h@{C:/Users/1drom/OneDrive/Documenti/GitHub/gadget365/src/gestione\_file.h}}
-{\ttfamily \#include \char`\"{}strutture.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}visualizzazione.\+h\char`\"{}}\newline
 {\ttfamily \#include $<$ctype.\+h$>$}\newline
 {\ttfamily \#include $<$string.\+h$>$}\newline
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}strutture.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}visualizzazione.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{gestione__file_8h_abff60afb5a6c3c2393ae51b597523893}{FILE\+\_\+\+CLIENTI}}~\char`\"{}clienti.\+csv\char`\"{}
+\item 
+\#define \mbox{\hyperlink{gestione__file_8h_ac767c228fa8860a69f43b326630d87c9}{FILE\+\_\+\+ORDINI}}~\char`\"{}ordini.\+csv\char`\"{}
+\item 
+\#define \mbox{\hyperlink{gestione__file_8h_ae4b83ff51c28f59e9bee28f7544e5146}{FILE\+\_\+\+GADGET}}~\char`\"{}gadget.\+csv\char`\"{}
+\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -38,7 +47,32 @@ int \mbox{\hyperlink{gestione__file_8h_a6e6b6159ec076eb4d8164a81801864e3}{restit
 void \mbox{\hyperlink{gestione__file_8h_a82efb5997f92c5314b44cbc6acf1a630}{approva\+\_\+ordini}} ()
 \begin{DoxyCompactList}\small\item\em Procedura legge tutti i record presenti nel file \char`\"{}file\+\_\+ordini\char`\"{} assegnandoli ad una struct \mbox{\hyperlink{structordine__t}{ordine\+\_\+t}} di appoggio, visualizzando gli ordini che possiedono il parametro stato equivalente a \char`\"{}0\char`\"{}. Successivamente inserendo il codice di un ordine puo\textquotesingle{} decidere se approvarlo (1) o rifiutarlo (2). \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{gestione__file_8h_a1d3d50ac5c975b4e6e6bf43073d2372b}{modifica\+\_\+stato\+\_\+ordine}} (char $\ast$cod\+\_\+ordine, int stato)
-\begin{DoxyCompactList}\small\item\em Funzione che avendo come input una stringa \char`\"{}cod\+\_\+ordine\char`\"{} contenente il codice dell\textquotesingle{}ordine da modificare e il parametro \char`\"{}stato\char`\"{} contenente il valore del nuovo stato, legge ogni record presente nel file \char`\"{}file\+\_\+ordini\char`\"{} assegnandoli ad una struct di appoggio. Il record che avra\textquotesingle{} lo stesso codice del parametro \char`\"{}cod\+\_\+ordine\char`\"{} dato in input verra\textquotesingle{} modificato con il nuovo stato. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Funzione che avendo come input una stringa \char`\"{}cod\+\_\+ordine\char`\"{} contenente il codice dell\textquotesingle{}ordine da modificare e il parametro \char`\"{}stato\char`\"{} contenente il valore del nuovo stato, legge ogni record presente nel file \char`\"{}file\+\_\+ordini\char`\"{} assegnandoli ad una struct di appoggio. Il record che avra\textquotesingle{} lo stesso codice del parametro \char`\"{}cod\+\_\+ordine\char`\"{} dato in input verra\textquotesingle{} modificato con il nuovo stato. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{gestione__file_8h_aba019cf9f72872ce6bbafecba0f86c7e}{input\+\_\+scelta}} ()
+\item 
+void \mbox{\hyperlink{gestione__file_8h_a98edc715c69551e41e2f7704e811ecbf}{restituisci\+ALL\+\_\+ordini}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{gestione__file_8h_abff60afb5a6c3c2393ae51b597523893}\label{gestione__file_8h_abff60afb5a6c3c2393ae51b597523893}} 
+\index{gestione\_file.h@{gestione\_file.h}!FILE\_CLIENTI@{FILE\_CLIENTI}}
+\index{FILE\_CLIENTI@{FILE\_CLIENTI}!gestione\_file.h@{gestione\_file.h}}
+\doxysubsubsection{\texorpdfstring{FILE\_CLIENTI}{FILE\_CLIENTI}}
+{\footnotesize\ttfamily \#define FILE\+\_\+\+CLIENTI~\char`\"{}clienti.\+csv\char`\"{}}
+
+\mbox{\Hypertarget{gestione__file_8h_ae4b83ff51c28f59e9bee28f7544e5146}\label{gestione__file_8h_ae4b83ff51c28f59e9bee28f7544e5146}} 
+\index{gestione\_file.h@{gestione\_file.h}!FILE\_GADGET@{FILE\_GADGET}}
+\index{FILE\_GADGET@{FILE\_GADGET}!gestione\_file.h@{gestione\_file.h}}
+\doxysubsubsection{\texorpdfstring{FILE\_GADGET}{FILE\_GADGET}}
+{\footnotesize\ttfamily \#define FILE\+\_\+\+GADGET~\char`\"{}gadget.\+csv\char`\"{}}
+
+\mbox{\Hypertarget{gestione__file_8h_ac767c228fa8860a69f43b326630d87c9}\label{gestione__file_8h_ac767c228fa8860a69f43b326630d87c9}} 
+\index{gestione\_file.h@{gestione\_file.h}!FILE\_ORDINI@{FILE\_ORDINI}}
+\index{FILE\_ORDINI@{FILE\_ORDINI}!gestione\_file.h@{gestione\_file.h}}
+\doxysubsubsection{\texorpdfstring{FILE\_ORDINI}{FILE\_ORDINI}}
+{\footnotesize\ttfamily \#define FILE\+\_\+\+ORDINI~\char`\"{}ordini.\+csv\char`\"{}}
+
 
 
 \doxysubsection{Function Documentation}
@@ -110,6 +144,12 @@ Funzione che avendo come input una stringa \char`\"{}gadget\char`\"{} contenente
 {\em 0} & Se si e\textquotesingle{} presentato un errore. \\
 \hline
 \end{DoxyRetVals}
+\mbox{\Hypertarget{gestione__file_8h_aba019cf9f72872ce6bbafecba0f86c7e}\label{gestione__file_8h_aba019cf9f72872ce6bbafecba0f86c7e}} 
+\index{gestione\_file.h@{gestione\_file.h}!input\_scelta@{input\_scelta}}
+\index{input\_scelta@{input\_scelta}!gestione\_file.h@{gestione\_file.h}}
+\doxysubsubsection{\texorpdfstring{input\_scelta()}{input\_scelta()}}
+{\footnotesize\ttfamily int input\+\_\+scelta (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{gestione__file_8h_aed9f88cb55c36aa7d4a48a41c4d6ceba}\label{gestione__file_8h_aed9f88cb55c36aa7d4a48a41c4d6ceba}} 
 \index{gestione\_file.h@{gestione\_file.h}!inserisci\_cliente@{inserisci\_cliente}}
 \index{inserisci\_cliente@{inserisci\_cliente}!gestione\_file.h@{gestione\_file.h}}
@@ -297,6 +337,12 @@ La funzione ha come input (per riferimento) una struct \mbox{\hyperlink{structor
 
 
 Procedura che visualizza tutti i gadget presenti nel file \char`\"{}file\+\_\+gadget\char`\"{}. 
+
+\mbox{\Hypertarget{gestione__file_8h_a98edc715c69551e41e2f7704e811ecbf}\label{gestione__file_8h_a98edc715c69551e41e2f7704e811ecbf}} 
+\index{gestione\_file.h@{gestione\_file.h}!restituisciALL\_ordini@{restituisciALL\_ordini}}
+\index{restituisciALL\_ordini@{restituisciALL\_ordini}!gestione\_file.h@{gestione\_file.h}}
+\doxysubsubsection{\texorpdfstring{restituisciALL\_ordini()}{restituisciALL\_ordini()}}
+{\footnotesize\ttfamily void restituisci\+ALL\+\_\+ordini (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{gestione__file_8h_adb0b57cf56452a115671a4ea16e7f042}\label{gestione__file_8h_adb0b57cf56452a115671a4ea16e7f042}} 
 \index{gestione\_file.h@{gestione\_file.h}!ricerca\_gadget@{ricerca\_gadget}}

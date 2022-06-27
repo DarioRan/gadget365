@@ -79,27 +79,30 @@ $(function() {
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef GESTIONE_ORDINI_H_</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define GESTIONE_ORDINI_H_</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="strutture_8h.html">strutture.h</a>&quot;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="gestione__file_8h.html">gestione_file.h</a>&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="gestione__gadget_8h.html">gestione_gadget.h</a>&quot;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="gestione__ordini_8h.html">gestione_ordini.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;time.h&gt;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;string.h&gt;</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;time.h&gt;</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keywordtype">void</span> <a class="code hl_function" href="gestione__ordini_8h.html#a335bb0bbdce58d21cba3e57b2d48c7da">effettua_ordine</a>(<span class="keywordtype">char</span>* username);</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keywordtype">int</span> <a class="code hl_function" href="gestione__ordini_8h.html#ab04ebb6a3e4aaa112c281be4bc0492f7">emetti_ordine</a>(<a class="code hl_struct" href="structordine__t.html">ordine_t</a> xordine);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#endif </span><span class="comment">/* GESTIONE_ORDINI_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="strutture_8h.html">strutture.h</a>&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;<a class="code" href="gestione__file_8h.html">gestione_file.h</a>&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;<a class="code" href="gestione__gadget_8h.html">gestione_gadget.h</a>&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;<a class="code" href="gestione__ordini_8h.html">gestione_ordini.h</a>&quot;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keywordtype">void</span> <a class="code hl_function" href="gestione__ordini_8h.html#a335bb0bbdce58d21cba3e57b2d48c7da">effettua_ordine</a>(<span class="keywordtype">char</span>* username);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keywordtype">int</span> <a class="code hl_function" href="gestione__ordini_8h.html#ab04ebb6a3e4aaa112c281be4bc0492f7">emetti_ordine</a>(<a class="code hl_struct" href="structordine__t.html">ordine_t</a> xordine);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#endif </span><span class="comment">/* GESTIONE_ORDINI_H_ */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="agestione__file_8h_html"><div class="ttname"><a href="gestione__file_8h.html">gestione_file.h</a></div></div>
 <div class="ttc" id="agestione__gadget_8h_html"><div class="ttname"><a href="gestione__gadget_8h.html">gestione_gadget.h</a></div></div>
 <div class="ttc" id="agestione__ordini_8h_html"><div class="ttname"><a href="gestione__ordini_8h.html">gestione_ordini.h</a></div></div>
 <div class="ttc" id="agestione__ordini_8h_html_a335bb0bbdce58d21cba3e57b2d48c7da"><div class="ttname"><a href="gestione__ordini_8h.html#a335bb0bbdce58d21cba3e57b2d48c7da">effettua_ordine</a></div><div class="ttdeci">void effettua_ordine(char *username)</div><div class="ttdoc">Procedura incaricata di assemblare ed inserire nel file &quot;file_ordini&quot; un nuovo ordine....</div><div class="ttdef"><b>Definition:</b> gestione_ordini.c:10</div></div>
-<div class="ttc" id="agestione__ordini_8h_html_ab04ebb6a3e4aaa112c281be4bc0492f7"><div class="ttname"><a href="gestione__ordini_8h.html#ab04ebb6a3e4aaa112c281be4bc0492f7">emetti_ordine</a></div><div class="ttdeci">int emetti_ordine(ordine_t xordine)</div><div class="ttdoc">Funzione che a seconda dei gadget presenti nell'ordine, utilizza la funzione &quot;restituisci_gadget&quot; per...</div><div class="ttdef"><b>Definition:</b> gestione_ordini.c:94</div></div>
-<div class="ttc" id="astructordine__t_html"><div class="ttname"><a href="structordine__t.html">ordine_t</a></div><div class="ttdef"><b>Definition:</b> strutture.h:51</div></div>
+<div class="ttc" id="agestione__ordini_8h_html_ab04ebb6a3e4aaa112c281be4bc0492f7"><div class="ttname"><a href="gestione__ordini_8h.html#ab04ebb6a3e4aaa112c281be4bc0492f7">emetti_ordine</a></div><div class="ttdeci">int emetti_ordine(ordine_t xordine)</div><div class="ttdoc">Funzione che a seconda dei gadget presenti nell'ordine, utilizza la funzione &quot;restituisci_gadget&quot; per...</div><div class="ttdef"><b>Definition:</b> gestione_ordini.c:97</div></div>
+<div class="ttc" id="astructordine__t_html"><div class="ttname"><a href="structordine__t.html">ordine_t</a></div><div class="ttdef"><b>Definition:</b> strutture.h:52</div></div>
 <div class="ttc" id="astrutture_8h_html"><div class="ttname"><a href="strutture_8h.html">strutture.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

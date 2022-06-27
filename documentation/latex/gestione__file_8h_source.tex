@@ -11,34 +11,45 @@
 \DoxyCodeLine{7 }
 \DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef GESTIONE\_FILE\_H\_}}
 \DoxyCodeLine{9 \textcolor{preprocessor}{\#define GESTIONE\_FILE\_H\_}}
-\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{strutture_8h}{strutture.h}}"{}}}
-\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{visualizzazione_8h}{visualizzazione.h}}"{}}}
-\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <ctype.h>}}
-\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <string.h>}}
-\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <stdio.h>}}
-\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <stdlib.h>}}
-\DoxyCodeLine{21 \textcolor{keywordtype}{void} \mbox{\hyperlink{gestione__file_8h_a9b9304a7c4e461919963dfbc351e1c5a}{apertura\_file}}();}
-\DoxyCodeLine{29 \textcolor{keywordtype}{int} \mbox{\hyperlink{gestione__file_8h_a4fc52c462c1d2fd43ff452250a0bb6b6}{inserisci\_gadget}}(\mbox{\hyperlink{structgadget__t}{gadget\_t}} xgadget);}
-\DoxyCodeLine{30 }
-\DoxyCodeLine{40 \textcolor{keywordtype}{int} \mbox{\hyperlink{gestione__file_8h_aed9f88cb55c36aa7d4a48a41c4d6ceba}{inserisci\_cliente}}(\mbox{\hyperlink{structcliente__t}{cliente\_t}} xcliente);}
-\DoxyCodeLine{48 \textcolor{keywordtype}{int} \mbox{\hyperlink{gestione__file_8h_acea95340577507bc3219aa22ec740769}{inserisci\_ordine}}(\mbox{\hyperlink{structordine__t}{ordine\_t}} xordine);}
-\DoxyCodeLine{57 \textcolor{keywordtype}{int} \mbox{\hyperlink{gestione__file_8h_ad65ec79cc1f577ca29541e8b5c5900ad}{restituisci\_cliente}}(\textcolor{keywordtype}{char} ricerca[\mbox{\hyperlink{strutture_8h_aab0b4ae424f7c60206f58fb67f5e1317}{CARATTERI}}], \mbox{\hyperlink{structcliente__t}{cliente\_t}}* risultato\_cliente );}
-\DoxyCodeLine{63 \textcolor{keywordtype}{void} \mbox{\hyperlink{gestione__file_8h_adb0b57cf56452a115671a4ea16e7f042}{ricerca\_gadget}}(\textcolor{keywordtype}{char} ricerca[\mbox{\hyperlink{strutture_8h_aab0b4ae424f7c60206f58fb67f5e1317}{CARATTERI}}], \textcolor{keywordtype}{int} scelta );}
-\DoxyCodeLine{73 \textcolor{keywordtype}{int} \mbox{\hyperlink{gestione__file_8h_a15066710ca41030b53dcc79bef97ba0a}{restituisci\_gadget}}(\textcolor{keywordtype}{char} ricerca[\mbox{\hyperlink{strutture_8h_aab0b4ae424f7c60206f58fb67f5e1317}{CARATTERI}}], \mbox{\hyperlink{structgadget__t}{gadget\_t}}* risultato\_gadget, \textcolor{keywordtype}{int} scelta );}
-\DoxyCodeLine{81 \textcolor{keywordtype}{int} \mbox{\hyperlink{gestione__file_8h_a96f528b92da2ef07807f84cef8cffe66}{cancella\_gadget}}(\textcolor{keywordtype}{char}* gadget);}
-\DoxyCodeLine{89 \textcolor{keywordtype}{int} \mbox{\hyperlink{gestione__file_8h_ab7f6f4b651ed65634302161e39b25b64}{cancella\_cliente}}(\textcolor{keywordtype}{char}* username);}
-\DoxyCodeLine{94 \textcolor{keywordtype}{void} \mbox{\hyperlink{gestione__file_8h_a69ef63a4311b3baff481cd4fc0a6ee83}{visualizza\_ordini\_cliente}}(\textcolor{keywordtype}{char}* username);}
-\DoxyCodeLine{98 \textcolor{keywordtype}{void} \mbox{\hyperlink{gestione__file_8h_af4865bddcc0ebd0c8049f919892bc913}{restituisciALL\_gadget}}();}
-\DoxyCodeLine{102 \textcolor{keywordtype}{void} \mbox{\hyperlink{gestione__file_8h_a69ad3be750674092ec03dc4fb2853894}{visualizza\_piu\_venduti}}();}
-\DoxyCodeLine{111 \textcolor{keywordtype}{int} \mbox{\hyperlink{gestione__file_8h_a6e6b6159ec076eb4d8164a81801864e3}{restituisci\_ordine}}(\textcolor{keywordtype}{char}* codice\_ordine, \mbox{\hyperlink{structordine__t}{ordine\_t}}* risultato\_ordine);}
-\DoxyCodeLine{115 \textcolor{keywordtype}{void} \mbox{\hyperlink{gestione__file_8h_a82efb5997f92c5314b44cbc6acf1a630}{approva\_ordini}}();}
-\DoxyCodeLine{124 \textcolor{keywordtype}{int} \mbox{\hyperlink{gestione__file_8h_a1d3d50ac5c975b4e6e6bf43073d2372b}{modifica\_stato\_ordine}}(\textcolor{keywordtype}{char}* cod\_ordine, \textcolor{keywordtype}{int} stato);}
-\DoxyCodeLine{125 }
-\DoxyCodeLine{126 }
-\DoxyCodeLine{127 }
-\DoxyCodeLine{128 }
-\DoxyCodeLine{129 }
-\DoxyCodeLine{130 }
-\DoxyCodeLine{131 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* GESTIONE\_FILE\_H\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <ctype.h>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{strutture_8h}{strutture.h}}"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{visualizzazione_8h}{visualizzazione.h}}"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define FILE\_CLIENTI "{}clienti.csv"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define FILE\_ORDINI "{}ordini.csv"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#define FILE\_GADGET "{}gadget.csv"{}}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 }
+\DoxyCodeLine{30 \textcolor{keywordtype}{void} \mbox{\hyperlink{gestione__file_8h_a9b9304a7c4e461919963dfbc351e1c5a}{apertura\_file}}();}
+\DoxyCodeLine{38 \textcolor{keywordtype}{int} \mbox{\hyperlink{gestione__file_8h_a4fc52c462c1d2fd43ff452250a0bb6b6}{inserisci\_gadget}}(\mbox{\hyperlink{structgadget__t}{gadget\_t}} xgadget);}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{49 \textcolor{keywordtype}{int} \mbox{\hyperlink{gestione__file_8h_aed9f88cb55c36aa7d4a48a41c4d6ceba}{inserisci\_cliente}}(\mbox{\hyperlink{structcliente__t}{cliente\_t}} xcliente);}
+\DoxyCodeLine{57 \textcolor{keywordtype}{int} \mbox{\hyperlink{gestione__file_8h_acea95340577507bc3219aa22ec740769}{inserisci\_ordine}}(\mbox{\hyperlink{structordine__t}{ordine\_t}} xordine);}
+\DoxyCodeLine{66 \textcolor{keywordtype}{int} \mbox{\hyperlink{gestione__file_8h_ad65ec79cc1f577ca29541e8b5c5900ad}{restituisci\_cliente}}(\textcolor{keywordtype}{char} ricerca[\mbox{\hyperlink{strutture_8h_aab0b4ae424f7c60206f58fb67f5e1317}{CARATTERI}}], \mbox{\hyperlink{structcliente__t}{cliente\_t}}* risultato\_cliente );}
+\DoxyCodeLine{72 \textcolor{keywordtype}{void} \mbox{\hyperlink{gestione__file_8h_adb0b57cf56452a115671a4ea16e7f042}{ricerca\_gadget}}(\textcolor{keywordtype}{char} ricerca[\mbox{\hyperlink{strutture_8h_aab0b4ae424f7c60206f58fb67f5e1317}{CARATTERI}}], \textcolor{keywordtype}{int} scelta );}
+\DoxyCodeLine{82 \textcolor{keywordtype}{int} \mbox{\hyperlink{gestione__file_8h_a15066710ca41030b53dcc79bef97ba0a}{restituisci\_gadget}}(\textcolor{keywordtype}{char} ricerca[\mbox{\hyperlink{strutture_8h_aab0b4ae424f7c60206f58fb67f5e1317}{CARATTERI}}], \mbox{\hyperlink{structgadget__t}{gadget\_t}}* risultato\_gadget, \textcolor{keywordtype}{int} scelta );}
+\DoxyCodeLine{90 \textcolor{keywordtype}{int} \mbox{\hyperlink{gestione__file_8h_a96f528b92da2ef07807f84cef8cffe66}{cancella\_gadget}}(\textcolor{keywordtype}{char}* gadget);}
+\DoxyCodeLine{98 \textcolor{keywordtype}{int} \mbox{\hyperlink{gestione__file_8h_ab7f6f4b651ed65634302161e39b25b64}{cancella\_cliente}}(\textcolor{keywordtype}{char}* username);}
+\DoxyCodeLine{103 \textcolor{keywordtype}{void} \mbox{\hyperlink{gestione__file_8h_a69ef63a4311b3baff481cd4fc0a6ee83}{visualizza\_ordini\_cliente}}(\textcolor{keywordtype}{char}* username);}
+\DoxyCodeLine{107 \textcolor{keywordtype}{void} \mbox{\hyperlink{gestione__file_8h_af4865bddcc0ebd0c8049f919892bc913}{restituisciALL\_gadget}}();}
+\DoxyCodeLine{111 \textcolor{keywordtype}{void} \mbox{\hyperlink{gestione__file_8h_a69ad3be750674092ec03dc4fb2853894}{visualizza\_piu\_venduti}}();}
+\DoxyCodeLine{120 \textcolor{keywordtype}{int} \mbox{\hyperlink{gestione__file_8h_a6e6b6159ec076eb4d8164a81801864e3}{restituisci\_ordine}}(\textcolor{keywordtype}{char}* codice\_ordine, \mbox{\hyperlink{structordine__t}{ordine\_t}}* risultato\_ordine);}
+\DoxyCodeLine{124 \textcolor{keywordtype}{void} \mbox{\hyperlink{gestione__file_8h_a82efb5997f92c5314b44cbc6acf1a630}{approva\_ordini}}();}
+\DoxyCodeLine{133 \textcolor{keywordtype}{int} \mbox{\hyperlink{gestione__file_8h_a1d3d50ac5c975b4e6e6bf43073d2372b}{modifica\_stato\_ordine}}(\textcolor{keywordtype}{char}* cod\_ordine, \textcolor{keywordtype}{int} stato);}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 \textcolor{keywordtype}{int} \mbox{\hyperlink{gestione__file_8h_aba019cf9f72872ce6bbafecba0f86c7e}{input\_scelta}}();}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 \textcolor{keywordtype}{void} \mbox{\hyperlink{gestione__file_8h_a98edc715c69551e41e2f7704e811ecbf}{restituisciALL\_ordini}}();}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* GESTIONE\_FILE\_H\_ */}\textcolor{preprocessor}{}}
 
 \end{DoxyCode}
