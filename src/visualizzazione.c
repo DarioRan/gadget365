@@ -9,6 +9,7 @@
 
 void inizializza_menu()
 {
+	//visualizzazione menu principale
 	printf("\n*---------------------------------------*\n");
 	printf("|                gadget365	        |\n");
 	printf("*---------------------------------------*\n");
@@ -21,6 +22,7 @@ void inizializza_menu()
 
 void visualizza_menu()
 {
+	//visualizzazione menu cliente
 	printf("\n*---------------------------------------*\n");
 	printf("|             Menu Cliente              |\n");
 	printf("*---------------------------------------*\n");
@@ -37,6 +39,7 @@ void visualizza_menu()
 
 void visualizza_menu_modifica()
 {
+	//visualizzazione menu modifica
 	printf("\n*---------------------------------------*\n");
 	printf("|             Menu Modifica             |\n");
 	printf("*---------------------------------------*\n");
@@ -51,6 +54,7 @@ void visualizza_menu_modifica()
 
 void visualizza_menu_ricerca()
 {
+	//visualizzazione menu ricerca gadget
 	printf("\n*--------------------------------------*\n");
 	printf("|             Menu Ricerca              |\n");
 	printf("*---------------------------------------*\n");
@@ -64,6 +68,7 @@ void visualizza_menu_ricerca()
 
 void visualizza_menu_modifica_gadget()
 {
+	//visualizzazione menu modifica gadget
 	printf("\n*---------------------------------------*\n");
 	printf("|             Menu Modifica             |\n");
 	printf("*---------------------------------------*\n");
@@ -79,6 +84,7 @@ void visualizza_menu_modifica_gadget()
 
 void visualizza_menu_gestore()
 {
+	//visualizzazione menu gestore
 	printf("\n*---------------------------------------*\n");
 	printf("|          Menu gestore                 |\n");
 	printf("*---------------------------------------*\n");
@@ -97,7 +103,7 @@ void visualizza_menu_gestore()
 
 void visualizza_cliente(cliente_t xcliente)
 {
-
+	//visualizzazione info clienti
 	printf("\n*---------------------------------------*\n");
 	printf("|        Informazioni Utente            |\n");
 	printf("*---------------------------------------*\n");
@@ -111,6 +117,7 @@ void visualizza_cliente(cliente_t xcliente)
 
 void visualizza_gadget(gadget_t xgadget)
 {
+	//visualizzazione info gadget
 	if(xgadget.quantita>=0 && xgadget.prezzo>0)
 	{
 	printf("*---------------------------------------*\n");
@@ -129,6 +136,7 @@ void visualizza_gadget(gadget_t xgadget)
 
 void visualizza_gadget_recap(gadget_t xgadget)
 {
+	//visualizzazione info gadget
 	printf("*---------------------------------------*\n");
 	printf("|          Codice Gadget: %s          |\n",xgadget.cod_gadget);
 	printf("*---------------------------------------*\n");
@@ -140,7 +148,7 @@ void visualizza_gadget_recap(gadget_t xgadget)
 
 void visualizza_ordine_recap(ordine_t xordine)
 {
-
+	//visualizzazione info ordine
 	cliente_t xcliente;
 	gadget_t xgad;
 	int esito=0;
