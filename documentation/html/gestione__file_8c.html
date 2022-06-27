@@ -107,6 +107,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:af4865bddcc0ebd0c8049f919892bc913"><td class="mdescLeft">&#160;</td><td class="mdescRight">Procedura che visualizza tutti i gadget presenti nel file "file_gadget".  <a href="gestione__file_8c.html#af4865bddcc0ebd0c8049f919892bc913">More...</a><br /></td></tr>
 <tr class="separator:af4865bddcc0ebd0c8049f919892bc913"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98edc715c69551e41e2f7704e811ecbf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gestione__file_8c.html#a98edc715c69551e41e2f7704e811ecbf">restituisciALL_ordini</a> ()</td></tr>
+<tr class="memdesc:a98edc715c69551e41e2f7704e811ecbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Procedura legge tutti i record presenti nel file "file_ordini" e li visualizza.  <a href="gestione__file_8c.html#a98edc715c69551e41e2f7704e811ecbf">More...</a><br /></td></tr>
 <tr class="separator:a98edc715c69551e41e2f7704e811ecbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69ef63a4311b3baff481cd4fc0a6ee83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gestione__file_8c.html#a69ef63a4311b3baff481cd4fc0a6ee83">visualizza_ordini_cliente</a> (char *username)</td></tr>
 <tr class="memdesc:a69ef63a4311b3baff481cd4fc0a6ee83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Procedura che avendo come input una stringa "username" contenente l'username dell'utente di cui visualizzare gli ordini, legge ogni record presente nel file "file_ordini" assegnandoli ad una struct di appoggio. Se il nome dell'ordine contenuto nella struct di appoggio e' uguale al parametro dato in input allora verranno visualizzati le informazioni di quell'ordine.  <a href="gestione__file_8c.html#a69ef63a4311b3baff481cd4fc0a6ee83">More...</a><br /></td></tr>
@@ -198,7 +199,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">1</td><td>Se l'inserimento e' stato completato. </td></tr>
+    <tr><td class="paramname">1</td><td>Se e' stato cancellato. </td></tr>
     <tr><td class="paramname">0</td><td>Se si e' presentato un errore. </td></tr>
   </table>
   </dd>
@@ -232,7 +233,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">1</td><td>Se l'inserimento e' stato completato. </td></tr>
+    <tr><td class="paramname">1</td><td>Se e' stato cancellato. </td></tr>
     <tr><td class="paramname">0</td><td>Se si e' presentato un errore. </td></tr>
   </table>
   </dd>
@@ -476,7 +477,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">1</td><td>Se l'inserimento e' stato completato. </td></tr>
+    <tr><td class="paramname">1</td><td>Se e' stato trovato. </td></tr>
     <tr><td class="paramname">0</td><td>Se si e' presentato un errore. </td></tr>
   </table>
   </dd>
@@ -562,6 +563,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Procedura legge tutti i record presenti nel file "file_ordini" e li visualizza. </p>
 
 </div>
 </div>

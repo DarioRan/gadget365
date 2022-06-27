@@ -137,9 +137,8 @@ Functions</h2></td></tr>
 <tr class="memitem:a1d3d50ac5c975b4e6e6bf43073d2372b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gestione__file_8h.html#a1d3d50ac5c975b4e6e6bf43073d2372b">modifica_stato_ordine</a> (char *cod_ordine, int stato)</td></tr>
 <tr class="memdesc:a1d3d50ac5c975b4e6e6bf43073d2372b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funzione che avendo come input una stringa "cod_ordine" contenente il codice dell'ordine da modificare e il parametro "stato" contenente il valore del nuovo stato, legge ogni record presente nel file "file_ordini" assegnandoli ad una struct di appoggio. Il record che avra' lo stesso codice del parametro "cod_ordine" dato in input verra' modificato con il nuovo stato.  <a href="gestione__file_8h.html#a1d3d50ac5c975b4e6e6bf43073d2372b">More...</a><br /></td></tr>
 <tr class="separator:a1d3d50ac5c975b4e6e6bf43073d2372b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba019cf9f72872ce6bbafecba0f86c7e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gestione__file_8h.html#aba019cf9f72872ce6bbafecba0f86c7e">input_scelta</a> ()</td></tr>
-<tr class="separator:aba019cf9f72872ce6bbafecba0f86c7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98edc715c69551e41e2f7704e811ecbf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gestione__file_8h.html#a98edc715c69551e41e2f7704e811ecbf">restituisciALL_ordini</a> ()</td></tr>
+<tr class="memdesc:a98edc715c69551e41e2f7704e811ecbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Procedura legge tutti i record presenti nel file "file_ordini" e li visualizza.  <a href="gestione__file_8h.html#a98edc715c69551e41e2f7704e811ecbf">More...</a><br /></td></tr>
 <tr class="separator:a98edc715c69551e41e2f7704e811ecbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -250,7 +249,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">1</td><td>Se l'inserimento e' stato completato. </td></tr>
+    <tr><td class="paramname">1</td><td>Se e' stato cancellato. </td></tr>
     <tr><td class="paramname">0</td><td>Se si e' presentato un errore. </td></tr>
   </table>
   </dd>
@@ -284,28 +283,11 @@ Functions</h2></td></tr>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">1</td><td>Se l'inserimento e' stato completato. </td></tr>
+    <tr><td class="paramname">1</td><td>Se e' stato cancellato. </td></tr>
     <tr><td class="paramname">0</td><td>Se si e' presentato un errore. </td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="aba019cf9f72872ce6bbafecba0f86c7e" name="aba019cf9f72872ce6bbafecba0f86c7e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba019cf9f72872ce6bbafecba0f86c7e">&#9670;&nbsp;</a></span>input_scelta()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int input_scelta </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -545,7 +527,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">1</td><td>Se l'inserimento e' stato completato. </td></tr>
+    <tr><td class="paramname">1</td><td>Se e' stato trovato. </td></tr>
     <tr><td class="paramname">0</td><td>Se si e' presentato un errore. </td></tr>
   </table>
   </dd>
@@ -631,6 +613,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Procedura legge tutti i record presenti nel file "file_ordini" e li visualizza. </p>
 
 </div>
 </div>
