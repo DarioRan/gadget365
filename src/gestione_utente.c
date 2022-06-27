@@ -10,7 +10,7 @@
 
 int registrazione_cliente()
 {
-
+//creazione struct utente e inserimento dati
 	int esito=0;
 	cliente_t xutente;
 	printf("\n|Inserire ragione sociale: ");
@@ -25,7 +25,7 @@ int registrazione_cliente()
 	get_stringa(xutente.username);
 	printf("\n|Inserire password utente: ");
 	get_stringa(xutente.pass);
-
+// se il cliente viene registrato...
 	if(inserisci_cliente(xutente)==1)
 	{
 		printf("|Cliente Registrato Correttamente|"); //////////////////
@@ -46,6 +46,7 @@ int accesso_cliente(char username[CARATTERI], char pass[CARATTERI])
 	int res=0;
 	int res2=0;
 	int esito_accesso=0;
+	// controllo che i dati inseriti siano uguali a quelli dell'amministratore
 	res=strncmp(USERADMIN,username,9);
 	res2=strncmp(PASSADMIN,pass,6);
 	if(res==0)
@@ -53,6 +54,7 @@ int accesso_cliente(char username[CARATTERI], char pass[CARATTERI])
 
 		if(res2==0)
 		{
+			// log in amministratore
 			printf("\n|Log-In Admin Avvenuto con Successo!|");
 			esito_accesso=2;
 		}
@@ -63,6 +65,7 @@ int accesso_cliente(char username[CARATTERI], char pass[CARATTERI])
 	}
 	else
 	{
+		//ricerco cliente con username e ne prendo i dati
 		cliente_t xutente;
 		esito_accesso=restituisci_cliente(username,&xutente);
 		if(esito_accesso==1)
@@ -103,10 +106,12 @@ void modifica_cliente(char username_corrente[CARATTERI])
 	case 1:
 		printf("\n|Inserire P. Iva: ");
 		get_stringa(mod);
+		//inseriamo la stringa da modificare, otteniamo la struct del cliente da modificare e lo modifichiamo
 		restituisci_cliente(username_corrente, &xcliente);
 		strcpy(xcliente.piva,mod);
 		esito2=cancella_cliente(username_corrente);
 		esito2=inserisci_cliente(xcliente);
+		//cancelliamo e inseriamo la nuova struct modificata
 		if(esito2==1)
 		{
 			printf("\n|Utente Modificato!|");
@@ -121,6 +126,7 @@ void modifica_cliente(char username_corrente[CARATTERI])
 		break;
 
 	case 2:
+		//ragionamento analogo al case 1...
 		printf("\n|Inserire Rag. Sociale: ");
 		get_stringa(mod);
 		restituisci_cliente(username_corrente, &xcliente);
